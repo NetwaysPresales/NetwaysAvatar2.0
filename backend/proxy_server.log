@@ -310,3 +310,1111 @@ task: <Task cancelling name='Task-7' coro=<WebSocketProtocol.run_asgi() running 
 2025-02-16 18:24:21,149 [INFO] Received non-audio response: {"type":"response.content_part.done","event_id":"event_B1ZrBjbZCNjEoiQGfRwlc","response_id":"resp_B1Zr67EfeTvcPrqeXvHtY","item_id":"item_B1Zr6ObKGsEs8LGUsAkMO","output_index":0,"content_index":0,"part":{"type":"audio","transcript":"Absolutely! Did you know that one day on Venus is longer than one year on Venus? This happens because Venus has an extremely slow rotation on its axis, taking about 243 Earth days to complete a single rotation. Meanwhile, it only takes about 225 Earth days for Venus to orbit the Sun, making its day longer than its year!"},"content":{"type":"audio","transcript":"Absolutely! Did you know that one day on Venus is longer than one year on Venus? This happens because Venus has an extremely slow rotation on its axis, taking about 243 Earth days to complete a single rotation. Meanwhile, it only takes about 225 Earth days for Venus to orbit the Sun, making its day longer than its year!"}}
 2025-02-16 18:24:21,149 [INFO] Received non-audio response: {"type":"response.output_item.done","event_id":"event_B1ZrBKCEGXaIMt8zwx0bD","response_id":"resp_B1Zr67EfeTvcPrqeXvHtY","output_index":0,"item":{"id":"item_B1Zr6ObKGsEs8LGUsAkMO","object":"realtime.item","type":"message","status":"completed","role":"assistant","content":[{"type":"audio","transcript":"Absolutely! Did you know that one day on Venus is longer than one year on Venus? This happens because Venus has an extremely slow rotation on its axis, taking about 243 Earth days to complete a single rotation. Meanwhile, it only takes about 225 Earth days for Venus to orbit the Sun, making its day longer than its year!"}]}}
 2025-02-16 18:24:21,149 [INFO] Received non-audio response: {"type":"response.done","event_id":"event_B1ZrBpZM6D1kz9qazNLY1","response":{"object":"realtime.response","id":"resp_B1Zr67EfeTvcPrqeXvHtY","status":"completed","status_details":null,"output":[{"id":"item_B1Zr6ObKGsEs8LGUsAkMO","object":"realtime.item","type":"message","status":"completed","role":"assistant","content":[{"type":"audio","transcript":"Absolutely! Did you know that one day on Venus is longer than one year on Venus? This happens because Venus has an extremely slow rotation on its axis, taking about 243 Earth days to complete a single rotation. Meanwhile, it only takes about 225 Earth days for Venus to orbit the Sun, making its day longer than its year!"}]}],"conversation_id":"conv_B1Zr5FcYt4DHu2n0QVDz2","modalities":["audio","text"],"voice":"alloy","custom_voice_id":null,"output_audio_format":"pcm16","temperature":0.8,"max_output_tokens":"inf","usage":{"total_tokens":655,"input_tokens":23,"output_tokens":632,"input_token_details":{"text_tokens":23,"audio_tokens":0,"cached_tokens":0,"cached_tokens_details":{"text_tokens":0,"audio_tokens":0}},"output_token_details":{"text_tokens":100,"audio_tokens":532}},"metadata":null}}
+2025-02-16 18:27:19,636 [INFO] Frontend WebSocket connected.
+2025-02-16 18:27:21,062 [INFO] Connected to Azure OpenAI WebSocket.
+2025-02-16 18:27:21,077 [INFO] Azure Session Created.
+2025-02-16 18:27:21,077 [INFO] Sent session.update to Azure.
+2025-02-16 18:27:21,262 [INFO] Received response for session.update: {"type":"session.updated","event_id":"event_B1Zu5iTmLoYgmokB8DzrF","session":{"id":"sess_B1Zu4UzhBhdYbrcivEikF","object":"realtime.session","model":"gpt-4o-realtime-preview-2024-12-17","expires_at":1739716940,"modalities":["text","audio"],"instructions":"You are a helpful AI assistant.","voice":"alloy","custom_voice_id":null,"turn_detection":{"type":"server_vad","threshold":0.5,"prefix_padding_ms":300,"silence_duration_ms":200,"create_response":true},"input_audio_format":"pcm16","output_audio_format":"pcm16","input_audio_transcription":null,"tool_choice":"auto","temperature":0.8,"max_response_output_tokens":"inf","client_secret":null,"tools":[]}}
+2025-02-16 18:27:21,262 [INFO] Sent conversation.item.create to Azure.
+2025-02-16 18:27:21,452 [INFO] Received response for conversation.item.create: {"type":"conversation.item.created","event_id":"event_B1Zu5mTPwYXp8f1Z5fT7A","previous_item_id":null,"item":{"id":"item_B1Zu5u7Mq9lz0lOKhSqeB","object":"realtime.item","type":"message","status":"completed","role":"user","content":[{"type":"input_text","text":"Hello! Can you tell me a fun fact about space?"}]}}
+2025-02-16 18:27:21,452 [INFO] Sent response.create to Azure.
+2025-02-16 18:27:21,659 [INFO] Received response for response.create: {"type":"response.created","event_id":"event_B1Zu5Io6RrGzzS9EP6xqW","response":{"object":"realtime.response","id":"resp_B1Zu5E1vUeq0hzSLHzB6G","status":"in_progress","status_details":null,"output":[],"conversation_id":"conv_B1Zu48BzLGs2jNJIFHAOs","modalities":["text","audio"],"voice":"alloy","custom_voice_id":null,"output_audio_format":"pcm16","temperature":0.8,"max_output_tokens":"inf","usage":null,"metadata":null}}
+2025-02-16 18:27:21,930 [INFO] Received non-audio response: {"type":"rate_limits.updated","event_id":"event_B1Zu5usNpPcUUpSfQkW68","rate_limits":[]}
+2025-02-16 18:27:21,951 [INFO] Received non-audio response: {"type":"response.output_item.added","event_id":"event_B1Zu5kHmuWEOYLJ3bHzFo","response_id":"resp_B1Zu5E1vUeq0hzSLHzB6G","output_index":0,"item":{"id":"item_B1Zu5oMVWXsCvR3Mxo3b7","object":"realtime.item","type":"message","status":"in_progress","role":"assistant","content":[]}}
+2025-02-16 18:27:21,951 [INFO] Received non-audio response: {"type":"conversation.item.created","event_id":"event_B1Zu5xHgKKEJTb32Yq1fY","previous_item_id":"item_B1Zu5u7Mq9lz0lOKhSqeB","item":{"id":"item_B1Zu5oMVWXsCvR3Mxo3b7","object":"realtime.item","type":"message","status":"in_progress","role":"assistant","content":[]}}
+2025-02-16 18:27:21,951 [INFO] Received non-audio response: {"type":"response.content_part.added","event_id":"event_B1Zu5IHhMN05lfKLIhOTM","response_id":"resp_B1Zu5E1vUeq0hzSLHzB6G","item_id":"item_B1Zu5oMVWXsCvR3Mxo3b7","output_index":0,"content_index":0,"part":{"type":"audio","transcript":""},"content":{"type":"audio","transcript":""}}
+2025-02-16 18:27:21,951 [INFO] Transcribed Text Delta: Sure
+2025-02-16 18:27:21,965 [INFO] Transcribed Text Delta: !
+2025-02-16 18:27:21,976 [INFO] Transcribed Text Delta:  Did
+2025-02-16 18:27:22,021 [INFO] Streaming audio chunk of size: 6400 bytes
+2025-02-16 18:27:22,034 [INFO] Sent audio chunk of size: 6400 bytes to client
+2025-02-16 18:27:22,068 [INFO] Streaming audio chunk of size: 9600 bytes
+2025-02-16 18:27:22,068 [INFO] Sent audio chunk of size: 9600 bytes to client
+2025-02-16 18:27:22,106 [INFO] Transcribed Text Delta:  you
+2025-02-16 18:27:22,106 [INFO] Transcribed Text Delta:  know
+2025-02-16 18:27:22,110 [INFO] Transcribed Text Delta:  that
+2025-02-16 18:27:22,266 [INFO] Streaming audio chunk of size: 16000 bytes
+2025-02-16 18:27:22,266 [INFO] Sent audio chunk of size: 16000 bytes to client
+2025-02-16 18:27:22,266 [INFO] Streaming audio chunk of size: 16000 bytes
+2025-02-16 18:27:22,266 [INFO] Sent audio chunk of size: 16000 bytes to client
+2025-02-16 18:27:22,335 [INFO] Streaming audio chunk of size: 16000 bytes
+2025-02-16 18:27:22,335 [INFO] Sent audio chunk of size: 16000 bytes to client
+2025-02-16 18:27:22,335 [INFO] Transcribed Text Delta:  in
+2025-02-16 18:27:22,335 [INFO] Transcribed Text Delta:  space
+2025-02-16 18:27:22,335 [INFO] Transcribed Text Delta: ,
+2025-02-16 18:27:22,410 [INFO] Streaming audio chunk of size: 16000 bytes
+2025-02-16 18:27:22,411 [INFO] Sent audio chunk of size: 16000 bytes to client
+2025-02-16 18:27:22,411 [INFO] Transcribed Text Delta:  astronauts
+2025-02-16 18:27:22,411 [INFO] Transcribed Text Delta: '
+2025-02-16 18:27:22,411 [INFO] Transcribed Text Delta:  height
+2025-02-16 18:27:22,412 [INFO] Transcribed Text Delta:  can
+2025-02-16 18:27:22,412 [INFO] Transcribed Text Delta:  increase
+2025-02-16 18:27:22,416 [INFO] Transcribed Text Delta:  by
+2025-02-16 18:27:22,455 [INFO] Streaming audio chunk of size: 32000 bytes
+2025-02-16 18:27:22,456 [INFO] Sent audio chunk of size: 32000 bytes to client
+2025-02-16 18:27:22,599 [INFO] Streaming audio chunk of size: 48000 bytes
+2025-02-16 18:27:22,607 [INFO] Sent audio chunk of size: 48000 bytes to client
+2025-02-16 18:27:22,655 [INFO] Transcribed Text Delta:  up
+2025-02-16 18:27:22,662 [INFO] Transcribed Text Delta:  to
+2025-02-16 18:27:22,673 [INFO] Transcribed Text Delta:  
+2025-02-16 18:27:22,675 [INFO] Transcribed Text Delta: 3
+2025-02-16 18:27:22,684 [INFO] Transcribed Text Delta: %
+2025-02-16 18:27:22,686 [INFO] Transcribed Text Delta: ?
+2025-02-16 18:27:22,697 [INFO] Transcribed Text Delta:  This
+2025-02-16 18:27:22,702 [INFO] Transcribed Text Delta:  happens
+2025-02-16 18:27:22,768 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:27:22,768 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:27:22,916 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:27:22,916 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:27:23,052 [INFO] Transcribed Text Delta:  because
+2025-02-16 18:27:23,070 [INFO] Transcribed Text Delta:  the
+2025-02-16 18:27:23,071 [INFO] Transcribed Text Delta:  spine
+2025-02-16 18:27:23,073 [INFO] Transcribed Text Delta: 's
+2025-02-16 18:27:23,082 [INFO] Transcribed Text Delta:  discs
+2025-02-16 18:27:23,085 [INFO] Transcribed Text Delta:  expand
+2025-02-16 18:27:23,109 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:27:23,119 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:27:23,250 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:27:23,250 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:27:23,400 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:27:23,400 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:27:23,424 [INFO] Transcribed Text Delta:  in
+2025-02-16 18:27:23,438 [INFO] Transcribed Text Delta:  the
+2025-02-16 18:27:23,452 [INFO] Transcribed Text Delta:  absence
+2025-02-16 18:27:23,452 [INFO] Transcribed Text Delta:  of
+2025-02-16 18:27:23,452 [INFO] Transcribed Text Delta:  Earth's
+2025-02-16 18:27:23,464 [INFO] Transcribed Text Delta:  gravity
+2025-02-16 18:27:23,469 [INFO] Transcribed Text Delta: ,
+2025-02-16 18:27:23,479 [INFO] Transcribed Text Delta:  making
+2025-02-16 18:27:23,617 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:27:23,622 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:27:23,750 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:27:23,766 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:27:23,817 [INFO] Transcribed Text Delta:  astronauts
+2025-02-16 18:27:23,834 [INFO] Transcribed Text Delta:  temporarily
+2025-02-16 18:27:23,844 [INFO] Transcribed Text Delta:  taller
+2025-02-16 18:27:23,951 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:27:23,951 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:27:24,084 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:27:24,099 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:27:24,197 [INFO] Transcribed Text Delta:  while
+2025-02-16 18:27:24,201 [INFO] Transcribed Text Delta:  they're
+2025-02-16 18:27:24,209 [INFO] Transcribed Text Delta:  in
+2025-02-16 18:27:24,215 [INFO] Transcribed Text Delta:  orbit
+2025-02-16 18:27:24,222 [INFO] Transcribed Text Delta: .
+2025-02-16 18:27:24,229 [INFO] Transcribed Text Delta:  Once
+2025-02-16 18:27:24,304 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:27:24,307 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:27:24,450 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:27:24,452 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:27:24,568 [INFO] Transcribed Text Delta:  they
+2025-02-16 18:27:24,584 [INFO] Transcribed Text Delta:  return
+2025-02-16 18:27:24,593 [INFO] Transcribed Text Delta:  to
+2025-02-16 18:27:24,600 [INFO] Transcribed Text Delta:  Earth
+2025-02-16 18:27:24,602 [INFO] Transcribed Text Delta: ,
+2025-02-16 18:27:24,612 [INFO] Transcribed Text Delta:  they
+2025-02-16 18:27:24,620 [INFO] Transcribed Text Delta:  go
+2025-02-16 18:27:24,624 [INFO] Transcribed Text Delta:  back
+2025-02-16 18:27:24,634 [INFO] Transcribed Text Delta:  to
+2025-02-16 18:27:24,635 [INFO] Transcribed Text Delta:  their
+2025-02-16 18:27:24,647 [INFO] Transcribed Text Delta:  normal
+2025-02-16 18:27:24,652 [INFO] Transcribed Text Delta:  height
+2025-02-16 18:27:24,662 [INFO] Transcribed Text Delta: .
+2025-02-16 18:27:24,690 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:27:24,690 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:27:24,834 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:27:24,834 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:27:24,983 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:27:24,988 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:27:25,012 [INFO] Transcribed Text Delta:  Pretty
+2025-02-16 18:27:25,018 [INFO] Transcribed Text Delta:  cool
+2025-02-16 18:27:25,022 [INFO] Transcribed Text Delta: ,
+2025-02-16 18:27:25,026 [INFO] Transcribed Text Delta:  right
+2025-02-16 18:27:25,034 [INFO] Transcribed Text Delta: ?
+2025-02-16 18:27:25,179 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:27:25,182 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:27:25,317 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:27:25,317 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:27:25,450 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:27:25,466 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:27:25,468 [INFO] Streaming audio chunk of size: 35200 bytes
+2025-02-16 18:27:25,468 [INFO] Sent audio chunk of size: 35200 bytes to client
+2025-02-16 18:27:25,468 [INFO] Received non-audio response: {"type":"response.audio.done","event_id":"event_B1Zu9TXnRHHppB9pf1W1g","response_id":"resp_B1Zu5E1vUeq0hzSLHzB6G","item_id":"item_B1Zu5oMVWXsCvR3Mxo3b7","output_index":0,"content_index":0}
+2025-02-16 18:27:25,674 [INFO] Received non-audio response: {"type":"response.audio_transcript.done","event_id":"event_B1Zu9avGND5Pj9eRucH7u","response_id":"resp_B1Zu5E1vUeq0hzSLHzB6G","item_id":"item_B1Zu5oMVWXsCvR3Mxo3b7","output_index":0,"content_index":0,"transcript":"Sure! Did you know that in space, astronauts' height can increase by up to 3%? This happens because the spine's discs expand in the absence of Earth's gravity, making astronauts temporarily taller while they're in orbit. Once they return to Earth, they go back to their normal height. Pretty cool, right?"}
+2025-02-16 18:27:25,674 [INFO] Received non-audio response: {"type":"response.content_part.done","event_id":"event_B1Zu9mz5NYIGJiVq2Jxkc","response_id":"resp_B1Zu5E1vUeq0hzSLHzB6G","item_id":"item_B1Zu5oMVWXsCvR3Mxo3b7","output_index":0,"content_index":0,"part":{"type":"audio","transcript":"Sure! Did you know that in space, astronauts' height can increase by up to 3%? This happens because the spine's discs expand in the absence of Earth's gravity, making astronauts temporarily taller while they're in orbit. Once they return to Earth, they go back to their normal height. Pretty cool, right?"},"content":{"type":"audio","transcript":"Sure! Did you know that in space, astronauts' height can increase by up to 3%? This happens because the spine's discs expand in the absence of Earth's gravity, making astronauts temporarily taller while they're in orbit. Once they return to Earth, they go back to their normal height. Pretty cool, right?"}}
+2025-02-16 18:27:25,674 [INFO] Received non-audio response: {"type":"response.output_item.done","event_id":"event_B1Zu94txVCRveyq9qXe2S","response_id":"resp_B1Zu5E1vUeq0hzSLHzB6G","output_index":0,"item":{"id":"item_B1Zu5oMVWXsCvR3Mxo3b7","object":"realtime.item","type":"message","status":"completed","role":"assistant","content":[{"type":"audio","transcript":"Sure! Did you know that in space, astronauts' height can increase by up to 3%? This happens because the spine's discs expand in the absence of Earth's gravity, making astronauts temporarily taller while they're in orbit. Once they return to Earth, they go back to their normal height. Pretty cool, right?"}]}}
+2025-02-16 18:27:25,674 [INFO] Received non-audio response: {"type":"response.done","event_id":"event_B1Zu9QTHgk24PLEdg4hq3","response":{"object":"realtime.response","id":"resp_B1Zu5E1vUeq0hzSLHzB6G","status":"completed","status_details":null,"output":[{"id":"item_B1Zu5oMVWXsCvR3Mxo3b7","object":"realtime.item","type":"message","status":"completed","role":"assistant","content":[{"type":"audio","transcript":"Sure! Did you know that in space, astronauts' height can increase by up to 3%? This happens because the spine's discs expand in the absence of Earth's gravity, making astronauts temporarily taller while they're in orbit. Once they return to Earth, they go back to their normal height. Pretty cool, right?"}]}],"conversation_id":"conv_B1Zu48BzLGs2jNJIFHAOs","modalities":["text","audio"],"voice":"alloy","custom_voice_id":null,"output_audio_format":"pcm16","temperature":0.8,"max_output_tokens":"inf","usage":{"total_tokens":514,"input_tokens":23,"output_tokens":491,"input_token_details":{"text_tokens":23,"audio_tokens":0,"cached_tokens":0,"cached_tokens_details":{"text_tokens":0,"audio_tokens":0}},"output_token_details":{"text_tokens":90,"audio_tokens":401}},"metadata":null}}
+2025-02-16 18:33:03,222 [INFO] Frontend WebSocket connected.
+2025-02-16 18:33:05,061 [INFO] Connected to Azure OpenAI WebSocket.
+2025-02-16 18:33:05,061 [INFO] Azure Session Created.
+2025-02-16 18:33:05,061 [INFO] Sent session.update to Azure.
+2025-02-16 18:33:05,271 [INFO] Received response for session.update: {"type":"session.updated","event_id":"event_B1ZzdUizaHk1DaOouvjPB","session":{"id":"sess_B1ZzcZhEHvEpGAcheuNtL","object":"realtime.session","model":"gpt-4o-realtime-preview-2024-12-17","expires_at":1739717284,"modalities":["text","audio"],"instructions":"You are a helpful AI assistant.","voice":"alloy","custom_voice_id":null,"turn_detection":{"type":"server_vad","threshold":0.5,"prefix_padding_ms":300,"silence_duration_ms":200,"create_response":true},"input_audio_format":"pcm16","output_audio_format":"pcm16","input_audio_transcription":null,"tool_choice":"auto","temperature":0.8,"max_response_output_tokens":"inf","client_secret":null,"tools":[]}}
+2025-02-16 18:33:05,271 [INFO] Sent conversation.item.create to Azure.
+2025-02-16 18:33:05,473 [INFO] Received response for conversation.item.create: {"type":"conversation.item.created","event_id":"event_B1ZzdxypAuY6WWWMfebBf","previous_item_id":null,"item":{"id":"item_B1ZzdV1OmfWHPQ7irgN5m","object":"realtime.item","type":"message","status":"completed","role":"user","content":[{"type":"input_text","text":"Hello! Can you tell me a fun fact about space?"}]}}
+2025-02-16 18:33:05,473 [INFO] Sent response.create to Azure.
+2025-02-16 18:33:05,671 [INFO] Received response for response.create: {"type":"response.created","event_id":"event_B1Zzd0WZD0bvL2rDBk7sw","response":{"object":"realtime.response","id":"resp_B1ZzdylvwO5QQ61wIy5RC","status":"in_progress","status_details":null,"output":[],"conversation_id":"conv_B1ZzcLPWJFflSCOKcjj4q","modalities":["text","audio"],"voice":"alloy","custom_voice_id":null,"output_audio_format":"pcm16","temperature":0.8,"max_output_tokens":"inf","usage":null,"metadata":null}}
+2025-02-16 18:33:08,726 [INFO] Received non-audio response: {"type":"rate_limits.updated","event_id":"event_B1Zzg6wrO8D6xwHT05okR","rate_limits":[]}
+2025-02-16 18:33:08,726 [INFO] Received non-audio response: {"type":"response.output_item.added","event_id":"event_B1ZzgnvJ3L0aBgYaYK2nK","response_id":"resp_B1ZzdylvwO5QQ61wIy5RC","output_index":0,"item":{"id":"item_B1ZzdKOWqhrU4Va1vLFtX","object":"realtime.item","type":"message","status":"in_progress","role":"assistant","content":[]}}
+2025-02-16 18:33:08,726 [INFO] Received non-audio response: {"type":"conversation.item.created","event_id":"event_B1Zzgcno41atmMALMkk73","previous_item_id":"item_B1ZzdV1OmfWHPQ7irgN5m","item":{"id":"item_B1ZzdKOWqhrU4Va1vLFtX","object":"realtime.item","type":"message","status":"in_progress","role":"assistant","content":[]}}
+2025-02-16 18:33:08,746 [INFO] Received non-audio response: {"type":"response.content_part.added","event_id":"event_B1ZzgMLWRiSjhzQnXEYlW","response_id":"resp_B1ZzdylvwO5QQ61wIy5RC","item_id":"item_B1ZzdKOWqhrU4Va1vLFtX","output_index":0,"content_index":0,"part":{"type":"audio","transcript":""},"content":{"type":"audio","transcript":""}}
+2025-02-16 18:33:08,746 [INFO] Transcribed Text Delta: Sure
+2025-02-16 18:33:08,760 [INFO] Transcribed Text Delta: !
+2025-02-16 18:33:08,765 [INFO] Transcribed Text Delta:  Did
+2025-02-16 18:33:08,771 [INFO] Transcribed Text Delta:  you
+2025-02-16 18:33:08,823 [INFO] Streaming audio chunk of size: 6400 bytes
+2025-02-16 18:33:08,823 [INFO] Sent audio chunk of size: 6400 bytes to client
+2025-02-16 18:33:08,876 [INFO] Streaming audio chunk of size: 9600 bytes
+2025-02-16 18:33:08,877 [INFO] Sent audio chunk of size: 9600 bytes to client
+2025-02-16 18:33:09,020 [INFO] Streaming audio chunk of size: 16000 bytes
+2025-02-16 18:33:09,020 [INFO] Sent audio chunk of size: 16000 bytes to client
+2025-02-16 18:33:09,020 [INFO] Transcribed Text Delta:  know
+2025-02-16 18:33:09,020 [INFO] Transcribed Text Delta:  that
+2025-02-16 18:33:09,061 [INFO] Streaming audio chunk of size: 16000 bytes
+2025-02-16 18:33:09,061 [INFO] Sent audio chunk of size: 16000 bytes to client
+2025-02-16 18:33:09,139 [INFO] Streaming audio chunk of size: 16000 bytes
+2025-02-16 18:33:09,139 [INFO] Sent audio chunk of size: 16000 bytes to client
+2025-02-16 18:33:09,139 [INFO] Transcribed Text Delta:  one
+2025-02-16 18:33:09,139 [INFO] Transcribed Text Delta:  day
+2025-02-16 18:33:09,208 [INFO] Streaming audio chunk of size: 16000 bytes
+2025-02-16 18:33:09,208 [INFO] Sent audio chunk of size: 16000 bytes to client
+2025-02-16 18:33:09,307 [INFO] Streaming audio chunk of size: 32000 bytes
+2025-02-16 18:33:09,309 [INFO] Sent audio chunk of size: 32000 bytes to client
+2025-02-16 18:33:09,309 [INFO] Transcribed Text Delta:  on
+2025-02-16 18:33:09,309 [INFO] Transcribed Text Delta:  Venus
+2025-02-16 18:33:09,309 [INFO] Transcribed Text Delta:  is
+2025-02-16 18:33:09,309 [INFO] Transcribed Text Delta:  longer
+2025-02-16 18:33:09,309 [INFO] Transcribed Text Delta:  than
+2025-02-16 18:33:09,309 [INFO] Transcribed Text Delta:  an
+2025-02-16 18:33:09,309 [INFO] Transcribed Text Delta:  entire
+2025-02-16 18:33:09,400 [INFO] Streaming audio chunk of size: 48000 bytes
+2025-02-16 18:33:09,402 [INFO] Sent audio chunk of size: 48000 bytes to client
+2025-02-16 18:33:09,441 [INFO] Transcribed Text Delta:  year
+2025-02-16 18:33:09,455 [INFO] Transcribed Text Delta:  on
+2025-02-16 18:33:09,455 [INFO] Transcribed Text Delta:  Venus
+2025-02-16 18:33:09,459 [INFO] Transcribed Text Delta: ?
+2025-02-16 18:33:09,461 [INFO] Transcribed Text Delta:  It
+2025-02-16 18:33:09,522 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:33:09,522 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:33:09,654 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:33:09,670 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:33:09,805 [INFO] Transcribed Text Delta:  takes
+2025-02-16 18:33:09,805 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:33:09,805 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:33:09,805 [INFO] Transcribed Text Delta:  about
+2025-02-16 18:33:09,820 [INFO] Transcribed Text Delta:  
+2025-02-16 18:33:09,823 [INFO] Transcribed Text Delta: 243
+2025-02-16 18:33:09,832 [INFO] Transcribed Text Delta:  Earth
+2025-02-16 18:33:09,985 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:33:09,985 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:33:10,137 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:33:10,137 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:33:10,175 [INFO] Transcribed Text Delta:  days
+2025-02-16 18:33:10,186 [INFO] Transcribed Text Delta:  for
+2025-02-16 18:33:10,191 [INFO] Transcribed Text Delta:  Venus
+2025-02-16 18:33:10,198 [INFO] Transcribed Text Delta:  to
+2025-02-16 18:33:10,205 [INFO] Transcribed Text Delta:  complete
+2025-02-16 18:33:10,213 [INFO] Transcribed Text Delta:  one
+2025-02-16 18:33:10,219 [INFO] Transcribed Text Delta:  rotation
+2025-02-16 18:33:10,338 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:33:10,353 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:33:10,488 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:33:10,498 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:33:10,566 [INFO] Transcribed Text Delta:  on
+2025-02-16 18:33:10,572 [INFO] Transcribed Text Delta:  its
+2025-02-16 18:33:10,576 [INFO] Transcribed Text Delta:  axis
+2025-02-16 18:33:10,577 [INFO] Transcribed Text Delta: ,
+2025-02-16 18:33:10,590 [INFO] Transcribed Text Delta:  but
+2025-02-16 18:33:10,684 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:33:10,687 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:33:10,919 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:33:10,924 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:33:10,924 [INFO] Transcribed Text Delta:  it
+2025-02-16 18:33:10,941 [INFO] Transcribed Text Delta:  only
+2025-02-16 18:33:10,941 [INFO] Transcribed Text Delta:  takes
+2025-02-16 18:33:10,954 [INFO] Transcribed Text Delta:  about
+2025-02-16 18:33:10,958 [INFO] Transcribed Text Delta:  
+2025-02-16 18:33:10,970 [INFO] Transcribed Text Delta: 225
+2025-02-16 18:33:10,976 [INFO] Transcribed Text Delta:  Earth
+2025-02-16 18:33:11,025 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:33:11,038 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:33:11,171 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:33:11,171 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:33:11,304 [INFO] Transcribed Text Delta:  days
+2025-02-16 18:33:11,304 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:33:11,321 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:33:11,322 [INFO] Transcribed Text Delta:  for
+2025-02-16 18:33:11,327 [INFO] Transcribed Text Delta:  Venus
+2025-02-16 18:33:11,339 [INFO] Transcribed Text Delta:  to
+2025-02-16 18:33:11,339 [INFO] Transcribed Text Delta:  orbit
+2025-02-16 18:33:11,504 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:33:11,509 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:33:11,638 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:33:11,654 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:33:11,675 [INFO] Transcribed Text Delta:  the
+2025-02-16 18:33:11,688 [INFO] Transcribed Text Delta:  Sun
+2025-02-16 18:33:11,691 [INFO] Transcribed Text Delta: .
+2025-02-16 18:33:11,701 [INFO] Transcribed Text Delta:  So
+2025-02-16 18:33:11,708 [INFO] Transcribed Text Delta: ,
+2025-02-16 18:33:11,712 [INFO] Transcribed Text Delta:  a
+2025-02-16 18:33:11,722 [INFO] Transcribed Text Delta:  day
+2025-02-16 18:33:11,722 [INFO] Transcribed Text Delta:  on
+2025-02-16 18:33:11,734 [INFO] Transcribed Text Delta:  Venus
+2025-02-16 18:33:11,739 [INFO] Transcribed Text Delta:  is
+2025-02-16 18:33:11,871 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:33:11,871 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:33:12,004 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:33:12,015 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:33:12,072 [INFO] Transcribed Text Delta:  longer
+2025-02-16 18:33:12,089 [INFO] Transcribed Text Delta:  than
+2025-02-16 18:33:12,094 [INFO] Transcribed Text Delta:  its
+2025-02-16 18:33:12,100 [INFO] Transcribed Text Delta:  year
+2025-02-16 18:33:12,108 [INFO] Transcribed Text Delta: !
+2025-02-16 18:33:12,210 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:33:12,213 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:33:12,338 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:33:12,338 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:33:12,471 [INFO] Streaming audio chunk of size: 92800 bytes
+2025-02-16 18:33:12,488 [INFO] Sent audio chunk of size: 92800 bytes to client
+2025-02-16 18:33:12,488 [INFO] Received non-audio response: {"type":"response.audio.done","event_id":"event_B1Zzkc4ttDq0vgeJZapJs","response_id":"resp_B1ZzdylvwO5QQ61wIy5RC","item_id":"item_B1ZzdKOWqhrU4Va1vLFtX","output_index":0,"content_index":0}
+2025-02-16 18:33:12,539 [INFO] Received non-audio response: {"type":"response.audio_transcript.done","event_id":"event_B1ZzkZ2rRGSbCPsDHtC78","response_id":"resp_B1ZzdylvwO5QQ61wIy5RC","item_id":"item_B1ZzdKOWqhrU4Va1vLFtX","output_index":0,"content_index":0,"transcript":"Sure! Did you know that one day on Venus is longer than an entire year on Venus? It takes about 243 Earth days for Venus to complete one rotation on its axis, but it only takes about 225 Earth days for Venus to orbit the Sun. So, a day on Venus is longer than its year!"}
+2025-02-16 18:33:12,539 [INFO] Received non-audio response: {"type":"response.content_part.done","event_id":"event_B1ZzkcjxNBPBXkN81Okir","response_id":"resp_B1ZzdylvwO5QQ61wIy5RC","item_id":"item_B1ZzdKOWqhrU4Va1vLFtX","output_index":0,"content_index":0,"part":{"type":"audio","transcript":"Sure! Did you know that one day on Venus is longer than an entire year on Venus? It takes about 243 Earth days for Venus to complete one rotation on its axis, but it only takes about 225 Earth days for Venus to orbit the Sun. So, a day on Venus is longer than its year!"},"content":{"type":"audio","transcript":"Sure! Did you know that one day on Venus is longer than an entire year on Venus? It takes about 243 Earth days for Venus to complete one rotation on its axis, but it only takes about 225 Earth days for Venus to orbit the Sun. So, a day on Venus is longer than its year!"}}
+2025-02-16 18:33:12,539 [INFO] Received non-audio response: {"type":"response.output_item.done","event_id":"event_B1ZzkplNx7vghOGwUWxTW","response_id":"resp_B1ZzdylvwO5QQ61wIy5RC","output_index":0,"item":{"id":"item_B1ZzdKOWqhrU4Va1vLFtX","object":"realtime.item","type":"message","status":"completed","role":"assistant","content":[{"type":"audio","transcript":"Sure! Did you know that one day on Venus is longer than an entire year on Venus? It takes about 243 Earth days for Venus to complete one rotation on its axis, but it only takes about 225 Earth days for Venus to orbit the Sun. So, a day on Venus is longer than its year!"}]}}
+2025-02-16 18:33:12,539 [INFO] Received non-audio response: {"type":"response.done","event_id":"event_B1Zzk1qi3Gjs5KzEpmcC4","response":{"object":"realtime.response","id":"resp_B1ZzdylvwO5QQ61wIy5RC","status":"completed","status_details":null,"output":[{"id":"item_B1ZzdKOWqhrU4Va1vLFtX","object":"realtime.item","type":"message","status":"completed","role":"assistant","content":[{"type":"audio","transcript":"Sure! Did you know that one day on Venus is longer than an entire year on Venus? It takes about 243 Earth days for Venus to complete one rotation on its axis, but it only takes about 225 Earth days for Venus to orbit the Sun. So, a day on Venus is longer than its year!"}]}],"conversation_id":"conv_B1ZzcLPWJFflSCOKcjj4q","modalities":["text","audio"],"voice":"alloy","custom_voice_id":null,"output_audio_format":"pcm16","temperature":0.8,"max_output_tokens":"inf","usage":{"total_tokens":554,"input_tokens":23,"output_tokens":531,"input_token_details":{"text_tokens":23,"audio_tokens":0,"cached_tokens":0,"cached_tokens_details":{"text_tokens":0,"audio_tokens":0}},"output_token_details":{"text_tokens":92,"audio_tokens":439}},"metadata":null}}
+2025-02-16 18:35:44,400 [INFO] Frontend WebSocket connected.
+2025-02-16 18:35:46,785 [INFO] Connected to Azure OpenAI WebSocket.
+2025-02-16 18:35:46,785 [INFO] Azure Session Created.
+2025-02-16 18:35:46,785 [INFO] Sent session.update to Azure.
+2025-02-16 18:35:46,989 [INFO] Received response for session.update: {"type":"session.updated","event_id":"event_B1a2FFmAr4SU4oX5Jz7Yv","session":{"id":"sess_B1a2EVHzZnMzUsaFXWmm9","object":"realtime.session","model":"gpt-4o-realtime-preview-2024-12-17","expires_at":1739717446,"modalities":["audio","text"],"instructions":"You are a helpful AI assistant.","voice":"alloy","custom_voice_id":null,"turn_detection":{"type":"server_vad","threshold":0.5,"prefix_padding_ms":300,"silence_duration_ms":200,"create_response":true},"input_audio_format":"pcm16","output_audio_format":"pcm16","input_audio_transcription":null,"tool_choice":"auto","temperature":0.8,"max_response_output_tokens":"inf","client_secret":null,"tools":[]}}
+2025-02-16 18:35:46,989 [INFO] Sent conversation.item.create to Azure.
+2025-02-16 18:35:47,242 [INFO] Received response for conversation.item.create: {"type":"conversation.item.created","event_id":"event_B1a2F8JQqM8bx1MR3sQF1","previous_item_id":null,"item":{"id":"item_B1a2FGjbkp6ox6ijMMLlM","object":"realtime.item","type":"message","status":"completed","role":"user","content":[{"type":"input_text","text":"Hello! Can you tell me a fun fact about space?"}]}}
+2025-02-16 18:35:47,242 [INFO] Sent response.create to Azure.
+2025-02-16 18:35:47,504 [INFO] Received response for response.create: {"type":"response.created","event_id":"event_B1a2F3xg2JS4o7rUbhHp5","response":{"object":"realtime.response","id":"resp_B1a2FZu2paFenNDZG7Cf0","status":"in_progress","status_details":null,"output":[],"conversation_id":"conv_B1a2EPkYCqW22tFyDj5i6","modalities":["audio","text"],"voice":"alloy","custom_voice_id":null,"output_audio_format":"pcm16","temperature":0.8,"max_output_tokens":"inf","usage":null,"metadata":null}}
+2025-02-16 18:35:47,773 [INFO] Received non-audio response: {"type":"rate_limits.updated","event_id":"event_B1a2FjpKNM2oBRxqWTWDJ","rate_limits":[]}
+2025-02-16 18:35:47,789 [INFO] Received non-audio response: {"type":"response.output_item.added","event_id":"event_B1a2F3oINKKPvimyohyYa","response_id":"resp_B1a2FZu2paFenNDZG7Cf0","output_index":0,"item":{"id":"item_B1a2FLxgoCMomVRayJzIw","object":"realtime.item","type":"message","status":"in_progress","role":"assistant","content":[]}}
+2025-02-16 18:35:47,789 [INFO] Received non-audio response: {"type":"conversation.item.created","event_id":"event_B1a2FI5jvdHMvXf1RQxUM","previous_item_id":"item_B1a2FGjbkp6ox6ijMMLlM","item":{"id":"item_B1a2FLxgoCMomVRayJzIw","object":"realtime.item","type":"message","status":"in_progress","role":"assistant","content":[]}}
+2025-02-16 18:35:47,811 [INFO] Received non-audio response: {"type":"response.content_part.added","event_id":"event_B1a2Fl656MkbX5hq0bIY1","response_id":"resp_B1a2FZu2paFenNDZG7Cf0","item_id":"item_B1a2FLxgoCMomVRayJzIw","output_index":0,"content_index":0,"part":{"type":"audio","transcript":""},"content":{"type":"audio","transcript":""}}
+2025-02-16 18:35:47,812 [INFO] Transcribed Text Delta: Sure
+2025-02-16 18:35:47,812 [INFO] Transcribed Text Delta: !
+2025-02-16 18:35:47,813 [INFO] Transcribed Text Delta:  Did
+2025-02-16 18:35:47,825 [INFO] Transcribed Text Delta:  you
+2025-02-16 18:35:47,891 [INFO] Streaming audio chunk of size: 6400 bytes
+2025-02-16 18:35:47,891 [INFO] Sent audio chunk of size: 6400 bytes to client
+2025-02-16 18:35:47,947 [INFO] Streaming audio chunk of size: 9600 bytes
+2025-02-16 18:35:47,948 [INFO] Sent audio chunk of size: 9600 bytes to client
+2025-02-16 18:35:48,091 [INFO] Streaming audio chunk of size: 16000 bytes
+2025-02-16 18:35:48,091 [INFO] Sent audio chunk of size: 16000 bytes to client
+2025-02-16 18:35:48,091 [INFO] Transcribed Text Delta:  know
+2025-02-16 18:35:48,091 [INFO] Transcribed Text Delta:  that
+2025-02-16 18:35:48,091 [INFO] Transcribed Text Delta:  a
+2025-02-16 18:35:48,141 [INFO] Streaming audio chunk of size: 16000 bytes
+2025-02-16 18:35:48,142 [INFO] Sent audio chunk of size: 16000 bytes to client
+2025-02-16 18:35:48,201 [INFO] Streaming audio chunk of size: 16000 bytes
+2025-02-16 18:35:48,202 [INFO] Sent audio chunk of size: 16000 bytes to client
+2025-02-16 18:35:48,202 [INFO] Transcribed Text Delta:  day
+2025-02-16 18:35:48,202 [INFO] Transcribed Text Delta:  on
+2025-02-16 18:35:48,202 [INFO] Transcribed Text Delta:  Venus
+2025-02-16 18:35:48,279 [INFO] Streaming audio chunk of size: 16000 bytes
+2025-02-16 18:35:48,279 [INFO] Sent audio chunk of size: 16000 bytes to client
+2025-02-16 18:35:48,279 [INFO] Transcribed Text Delta:  is
+2025-02-16 18:35:48,349 [INFO] Streaming audio chunk of size: 32000 bytes
+2025-02-16 18:35:48,349 [INFO] Sent audio chunk of size: 32000 bytes to client
+2025-02-16 18:35:48,349 [INFO] Transcribed Text Delta:  longer
+2025-02-16 18:35:48,349 [INFO] Transcribed Text Delta:  than
+2025-02-16 18:35:48,349 [INFO] Transcribed Text Delta:  a
+2025-02-16 18:35:48,349 [INFO] Transcribed Text Delta:  year
+2025-02-16 18:35:48,349 [INFO] Transcribed Text Delta:  on
+2025-02-16 18:35:48,349 [INFO] Transcribed Text Delta:  Venus
+2025-02-16 18:35:48,349 [INFO] Transcribed Text Delta: ?
+2025-02-16 18:35:48,479 [INFO] Streaming audio chunk of size: 48000 bytes
+2025-02-16 18:35:48,479 [INFO] Sent audio chunk of size: 48000 bytes to client
+2025-02-16 18:35:48,523 [INFO] Transcribed Text Delta:  It
+2025-02-16 18:35:48,531 [INFO] Transcribed Text Delta:  takes
+2025-02-16 18:35:48,534 [INFO] Transcribed Text Delta:  about
+2025-02-16 18:35:48,543 [INFO] Transcribed Text Delta:  
+2025-02-16 18:35:48,549 [INFO] Transcribed Text Delta: 243
+2025-02-16 18:35:48,611 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:35:48,611 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:35:48,758 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:35:48,758 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:35:48,899 [INFO] Transcribed Text Delta:  Earth
+2025-02-16 18:35:48,899 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:35:48,910 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:35:48,910 [INFO] Transcribed Text Delta:  days
+2025-02-16 18:35:48,917 [INFO] Transcribed Text Delta:  for
+2025-02-16 18:35:48,925 [INFO] Transcribed Text Delta:  Venus
+2025-02-16 18:35:48,931 [INFO] Transcribed Text Delta:  to
+2025-02-16 18:35:48,932 [INFO] Transcribed Text Delta:  complete
+2025-02-16 18:35:48,948 [INFO] Transcribed Text Delta:  one
+2025-02-16 18:35:49,111 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:35:49,111 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:35:49,259 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:35:49,259 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:35:49,299 [INFO] Transcribed Text Delta:  rotation
+2025-02-16 18:35:49,307 [INFO] Transcribed Text Delta:  on
+2025-02-16 18:35:49,313 [INFO] Transcribed Text Delta:  its
+2025-02-16 18:35:49,320 [INFO] Transcribed Text Delta:  axis
+2025-02-16 18:35:49,324 [INFO] Transcribed Text Delta: ,
+2025-02-16 18:35:49,334 [INFO] Transcribed Text Delta:  but
+2025-02-16 18:35:49,341 [INFO] Transcribed Text Delta:  only
+2025-02-16 18:35:49,348 [INFO] Transcribed Text Delta:  about
+2025-02-16 18:35:49,479 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:35:49,479 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:35:49,621 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:35:49,621 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:35:49,691 [INFO] Transcribed Text Delta:  
+2025-02-16 18:35:49,691 [INFO] Transcribed Text Delta: 225
+2025-02-16 18:35:49,705 [INFO] Transcribed Text Delta:  Earth
+2025-02-16 18:35:49,712 [INFO] Transcribed Text Delta:  days
+2025-02-16 18:35:49,811 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:35:49,813 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:35:49,949 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:35:49,954 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:35:50,056 [INFO] Transcribed Text Delta:  for
+2025-02-16 18:35:50,059 [INFO] Transcribed Text Delta:  it
+2025-02-16 18:35:50,070 [INFO] Transcribed Text Delta:  to
+2025-02-16 18:35:50,078 [INFO] Transcribed Text Delta:  orbit
+2025-02-16 18:35:50,085 [INFO] Transcribed Text Delta:  the
+2025-02-16 18:35:50,096 [INFO] Transcribed Text Delta:  Sun
+2025-02-16 18:35:50,097 [INFO] Transcribed Text Delta: .
+2025-02-16 18:35:50,099 [INFO] Transcribed Text Delta:  This
+2025-02-16 18:35:50,159 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:35:50,159 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:35:50,313 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:35:50,321 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:35:50,439 [INFO] Transcribed Text Delta:  means
+2025-02-16 18:35:50,449 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:35:50,449 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:35:50,449 [INFO] Transcribed Text Delta:  that
+2025-02-16 18:35:50,461 [INFO] Transcribed Text Delta:  a
+2025-02-16 18:35:50,466 [INFO] Transcribed Text Delta:  day
+2025-02-16 18:35:50,473 [INFO] Transcribed Text Delta:  on
+2025-02-16 18:35:50,483 [INFO] Transcribed Text Delta:  Venus
+2025-02-16 18:35:50,486 [INFO] Transcribed Text Delta:  is
+2025-02-16 18:35:50,493 [INFO] Transcribed Text Delta:  longer
+2025-02-16 18:35:50,659 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:35:50,659 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:35:50,809 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:35:50,809 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:35:50,841 [INFO] Transcribed Text Delta:  than
+2025-02-16 18:35:50,849 [INFO] Transcribed Text Delta:  its
+2025-02-16 18:35:50,857 [INFO] Transcribed Text Delta:  year
+2025-02-16 18:35:50,864 [INFO] Transcribed Text Delta: !
+2025-02-16 18:35:50,999 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:35:51,006 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:35:51,139 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:35:51,145 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:35:51,209 [INFO] Streaming audio chunk of size: 60800 bytes
+2025-02-16 18:35:51,211 [INFO] Sent audio chunk of size: 60800 bytes to client
+2025-02-16 18:35:51,214 [INFO] Received non-audio response: {"type":"response.audio.done","event_id":"event_B1a2J3OmXfS2ZQgvOWDnI","response_id":"resp_B1a2FZu2paFenNDZG7Cf0","item_id":"item_B1a2FLxgoCMomVRayJzIw","output_index":0,"content_index":0}
+2025-02-16 18:35:51,268 [INFO] Received non-audio response: {"type":"response.audio_transcript.done","event_id":"event_B1a2JGHGmwf4flI3O8ypN","response_id":"resp_B1a2FZu2paFenNDZG7Cf0","item_id":"item_B1a2FLxgoCMomVRayJzIw","output_index":0,"content_index":0,"transcript":"Sure! Did you know that a day on Venus is longer than a year on Venus? It takes about 243 Earth days for Venus to complete one rotation on its axis, but only about 225 Earth days for it to orbit the Sun. This means that a day on Venus is longer than its year!"}
+2025-02-16 18:35:51,268 [INFO] Received non-audio response: {"type":"response.content_part.done","event_id":"event_B1a2JoY8ZDVDwvKc00Yi5","response_id":"resp_B1a2FZu2paFenNDZG7Cf0","item_id":"item_B1a2FLxgoCMomVRayJzIw","output_index":0,"content_index":0,"part":{"type":"audio","transcript":"Sure! Did you know that a day on Venus is longer than a year on Venus? It takes about 243 Earth days for Venus to complete one rotation on its axis, but only about 225 Earth days for it to orbit the Sun. This means that a day on Venus is longer than its year!"},"content":{"type":"audio","transcript":"Sure! Did you know that a day on Venus is longer than a year on Venus? It takes about 243 Earth days for Venus to complete one rotation on its axis, but only about 225 Earth days for it to orbit the Sun. This means that a day on Venus is longer than its year!"}}
+2025-02-16 18:35:51,268 [INFO] Received non-audio response: {"type":"response.output_item.done","event_id":"event_B1a2JetV3UVZdVjyodwYU","response_id":"resp_B1a2FZu2paFenNDZG7Cf0","output_index":0,"item":{"id":"item_B1a2FLxgoCMomVRayJzIw","object":"realtime.item","type":"message","status":"completed","role":"assistant","content":[{"type":"audio","transcript":"Sure! Did you know that a day on Venus is longer than a year on Venus? It takes about 243 Earth days for Venus to complete one rotation on its axis, but only about 225 Earth days for it to orbit the Sun. This means that a day on Venus is longer than its year!"}]}}
+2025-02-16 18:35:51,268 [INFO] Received non-audio response: {"type":"response.done","event_id":"event_B1a2JCH1MBBh2nhx8zvpW","response":{"object":"realtime.response","id":"resp_B1a2FZu2paFenNDZG7Cf0","status":"completed","status_details":null,"output":[{"id":"item_B1a2FLxgoCMomVRayJzIw","object":"realtime.item","type":"message","status":"completed","role":"assistant","content":[{"type":"audio","transcript":"Sure! Did you know that a day on Venus is longer than a year on Venus? It takes about 243 Earth days for Venus to complete one rotation on its axis, but only about 225 Earth days for it to orbit the Sun. This means that a day on Venus is longer than its year!"}]}],"conversation_id":"conv_B1a2EPkYCqW22tFyDj5i6","modalities":["text","audio"],"voice":"alloy","custom_voice_id":null,"output_audio_format":"pcm16","temperature":0.8,"max_output_tokens":"inf","usage":{"total_tokens":500,"input_tokens":23,"output_tokens":477,"input_token_details":{"text_tokens":23,"audio_tokens":0,"cached_tokens":0,"cached_tokens_details":{"text_tokens":0,"audio_tokens":0}},"output_token_details":{"text_tokens":88,"audio_tokens":389}},"metadata":null}}
+2025-02-16 18:38:00,751 [INFO] Frontend WebSocket connected.
+2025-02-16 18:38:02,320 [INFO] Connected to Azure OpenAI WebSocket.
+2025-02-16 18:38:02,320 [INFO] Azure Session Created.
+2025-02-16 18:38:02,320 [INFO] Sent session.update to Azure.
+2025-02-16 18:38:02,508 [INFO] Received response for session.update: {"type":"session.updated","event_id":"event_B1a4QTQ63wpRepYUydAGj","session":{"id":"sess_B1a4QCdyGmeWufPwXRZKd","object":"realtime.session","model":"gpt-4o-realtime-preview-2024-12-17","expires_at":1739717582,"modalities":["text","audio"],"instructions":"You are a helpful AI assistant.","voice":"alloy","custom_voice_id":null,"turn_detection":{"type":"server_vad","threshold":0.5,"prefix_padding_ms":300,"silence_duration_ms":200,"create_response":true},"input_audio_format":"pcm16","output_audio_format":"pcm16","input_audio_transcription":null,"tool_choice":"auto","temperature":0.8,"max_response_output_tokens":"inf","client_secret":null,"tools":[]}}
+2025-02-16 18:38:02,508 [INFO] Sent conversation.item.create to Azure.
+2025-02-16 18:38:02,713 [INFO] Received response for conversation.item.create: {"type":"conversation.item.created","event_id":"event_B1a4QVV0NazFbGGY7Gb61","previous_item_id":null,"item":{"id":"item_B1a4QsciQ6YaBVpGCELVk","object":"realtime.item","type":"message","status":"completed","role":"user","content":[{"type":"input_text","text":"Hello! Can you tell me a fun fact about space?"}]}}
+2025-02-16 18:38:02,713 [INFO] Sent response.create to Azure.
+2025-02-16 18:38:02,903 [INFO] Received response for response.create: {"type":"response.created","event_id":"event_B1a4QPszN9ZFnRL73XBfd","response":{"object":"realtime.response","id":"resp_B1a4Q0rNpgioahTpJGhHj","status":"in_progress","status_details":null,"output":[],"conversation_id":"conv_B1a4QjkoqqIfuBlKdE279","modalities":["text","audio"],"voice":"alloy","custom_voice_id":null,"output_audio_format":"pcm16","temperature":0.8,"max_output_tokens":"inf","usage":null,"metadata":null}}
+2025-02-16 18:38:03,164 [INFO] Received non-audio response: {"type":"rate_limits.updated","event_id":"event_B1a4RPvkUzpDPt5h2frVM","rate_limits":[]}
+2025-02-16 18:38:03,164 [INFO] Received non-audio response: {"type":"response.output_item.added","event_id":"event_B1a4RG1JJTE5uJXPS8Kun","response_id":"resp_B1a4Q0rNpgioahTpJGhHj","output_index":0,"item":{"id":"item_B1a4QoJtEiisX9u8PvYeI","object":"realtime.item","type":"message","status":"in_progress","role":"assistant","content":[]}}
+2025-02-16 18:38:03,164 [INFO] Received non-audio response: {"type":"conversation.item.created","event_id":"event_B1a4RRrkWEl7KgbWfZS0F","previous_item_id":"item_B1a4QsciQ6YaBVpGCELVk","item":{"id":"item_B1a4QoJtEiisX9u8PvYeI","object":"realtime.item","type":"message","status":"in_progress","role":"assistant","content":[]}}
+2025-02-16 18:38:03,192 [INFO] Received non-audio response: {"type":"response.content_part.added","event_id":"event_B1a4Rjfeme0DiKdw3Lett","response_id":"resp_B1a4Q0rNpgioahTpJGhHj","item_id":"item_B1a4QoJtEiisX9u8PvYeI","output_index":0,"content_index":0,"part":{"type":"audio","transcript":""},"content":{"type":"audio","transcript":""}}
+2025-02-16 18:38:03,193 [INFO] Transcribed Text Delta: Absolutely
+2025-02-16 18:38:03,197 [INFO] Transcribed Text Delta: !
+2025-02-16 18:38:03,246 [INFO] Streaming audio chunk of size: 6400 bytes
+2025-02-16 18:38:03,246 [INFO] Sent audio chunk of size: 6400 bytes to client
+2025-02-16 18:38:03,292 [INFO] Streaming audio chunk of size: 9600 bytes
+2025-02-16 18:38:03,292 [INFO] Sent audio chunk of size: 9600 bytes to client
+2025-02-16 18:38:03,494 [INFO] Streaming audio chunk of size: 16000 bytes
+2025-02-16 18:38:03,495 [INFO] Sent audio chunk of size: 16000 bytes to client
+2025-02-16 18:38:03,495 [INFO] Transcribed Text Delta:  Did
+2025-02-16 18:38:03,495 [INFO] Streaming audio chunk of size: 16000 bytes
+2025-02-16 18:38:03,496 [INFO] Sent audio chunk of size: 16000 bytes to client
+2025-02-16 18:38:03,581 [INFO] Streaming audio chunk of size: 16000 bytes
+2025-02-16 18:38:03,582 [INFO] Sent audio chunk of size: 16000 bytes to client
+2025-02-16 18:38:03,582 [INFO] Transcribed Text Delta:  you
+2025-02-16 18:38:03,582 [INFO] Transcribed Text Delta:  know
+2025-02-16 18:38:03,636 [INFO] Streaming audio chunk of size: 16000 bytes
+2025-02-16 18:38:03,636 [INFO] Sent audio chunk of size: 16000 bytes to client
+2025-02-16 18:38:03,714 [INFO] Streaming audio chunk of size: 32000 bytes
+2025-02-16 18:38:03,716 [INFO] Sent audio chunk of size: 32000 bytes to client
+2025-02-16 18:38:03,716 [INFO] Transcribed Text Delta:  that
+2025-02-16 18:38:03,716 [INFO] Transcribed Text Delta:  one
+2025-02-16 18:38:03,716 [INFO] Transcribed Text Delta:  day
+2025-02-16 18:38:03,716 [INFO] Transcribed Text Delta:  on
+2025-02-16 18:38:03,716 [INFO] Transcribed Text Delta:  Venus
+2025-02-16 18:38:03,717 [INFO] Transcribed Text Delta:  is
+2025-02-16 18:38:03,717 [INFO] Transcribed Text Delta:  longer
+2025-02-16 18:38:03,828 [INFO] Streaming audio chunk of size: 48000 bytes
+2025-02-16 18:38:03,828 [INFO] Sent audio chunk of size: 48000 bytes to client
+2025-02-16 18:38:03,880 [INFO] Transcribed Text Delta:  than
+2025-02-16 18:38:03,887 [INFO] Transcribed Text Delta:  one
+2025-02-16 18:38:03,894 [INFO] Transcribed Text Delta:  year
+2025-02-16 18:38:03,901 [INFO] Transcribed Text Delta:  on
+2025-02-16 18:38:03,901 [INFO] Transcribed Text Delta:  Earth
+2025-02-16 18:38:03,913 [INFO] Transcribed Text Delta: ?
+2025-02-16 18:38:03,922 [INFO] Transcribed Text Delta:  Venus
+2025-02-16 18:38:03,979 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:38:03,984 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:38:04,164 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:38:04,164 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:38:04,259 [INFO] Transcribed Text Delta:  rotates
+2025-02-16 18:38:04,310 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:38:04,310 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:38:04,310 [INFO] Transcribed Text Delta:  on
+2025-02-16 18:38:04,310 [INFO] Transcribed Text Delta:  its
+2025-02-16 18:38:04,310 [INFO] Transcribed Text Delta:  axis
+2025-02-16 18:38:04,446 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:38:04,446 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:38:04,576 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:38:04,590 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:38:04,612 [INFO] Transcribed Text Delta:  very
+2025-02-16 18:38:04,612 [INFO] Transcribed Text Delta:  slowly
+2025-02-16 18:38:04,630 [INFO] Transcribed Text Delta: ,
+2025-02-16 18:38:04,641 [INFO] Transcribed Text Delta:  taking
+2025-02-16 18:38:04,643 [INFO] Transcribed Text Delta:  about
+2025-02-16 18:38:04,647 [INFO] Transcribed Text Delta:  
+2025-02-16 18:38:04,657 [INFO] Transcribed Text Delta: 243
+2025-02-16 18:38:04,786 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:38:04,791 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:38:04,926 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:38:04,930 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:38:04,998 [INFO] Transcribed Text Delta:  Earth
+2025-02-16 18:38:05,004 [INFO] Transcribed Text Delta:  days
+2025-02-16 18:38:05,008 [INFO] Transcribed Text Delta:  to
+2025-02-16 18:38:05,017 [INFO] Transcribed Text Delta:  complete
+2025-02-16 18:38:05,022 [INFO] Transcribed Text Delta:  one
+2025-02-16 18:38:05,118 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:38:05,121 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:38:05,256 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:38:05,263 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:38:05,363 [INFO] Transcribed Text Delta:  full
+2025-02-16 18:38:05,363 [INFO] Transcribed Text Delta:  rotation
+2025-02-16 18:38:05,376 [INFO] Transcribed Text Delta: .
+2025-02-16 18:38:05,383 [INFO] Transcribed Text Delta:  Meanwhile
+2025-02-16 18:38:05,387 [INFO] Transcribed Text Delta: ,
+2025-02-16 18:38:05,468 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:38:05,471 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:38:05,616 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:38:05,618 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:38:05,749 [INFO] Transcribed Text Delta:  it
+2025-02-16 18:38:05,749 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:38:05,758 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:38:05,771 [INFO] Transcribed Text Delta:  takes
+2025-02-16 18:38:05,771 [INFO] Transcribed Text Delta:  only
+2025-02-16 18:38:05,774 [INFO] Transcribed Text Delta:  about
+2025-02-16 18:38:05,781 [INFO] Transcribed Text Delta:  
+2025-02-16 18:38:05,787 [INFO] Transcribed Text Delta: 225
+2025-02-16 18:38:05,956 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:38:05,960 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:38:06,100 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:38:06,102 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:38:06,130 [INFO] Transcribed Text Delta:  Earth
+2025-02-16 18:38:06,130 [INFO] Transcribed Text Delta:  days
+2025-02-16 18:38:06,145 [INFO] Transcribed Text Delta:  for
+2025-02-16 18:38:06,152 [INFO] Transcribed Text Delta:  Venus
+2025-02-16 18:38:06,160 [INFO] Transcribed Text Delta:  to
+2025-02-16 18:38:06,286 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:38:06,291 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:38:06,424 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:38:06,431 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:38:06,502 [INFO] Transcribed Text Delta:  orbit
+2025-02-16 18:38:06,506 [INFO] Transcribed Text Delta:  the
+2025-02-16 18:38:06,512 [INFO] Transcribed Text Delta:  Sun
+2025-02-16 18:38:06,519 [INFO] Transcribed Text Delta: .
+2025-02-16 18:38:06,526 [INFO] Transcribed Text Delta:  So
+2025-02-16 18:38:06,534 [INFO] Transcribed Text Delta: ,
+2025-02-16 18:38:06,536 [INFO] Transcribed Text Delta:  a
+2025-02-16 18:38:06,640 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:38:06,642 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:38:06,831 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:38:06,831 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:38:06,876 [INFO] Transcribed Text Delta:  day
+2025-02-16 18:38:06,882 [INFO] Transcribed Text Delta:  on
+2025-02-16 18:38:06,891 [INFO] Transcribed Text Delta:  Venus
+2025-02-16 18:38:06,898 [INFO] Transcribed Text Delta:  is
+2025-02-16 18:38:06,904 [INFO] Transcribed Text Delta:  longer
+2025-02-16 18:38:06,910 [INFO] Transcribed Text Delta:  than
+2025-02-16 18:38:06,916 [INFO] Transcribed Text Delta:  its
+2025-02-16 18:38:06,923 [INFO] Transcribed Text Delta:  year
+2025-02-16 18:38:06,931 [INFO] Transcribed Text Delta: !
+2025-02-16 18:38:06,981 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:38:06,992 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:38:07,123 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:38:07,131 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:38:07,261 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:38:07,271 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:38:07,411 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:38:07,414 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:38:08,967 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:38:08,979 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:38:08,979 [INFO] Streaming audio chunk of size: 32000 bytes
+2025-02-16 18:38:08,982 [INFO] Sent audio chunk of size: 32000 bytes to client
+2025-02-16 18:38:08,982 [INFO] Received non-audio response: {"type":"response.audio.done","event_id":"event_B1a4XsN5i41siKH8zGp9R","response_id":"resp_B1a4Q0rNpgioahTpJGhHj","item_id":"item_B1a4QoJtEiisX9u8PvYeI","output_index":0,"content_index":0}
+2025-02-16 18:38:09,045 [INFO] Received non-audio response: {"type":"response.audio_transcript.done","event_id":"event_B1a4XXlEfouQkUxFidWh4","response_id":"resp_B1a4Q0rNpgioahTpJGhHj","item_id":"item_B1a4QoJtEiisX9u8PvYeI","output_index":0,"content_index":0,"transcript":"Absolutely! Did you know that one day on Venus is longer than one year on Earth? Venus rotates on its axis very slowly, taking about 243 Earth days to complete one full rotation. Meanwhile, it takes only about 225 Earth days for Venus to orbit the Sun. So, a day on Venus is longer than its year!"}
+2025-02-16 18:38:09,045 [INFO] Received non-audio response: {"type":"response.content_part.done","event_id":"event_B1a4Xg4MjW6NItvCCOaN1","response_id":"resp_B1a4Q0rNpgioahTpJGhHj","item_id":"item_B1a4QoJtEiisX9u8PvYeI","output_index":0,"content_index":0,"part":{"type":"audio","transcript":"Absolutely! Did you know that one day on Venus is longer than one year on Earth? Venus rotates on its axis very slowly, taking about 243 Earth days to complete one full rotation. Meanwhile, it takes only about 225 Earth days for Venus to orbit the Sun. So, a day on Venus is longer than its year!"},"content":{"type":"audio","transcript":"Absolutely! Did you know that one day on Venus is longer than one year on Earth? Venus rotates on its axis very slowly, taking about 243 Earth days to complete one full rotation. Meanwhile, it takes only about 225 Earth days for Venus to orbit the Sun. So, a day on Venus is longer than its year!"}}
+2025-02-16 18:38:09,045 [INFO] Received non-audio response: {"type":"response.output_item.done","event_id":"event_B1a4XTsonsNLCndClJBnS","response_id":"resp_B1a4Q0rNpgioahTpJGhHj","output_index":0,"item":{"id":"item_B1a4QoJtEiisX9u8PvYeI","object":"realtime.item","type":"message","status":"completed","role":"assistant","content":[{"type":"audio","transcript":"Absolutely! Did you know that one day on Venus is longer than one year on Earth? Venus rotates on its axis very slowly, taking about 243 Earth days to complete one full rotation. Meanwhile, it takes only about 225 Earth days for Venus to orbit the Sun. So, a day on Venus is longer than its year!"}]}}
+2025-02-16 18:38:09,045 [INFO] Received non-audio response: {"type":"response.done","event_id":"event_B1a4Xlm0h9ZmVzm433Psg","response":{"object":"realtime.response","id":"resp_B1a4Q0rNpgioahTpJGhHj","status":"completed","status_details":null,"output":[{"id":"item_B1a4QoJtEiisX9u8PvYeI","object":"realtime.item","type":"message","status":"completed","role":"assistant","content":[{"type":"audio","transcript":"Absolutely! Did you know that one day on Venus is longer than one year on Earth? Venus rotates on its axis very slowly, taking about 243 Earth days to complete one full rotation. Meanwhile, it takes only about 225 Earth days for Venus to orbit the Sun. So, a day on Venus is longer than its year!"}]}],"conversation_id":"conv_B1a4QjkoqqIfuBlKdE279","modalities":["text","audio"],"voice":"alloy","custom_voice_id":null,"output_audio_format":"pcm16","temperature":0.8,"max_output_tokens":"inf","usage":{"total_tokens":640,"input_tokens":23,"output_tokens":617,"input_token_details":{"text_tokens":23,"audio_tokens":0,"cached_tokens":0,"cached_tokens_details":{"text_tokens":0,"audio_tokens":0}},"output_token_details":{"text_tokens":97,"audio_tokens":520}},"metadata":null}}
+2025-02-16 18:40:21,423 [INFO] Frontend WebSocket connected.
+2025-02-16 18:40:23,038 [INFO] Connected to Azure OpenAI WebSocket.
+2025-02-16 18:40:23,046 [INFO] Azure Session Created.
+2025-02-16 18:40:23,046 [INFO] Sent session.update to Azure.
+2025-02-16 18:40:23,239 [INFO] Received response for session.update: {"type":"session.updated","event_id":"event_B1a6hzFlleotkV6R2agUm","session":{"id":"sess_B1a6g0AchLQv7ARyxhNfk","object":"realtime.session","model":"gpt-4o-realtime-preview-2024-12-17","expires_at":1739717722,"modalities":["audio","text"],"instructions":"You are a helpful AI assistant.","voice":"alloy","custom_voice_id":null,"turn_detection":{"type":"server_vad","threshold":0.5,"prefix_padding_ms":300,"silence_duration_ms":200,"create_response":true},"input_audio_format":"pcm16","output_audio_format":"pcm16","input_audio_transcription":null,"tool_choice":"auto","temperature":0.8,"max_response_output_tokens":"inf","client_secret":null,"tools":[]}}
+2025-02-16 18:40:23,239 [INFO] Sent conversation.item.create to Azure.
+2025-02-16 18:40:23,429 [INFO] Received response for conversation.item.create: {"type":"conversation.item.created","event_id":"event_B1a6hkQmXwpMbGZU7wVtC","previous_item_id":null,"item":{"id":"item_B1a6hWlHnAcDeuwdhP8Cg","object":"realtime.item","type":"message","status":"completed","role":"user","content":[{"type":"input_text","text":"Hello! Can you tell me a fun fact about space?"}]}}
+2025-02-16 18:40:23,429 [INFO] Sent response.create to Azure.
+2025-02-16 18:40:23,635 [INFO] Received response for response.create: {"type":"response.created","event_id":"event_B1a6hZU2BTo1Sl4GWlBg8","response":{"object":"realtime.response","id":"resp_B1a6hmKa4B1J1jOPFHaMr","status":"in_progress","status_details":null,"output":[],"conversation_id":"conv_B1a6gXXKh3ZTSCasSBl8C","modalities":["audio","text"],"voice":"alloy","custom_voice_id":null,"output_audio_format":"pcm16","temperature":0.8,"max_output_tokens":"inf","usage":null,"metadata":null}}
+2025-02-16 18:40:23,916 [INFO] Received non-audio response: {"type":"rate_limits.updated","event_id":"event_B1a6ha3ZIapqs4iNQGnzf","rate_limits":[]}
+2025-02-16 18:40:23,916 [INFO] Received non-audio response: {"type":"response.output_item.added","event_id":"event_B1a6hfn97oFOar73V9Zpx","response_id":"resp_B1a6hmKa4B1J1jOPFHaMr","output_index":0,"item":{"id":"item_B1a6hTMDDAJwHt9srG3Fn","object":"realtime.item","type":"message","status":"in_progress","role":"assistant","content":[]}}
+2025-02-16 18:40:23,916 [INFO] Received non-audio response: {"type":"conversation.item.created","event_id":"event_B1a6hqDxR8q1N4DQyhBFR","previous_item_id":"item_B1a6hWlHnAcDeuwdhP8Cg","item":{"id":"item_B1a6hTMDDAJwHt9srG3Fn","object":"realtime.item","type":"message","status":"in_progress","role":"assistant","content":[]}}
+2025-02-16 18:40:23,936 [INFO] Received non-audio response: {"type":"response.content_part.added","event_id":"event_B1a6hhUXgKmWTwrMaidfW","response_id":"resp_B1a6hmKa4B1J1jOPFHaMr","item_id":"item_B1a6hTMDDAJwHt9srG3Fn","output_index":0,"content_index":0,"part":{"type":"audio","transcript":""},"content":{"type":"audio","transcript":""}}
+2025-02-16 18:40:23,936 [INFO] Transcribed Text Delta: Sure
+2025-02-16 18:40:23,950 [INFO] Transcribed Text Delta: !
+2025-02-16 18:40:23,955 [INFO] Transcribed Text Delta:  Did
+2025-02-16 18:40:24,016 [INFO] Streaming audio chunk of size: 6400 bytes
+2025-02-16 18:40:24,016 [INFO] Sent audio chunk of size: 6400 bytes to client
+2025-02-16 18:40:24,065 [INFO] Streaming audio chunk of size: 9600 bytes
+2025-02-16 18:40:24,065 [INFO] Sent audio chunk of size: 9600 bytes to client
+2025-02-16 18:40:24,242 [INFO] Streaming audio chunk of size: 16000 bytes
+2025-02-16 18:40:24,242 [INFO] Sent audio chunk of size: 16000 bytes to client
+2025-02-16 18:40:24,242 [INFO] Transcribed Text Delta:  you
+2025-02-16 18:40:24,242 [INFO] Transcribed Text Delta:  know
+2025-02-16 18:40:24,242 [INFO] Streaming audio chunk of size: 16000 bytes
+2025-02-16 18:40:24,242 [INFO] Sent audio chunk of size: 16000 bytes to client
+2025-02-16 18:40:24,334 [INFO] Streaming audio chunk of size: 16000 bytes
+2025-02-16 18:40:24,337 [INFO] Sent audio chunk of size: 16000 bytes to client
+2025-02-16 18:40:24,337 [INFO] Transcribed Text Delta:  that
+2025-02-16 18:40:24,337 [INFO] Transcribed Text Delta:  in
+2025-02-16 18:40:24,337 [INFO] Transcribed Text Delta:  space
+2025-02-16 18:40:24,337 [INFO] Transcribed Text Delta: ,
+2025-02-16 18:40:24,395 [INFO] Streaming audio chunk of size: 16000 bytes
+2025-02-16 18:40:24,397 [INFO] Sent audio chunk of size: 16000 bytes to client
+2025-02-16 18:40:24,444 [INFO] Streaming audio chunk of size: 32000 bytes
+2025-02-16 18:40:24,446 [INFO] Sent audio chunk of size: 32000 bytes to client
+2025-02-16 18:40:24,446 [INFO] Transcribed Text Delta:  there's
+2025-02-16 18:40:24,446 [INFO] Transcribed Text Delta:  a
+2025-02-16 18:40:24,446 [INFO] Transcribed Text Delta:  giant
+2025-02-16 18:40:24,446 [INFO] Transcribed Text Delta:  cloud
+2025-02-16 18:40:24,446 [INFO] Transcribed Text Delta:  of
+2025-02-16 18:40:24,446 [INFO] Transcribed Text Delta:  alcohol
+2025-02-16 18:40:24,446 [INFO] Transcribed Text Delta: ?
+2025-02-16 18:40:24,624 [INFO] Streaming audio chunk of size: 48000 bytes
+2025-02-16 18:40:24,624 [INFO] Sent audio chunk of size: 48000 bytes to client
+2025-02-16 18:40:24,684 [INFO] Transcribed Text Delta:  It's
+2025-02-16 18:40:24,688 [INFO] Transcribed Text Delta:  called
+2025-02-16 18:40:24,696 [INFO] Transcribed Text Delta:  Sagittarius
+2025-02-16 18:40:24,702 [INFO] Transcribed Text Delta:  B
+2025-02-16 18:40:24,710 [INFO] Transcribed Text Delta: 2
+2025-02-16 18:40:24,717 [INFO] Transcribed Text Delta: ,
+2025-02-16 18:40:24,777 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:40:24,777 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:40:24,924 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:40:24,929 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:40:25,077 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:40:25,084 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:40:25,084 [INFO] Transcribed Text Delta:  and
+2025-02-16 18:40:25,084 [INFO] Transcribed Text Delta:  it's
+2025-02-16 18:40:25,096 [INFO] Transcribed Text Delta:  a
+2025-02-16 18:40:25,097 [INFO] Transcribed Text Delta:  massive
+2025-02-16 18:40:25,107 [INFO] Transcribed Text Delta:  cloud
+2025-02-16 18:40:25,114 [INFO] Transcribed Text Delta:  of
+2025-02-16 18:40:25,288 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:40:25,291 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:40:25,437 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:40:25,441 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:40:25,472 [INFO] Transcribed Text Delta:  gas
+2025-02-16 18:40:25,477 [INFO] Transcribed Text Delta:  and
+2025-02-16 18:40:25,487 [INFO] Transcribed Text Delta:  dust
+2025-02-16 18:40:25,494 [INFO] Transcribed Text Delta:  containing
+2025-02-16 18:40:25,500 [INFO] Transcribed Text Delta:  eth
+2025-02-16 18:40:25,507 [INFO] Transcribed Text Delta: yl
+2025-02-16 18:40:25,515 [INFO] Transcribed Text Delta:  alcohol
+2025-02-16 18:40:25,521 [INFO] Transcribed Text Delta: ,
+2025-02-16 18:40:25,662 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:40:25,672 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:40:25,796 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:40:25,802 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:40:25,979 [INFO] Transcribed Text Delta:  the
+2025-02-16 18:40:25,989 [INFO] Transcribed Text Delta:  same
+2025-02-16 18:40:25,989 [INFO] Transcribed Text Delta:  type
+2025-02-16 18:40:25,989 [INFO] Transcribed Text Delta:  we
+2025-02-16 18:40:25,989 [INFO] Transcribed Text Delta:  find
+2025-02-16 18:40:25,989 [INFO] Transcribed Text Delta:  in
+2025-02-16 18:40:26,000 [INFO] Transcribed Text Delta:  beverages
+2025-02-16 18:40:26,013 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:40:26,016 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:40:26,164 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:40:26,164 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:40:26,269 [INFO] Transcribed Text Delta:  here
+2025-02-16 18:40:26,280 [INFO] Transcribed Text Delta:  on
+2025-02-16 18:40:26,289 [INFO] Transcribed Text Delta:  Earth
+2025-02-16 18:40:26,295 [INFO] Transcribed Text Delta: .
+2025-02-16 18:40:26,299 [INFO] Transcribed Text Delta:  However
+2025-02-16 18:40:26,307 [INFO] Transcribed Text Delta: ,
+2025-02-16 18:40:26,319 [INFO] Transcribed Text Delta:  drinking
+2025-02-16 18:40:26,322 [INFO] Transcribed Text Delta:  it
+2025-02-16 18:40:26,383 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:40:26,383 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:40:26,524 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:40:26,524 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:40:26,669 [INFO] Transcribed Text Delta:  wouldn't
+2025-02-16 18:40:26,674 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:40:26,679 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:40:26,683 [INFO] Transcribed Text Delta:  be
+2025-02-16 18:40:26,688 [INFO] Transcribed Text Delta:  a
+2025-02-16 18:40:26,696 [INFO] Transcribed Text Delta:  good
+2025-02-16 18:40:26,700 [INFO] Transcribed Text Delta:  idea
+2025-02-16 18:40:26,711 [INFO] Transcribed Text Delta: ,
+2025-02-16 18:40:26,711 [INFO] Transcribed Text Delta:  as
+2025-02-16 18:40:26,724 [INFO] Transcribed Text Delta:  it's
+2025-02-16 18:40:26,731 [INFO] Transcribed Text Delta:  mixed
+2025-02-16 18:40:26,904 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:40:26,908 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:40:27,058 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:40:27,060 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:40:27,081 [INFO] Transcribed Text Delta:  with
+2025-02-16 18:40:27,093 [INFO] Transcribed Text Delta:  other
+2025-02-16 18:40:27,100 [INFO] Transcribed Text Delta:  nasty
+2025-02-16 18:40:27,107 [INFO] Transcribed Text Delta:  chemicals
+2025-02-16 18:40:27,114 [INFO] Transcribed Text Delta: !
+2025-02-16 18:40:27,245 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:40:27,250 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:40:27,400 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:40:27,400 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:40:27,546 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:40:27,549 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:40:27,560 [INFO] Streaming audio chunk of size: 35200 bytes
+2025-02-16 18:40:27,561 [INFO] Sent audio chunk of size: 35200 bytes to client
+2025-02-16 18:40:27,567 [INFO] Received non-audio response: {"type":"response.audio.done","event_id":"event_B1a6l6dCdMN9xyWTQMHAI","response_id":"resp_B1a6hmKa4B1J1jOPFHaMr","item_id":"item_B1a6hTMDDAJwHt9srG3Fn","output_index":0,"content_index":0}
+2025-02-16 18:40:27,620 [INFO] Received non-audio response: {"type":"response.audio_transcript.done","event_id":"event_B1a6lc5m5sFNflKWGXggM","response_id":"resp_B1a6hmKa4B1J1jOPFHaMr","item_id":"item_B1a6hTMDDAJwHt9srG3Fn","output_index":0,"content_index":0,"transcript":"Sure! Did you know that in space, there's a giant cloud of alcohol? It's called Sagittarius B2, and it's a massive cloud of gas and dust containing ethyl alcohol, the same type we find in beverages here on Earth. However, drinking it wouldn't be a good idea, as it's mixed with other nasty chemicals!"}
+2025-02-16 18:40:27,620 [INFO] Received non-audio response: {"type":"response.content_part.done","event_id":"event_B1a6ltpmWcBihKUA2tYrp","response_id":"resp_B1a6hmKa4B1J1jOPFHaMr","item_id":"item_B1a6hTMDDAJwHt9srG3Fn","output_index":0,"content_index":0,"part":{"type":"audio","transcript":"Sure! Did you know that in space, there's a giant cloud of alcohol? It's called Sagittarius B2, and it's a massive cloud of gas and dust containing ethyl alcohol, the same type we find in beverages here on Earth. However, drinking it wouldn't be a good idea, as it's mixed with other nasty chemicals!"},"content":{"type":"audio","transcript":"Sure! Did you know that in space, there's a giant cloud of alcohol? It's called Sagittarius B2, and it's a massive cloud of gas and dust containing ethyl alcohol, the same type we find in beverages here on Earth. However, drinking it wouldn't be a good idea, as it's mixed with other nasty chemicals!"}}
+2025-02-16 18:40:27,620 [INFO] Received non-audio response: {"type":"response.output_item.done","event_id":"event_B1a6l0NxUmZ2hgRWFS3J0","response_id":"resp_B1a6hmKa4B1J1jOPFHaMr","output_index":0,"item":{"id":"item_B1a6hTMDDAJwHt9srG3Fn","object":"realtime.item","type":"message","status":"completed","role":"assistant","content":[{"type":"audio","transcript":"Sure! Did you know that in space, there's a giant cloud of alcohol? It's called Sagittarius B2, and it's a massive cloud of gas and dust containing ethyl alcohol, the same type we find in beverages here on Earth. However, drinking it wouldn't be a good idea, as it's mixed with other nasty chemicals!"}]}}
+2025-02-16 18:40:27,620 [INFO] Received non-audio response: {"type":"response.done","event_id":"event_B1a6lI3UwmUelzlRS3GAj","response":{"object":"realtime.response","id":"resp_B1a6hmKa4B1J1jOPFHaMr","status":"completed","status_details":null,"output":[{"id":"item_B1a6hTMDDAJwHt9srG3Fn","object":"realtime.item","type":"message","status":"completed","role":"assistant","content":[{"type":"audio","transcript":"Sure! Did you know that in space, there's a giant cloud of alcohol? It's called Sagittarius B2, and it's a massive cloud of gas and dust containing ethyl alcohol, the same type we find in beverages here on Earth. However, drinking it wouldn't be a good idea, as it's mixed with other nasty chemicals!"}]}],"conversation_id":"conv_B1a6gXXKh3ZTSCasSBl8C","modalities":["audio","text"],"voice":"alloy","custom_voice_id":null,"output_audio_format":"pcm16","temperature":0.8,"max_output_tokens":"inf","usage":{"total_tokens":515,"input_tokens":23,"output_tokens":492,"input_token_details":{"text_tokens":23,"audio_tokens":0,"cached_tokens":0,"cached_tokens_details":{"text_tokens":0,"audio_tokens":0}},"output_token_details":{"text_tokens":91,"audio_tokens":401}},"metadata":null}}
+2025-02-16 18:40:48,813 [INFO] Frontend WebSocket connected.
+2025-02-16 18:40:50,222 [INFO] Connected to Azure OpenAI WebSocket.
+2025-02-16 18:40:50,222 [INFO] Azure Session Created.
+2025-02-16 18:40:50,222 [INFO] Sent session.update to Azure.
+2025-02-16 18:40:50,420 [INFO] Received response for session.update: {"type":"session.updated","event_id":"event_B1a78ytIabbg8a33DwGMi","session":{"id":"sess_B1a78iCqbdJ3zS4PVoocS","object":"realtime.session","model":"gpt-4o-realtime-preview-2024-12-17","expires_at":1739717750,"modalities":["text","audio"],"instructions":"You are a helpful AI assistant.","voice":"alloy","custom_voice_id":null,"turn_detection":{"type":"server_vad","threshold":0.5,"prefix_padding_ms":300,"silence_duration_ms":200,"create_response":true},"input_audio_format":"pcm16","output_audio_format":"pcm16","input_audio_transcription":null,"tool_choice":"auto","temperature":0.8,"max_response_output_tokens":"inf","client_secret":null,"tools":[]}}
+2025-02-16 18:40:50,420 [INFO] Sent conversation.item.create to Azure.
+2025-02-16 18:40:50,620 [INFO] Received response for conversation.item.create: {"type":"conversation.item.created","event_id":"event_B1a78hDbwqCFE09Y3sR5h","previous_item_id":null,"item":{"id":"item_B1a78ZWWitguYzx9c8VNc","object":"realtime.item","type":"message","status":"completed","role":"user","content":[{"type":"input_text","text":"Hello! Can you tell me a fun fact about space?"}]}}
+2025-02-16 18:40:50,621 [INFO] Sent response.create to Azure.
+2025-02-16 18:40:50,818 [INFO] Received response for response.create: {"type":"response.created","event_id":"event_B1a78XFBduuh9TVXEPGUW","response":{"object":"realtime.response","id":"resp_B1a78R3A74UGRT4NnCQ3G","status":"in_progress","status_details":null,"output":[],"conversation_id":"conv_B1a78nCEPXuo4Bm8Gr1Qd","modalities":["text","audio"],"voice":"alloy","custom_voice_id":null,"output_audio_format":"pcm16","temperature":0.8,"max_output_tokens":"inf","usage":null,"metadata":null}}
+2025-02-16 18:40:51,103 [INFO] Received non-audio response: {"type":"rate_limits.updated","event_id":"event_B1a7904a8vhFegwabnDgp","rate_limits":[]}
+2025-02-16 18:40:51,103 [INFO] Received non-audio response: {"type":"response.output_item.added","event_id":"event_B1a79kk2IEx5WIvbDOdCc","response_id":"resp_B1a78R3A74UGRT4NnCQ3G","output_index":0,"item":{"id":"item_B1a78JBg08UWjFvYPsRjD","object":"realtime.item","type":"message","status":"in_progress","role":"assistant","content":[]}}
+2025-02-16 18:40:51,119 [INFO] Received non-audio response: {"type":"conversation.item.created","event_id":"event_B1a79cjIEHrnPRLY0tEow","previous_item_id":"item_B1a78ZWWitguYzx9c8VNc","item":{"id":"item_B1a78JBg08UWjFvYPsRjD","object":"realtime.item","type":"message","status":"in_progress","role":"assistant","content":[]}}
+2025-02-16 18:40:51,132 [INFO] Received non-audio response: {"type":"response.content_part.added","event_id":"event_B1a79ZAkZnW4OjCvNwt83","response_id":"resp_B1a78R3A74UGRT4NnCQ3G","item_id":"item_B1a78JBg08UWjFvYPsRjD","output_index":0,"content_index":0,"part":{"type":"audio","transcript":""},"content":{"type":"audio","transcript":""}}
+2025-02-16 18:40:51,133 [INFO] Transcribed Text Delta: Sure
+2025-02-16 18:40:51,133 [INFO] Transcribed Text Delta: !
+2025-02-16 18:40:51,145 [INFO] Transcribed Text Delta:  Did
+2025-02-16 18:40:51,210 [INFO] Streaming audio chunk of size: 6400 bytes
+2025-02-16 18:40:51,211 [INFO] Sent audio chunk of size: 6400 bytes to client
+2025-02-16 18:40:51,261 [INFO] Streaming audio chunk of size: 9600 bytes
+2025-02-16 18:40:51,261 [INFO] Sent audio chunk of size: 9600 bytes to client
+2025-02-16 18:40:51,401 [INFO] Streaming audio chunk of size: 16000 bytes
+2025-02-16 18:40:51,401 [INFO] Sent audio chunk of size: 16000 bytes to client
+2025-02-16 18:40:51,401 [INFO] Transcribed Text Delta:  you
+2025-02-16 18:40:51,401 [INFO] Transcribed Text Delta:  know
+2025-02-16 18:40:51,401 [INFO] Transcribed Text Delta:  that
+2025-02-16 18:40:51,451 [INFO] Streaming audio chunk of size: 16000 bytes
+2025-02-16 18:40:51,451 [INFO] Sent audio chunk of size: 16000 bytes to client
+2025-02-16 18:40:51,515 [INFO] Streaming audio chunk of size: 16000 bytes
+2025-02-16 18:40:51,516 [INFO] Sent audio chunk of size: 16000 bytes to client
+2025-02-16 18:40:51,516 [INFO] Transcribed Text Delta:  a
+2025-02-16 18:40:51,516 [INFO] Transcribed Text Delta:  day
+2025-02-16 18:40:51,516 [INFO] Transcribed Text Delta:  on
+2025-02-16 18:40:51,593 [INFO] Streaming audio chunk of size: 16000 bytes
+2025-02-16 18:40:51,593 [INFO] Sent audio chunk of size: 16000 bytes to client
+2025-02-16 18:40:51,670 [INFO] Streaming audio chunk of size: 32000 bytes
+2025-02-16 18:40:51,671 [INFO] Sent audio chunk of size: 32000 bytes to client
+2025-02-16 18:40:51,671 [INFO] Transcribed Text Delta:  Venus
+2025-02-16 18:40:51,671 [INFO] Transcribed Text Delta:  is
+2025-02-16 18:40:51,671 [INFO] Transcribed Text Delta:  longer
+2025-02-16 18:40:51,671 [INFO] Transcribed Text Delta:  than
+2025-02-16 18:40:51,671 [INFO] Transcribed Text Delta:  a
+2025-02-16 18:40:51,671 [INFO] Transcribed Text Delta:  year
+2025-02-16 18:40:51,671 [INFO] Transcribed Text Delta:  on
+2025-02-16 18:40:51,672 [INFO] Transcribed Text Delta:  Venus
+2025-02-16 18:40:51,672 [INFO] Transcribed Text Delta: ?
+2025-02-16 18:40:51,784 [INFO] Streaming audio chunk of size: 48000 bytes
+2025-02-16 18:40:51,786 [INFO] Sent audio chunk of size: 48000 bytes to client
+2025-02-16 18:40:51,841 [INFO] Transcribed Text Delta:  Venus
+2025-02-16 18:40:51,850 [INFO] Transcribed Text Delta:  has
+2025-02-16 18:40:51,855 [INFO] Transcribed Text Delta:  an
+2025-02-16 18:40:51,861 [INFO] Transcribed Text Delta:  incredibly
+2025-02-16 18:40:51,923 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:40:51,923 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:40:52,072 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:40:52,078 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:40:52,198 [INFO] Transcribed Text Delta:  slow
+2025-02-16 18:40:52,198 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:40:52,204 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:40:52,204 [INFO] Transcribed Text Delta:  rotation
+2025-02-16 18:40:52,211 [INFO] Transcribed Text Delta:  on
+2025-02-16 18:40:52,218 [INFO] Transcribed Text Delta:  its
+2025-02-16 18:40:52,218 [INFO] Transcribed Text Delta:  axis
+2025-02-16 18:40:52,232 [INFO] Transcribed Text Delta: ,
+2025-02-16 18:40:52,393 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:40:52,398 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:40:52,527 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:40:52,541 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:40:52,564 [INFO] Transcribed Text Delta:  taking
+2025-02-16 18:40:52,574 [INFO] Transcribed Text Delta:  about
+2025-02-16 18:40:52,583 [INFO] Transcribed Text Delta:  
+2025-02-16 18:40:52,589 [INFO] Transcribed Text Delta: 243
+2025-02-16 18:40:52,597 [INFO] Transcribed Text Delta:  Earth
+2025-02-16 18:40:52,779 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:40:52,779 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:40:52,864 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:40:52,864 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:40:52,933 [INFO] Transcribed Text Delta:  days
+2025-02-16 18:40:52,939 [INFO] Transcribed Text Delta:  to
+2025-02-16 18:40:52,947 [INFO] Transcribed Text Delta:  complete
+2025-02-16 18:40:52,953 [INFO] Transcribed Text Delta:  one
+2025-02-16 18:40:52,960 [INFO] Transcribed Text Delta:  rotation
+2025-02-16 18:40:52,967 [INFO] Transcribed Text Delta: .
+2025-02-16 18:40:53,060 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:40:53,064 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:40:53,202 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:40:53,202 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:40:53,304 [INFO] Transcribed Text Delta:  In
+2025-02-16 18:40:53,312 [INFO] Transcribed Text Delta:  contrast
+2025-02-16 18:40:53,318 [INFO] Transcribed Text Delta: ,
+2025-02-16 18:40:53,323 [INFO] Transcribed Text Delta:  it
+2025-02-16 18:40:53,383 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:40:53,383 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:40:53,526 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:40:53,526 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:40:53,665 [INFO] Transcribed Text Delta:  only
+2025-02-16 18:40:53,677 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:40:53,679 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:40:53,680 [INFO] Transcribed Text Delta:  takes
+2025-02-16 18:40:53,687 [INFO] Transcribed Text Delta:  about
+2025-02-16 18:40:53,695 [INFO] Transcribed Text Delta:  
+2025-02-16 18:40:53,702 [INFO] Transcribed Text Delta: 225
+2025-02-16 18:40:53,707 [INFO] Transcribed Text Delta:  Earth
+2025-02-16 18:40:53,871 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:40:53,874 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:40:54,008 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:40:54,017 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:40:54,050 [INFO] Transcribed Text Delta:  days
+2025-02-16 18:40:54,060 [INFO] Transcribed Text Delta:  for
+2025-02-16 18:40:54,069 [INFO] Transcribed Text Delta:  Venus
+2025-02-16 18:40:54,076 [INFO] Transcribed Text Delta:  to
+2025-02-16 18:40:54,084 [INFO] Transcribed Text Delta:  orbit
+2025-02-16 18:40:54,089 [INFO] Transcribed Text Delta:  the
+2025-02-16 18:40:54,097 [INFO] Transcribed Text Delta:  Sun
+2025-02-16 18:40:54,103 [INFO] Transcribed Text Delta: .
+2025-02-16 18:40:54,243 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:40:54,247 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:40:54,375 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:40:54,377 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:40:54,442 [INFO] Transcribed Text Delta:  So
+2025-02-16 18:40:54,449 [INFO] Transcribed Text Delta: ,
+2025-02-16 18:40:54,456 [INFO] Transcribed Text Delta:  in
+2025-02-16 18:40:54,467 [INFO] Transcribed Text Delta:  a
+2025-02-16 18:40:54,469 [INFO] Transcribed Text Delta:  sense
+2025-02-16 18:40:54,478 [INFO] Transcribed Text Delta: ,
+2025-02-16 18:40:54,572 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:40:54,574 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:40:54,710 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:40:54,710 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:40:54,809 [INFO] Transcribed Text Delta:  a
+2025-02-16 18:40:54,819 [INFO] Transcribed Text Delta:  day
+2025-02-16 18:40:54,829 [INFO] Transcribed Text Delta:  on
+2025-02-16 18:40:54,832 [INFO] Transcribed Text Delta:  Venus
+2025-02-16 18:40:54,842 [INFO] Transcribed Text Delta:  is
+2025-02-16 18:40:54,844 [INFO] Transcribed Text Delta:  longer
+2025-02-16 18:40:54,853 [INFO] Transcribed Text Delta:  than
+2025-02-16 18:40:54,911 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:40:54,919 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:40:55,057 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:40:55,058 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:40:55,192 [INFO] Transcribed Text Delta:  its
+2025-02-16 18:40:55,198 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:40:55,198 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:40:55,218 [INFO] Transcribed Text Delta:  year
+2025-02-16 18:40:55,218 [INFO] Transcribed Text Delta: !
+2025-02-16 18:40:55,418 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:40:55,421 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:40:55,518 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:40:55,518 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:40:55,538 [INFO] Streaming audio chunk of size: 41600 bytes
+2025-02-16 18:40:55,543 [INFO] Sent audio chunk of size: 41600 bytes to client
+2025-02-16 18:40:55,545 [INFO] Received non-audio response: {"type":"response.audio.done","event_id":"event_B1a7Doefvi2NHbUhpiHWw","response_id":"resp_B1a78R3A74UGRT4NnCQ3G","item_id":"item_B1a78JBg08UWjFvYPsRjD","output_index":0,"content_index":0}
+2025-02-16 18:40:55,598 [INFO] Received non-audio response: {"type":"response.audio_transcript.done","event_id":"event_B1a7DZs7KMjQ7sRQXaz8C","response_id":"resp_B1a78R3A74UGRT4NnCQ3G","item_id":"item_B1a78JBg08UWjFvYPsRjD","output_index":0,"content_index":0,"transcript":"Sure! Did you know that a day on Venus is longer than a year on Venus? Venus has an incredibly slow rotation on its axis, taking about 243 Earth days to complete one rotation. In contrast, it only takes about 225 Earth days for Venus to orbit the Sun. So, in a sense, a day on Venus is longer than its year!"}
+2025-02-16 18:40:55,598 [INFO] Received non-audio response: {"type":"response.content_part.done","event_id":"event_B1a7D8DhLSzX8r4TEPC2V","response_id":"resp_B1a78R3A74UGRT4NnCQ3G","item_id":"item_B1a78JBg08UWjFvYPsRjD","output_index":0,"content_index":0,"part":{"type":"audio","transcript":"Sure! Did you know that a day on Venus is longer than a year on Venus? Venus has an incredibly slow rotation on its axis, taking about 243 Earth days to complete one rotation. In contrast, it only takes about 225 Earth days for Venus to orbit the Sun. So, in a sense, a day on Venus is longer than its year!"},"content":{"type":"audio","transcript":"Sure! Did you know that a day on Venus is longer than a year on Venus? Venus has an incredibly slow rotation on its axis, taking about 243 Earth days to complete one rotation. In contrast, it only takes about 225 Earth days for Venus to orbit the Sun. So, in a sense, a day on Venus is longer than its year!"}}
+2025-02-16 18:40:55,598 [INFO] Received non-audio response: {"type":"response.output_item.done","event_id":"event_B1a7DKKpzPkZk4kSeb9QZ","response_id":"resp_B1a78R3A74UGRT4NnCQ3G","output_index":0,"item":{"id":"item_B1a78JBg08UWjFvYPsRjD","object":"realtime.item","type":"message","status":"completed","role":"assistant","content":[{"type":"audio","transcript":"Sure! Did you know that a day on Venus is longer than a year on Venus? Venus has an incredibly slow rotation on its axis, taking about 243 Earth days to complete one rotation. In contrast, it only takes about 225 Earth days for Venus to orbit the Sun. So, in a sense, a day on Venus is longer than its year!"}]}}
+2025-02-16 18:40:55,598 [INFO] Received non-audio response: {"type":"response.done","event_id":"event_B1a7DDSybQr5A20oQFlgP","response":{"object":"realtime.response","id":"resp_B1a78R3A74UGRT4NnCQ3G","status":"completed","status_details":null,"output":[{"id":"item_B1a78JBg08UWjFvYPsRjD","object":"realtime.item","type":"message","status":"completed","role":"assistant","content":[{"type":"audio","transcript":"Sure! Did you know that a day on Venus is longer than a year on Venus? Venus has an incredibly slow rotation on its axis, taking about 243 Earth days to complete one rotation. In contrast, it only takes about 225 Earth days for Venus to orbit the Sun. So, in a sense, a day on Venus is longer than its year!"}]}],"conversation_id":"conv_B1a78nCEPXuo4Bm8Gr1Qd","modalities":["text","audio"],"voice":"alloy","custom_voice_id":null,"output_audio_format":"pcm16","temperature":0.8,"max_output_tokens":"inf","usage":{"total_tokens":651,"input_tokens":23,"output_tokens":628,"input_token_details":{"text_tokens":23,"audio_tokens":0,"cached_tokens":0,"cached_tokens_details":{"text_tokens":0,"audio_tokens":0}},"output_token_details":{"text_tokens":105,"audio_tokens":523}},"metadata":null}}
+2025-02-16 18:41:17,430 [INFO] Frontend WebSocket connected.
+2025-02-16 18:41:18,854 [INFO] Connected to Azure OpenAI WebSocket.
+2025-02-16 18:41:18,854 [INFO] Azure Session Created.
+2025-02-16 18:41:18,854 [INFO] Sent session.update to Azure.
+2025-02-16 18:41:19,054 [INFO] Received response for session.update: {"type":"session.updated","event_id":"event_B1a7b4M55kMs9zRzlbOlr","session":{"id":"sess_B1a7aXYZdYrWPje43v4zt","object":"realtime.session","model":"gpt-4o-realtime-preview-2024-12-17","expires_at":1739717778,"modalities":["audio","text"],"instructions":"You are a helpful AI assistant.","voice":"alloy","custom_voice_id":null,"turn_detection":{"type":"server_vad","threshold":0.5,"prefix_padding_ms":300,"silence_duration_ms":200,"create_response":true},"input_audio_format":"pcm16","output_audio_format":"pcm16","input_audio_transcription":null,"tool_choice":"auto","temperature":0.8,"max_response_output_tokens":"inf","client_secret":null,"tools":[]}}
+2025-02-16 18:41:19,054 [INFO] Sent conversation.item.create to Azure.
+2025-02-16 18:41:19,252 [INFO] Received response for conversation.item.create: {"type":"conversation.item.created","event_id":"event_B1a7bvo6IiIVhRBHg60Ip","previous_item_id":null,"item":{"id":"item_B1a7bROrokfK3wj8CZQRs","object":"realtime.item","type":"message","status":"completed","role":"user","content":[{"type":"input_text","text":"Hello! Can you tell me a fun fact about space?"}]}}
+2025-02-16 18:41:19,252 [INFO] Sent response.create to Azure.
+2025-02-16 18:41:19,436 [INFO] Received response for response.create: {"type":"response.created","event_id":"event_B1a7bVxQrLnPR0kzhQGZe","response":{"object":"realtime.response","id":"resp_B1a7b63XQojFbzdypqAfy","status":"in_progress","status_details":null,"output":[],"conversation_id":"conv_B1a7aUqkzCvJ8TN2RDXN5","modalities":["audio","text"],"voice":"alloy","custom_voice_id":null,"output_audio_format":"pcm16","temperature":0.8,"max_output_tokens":"inf","usage":null,"metadata":null}}
+2025-02-16 18:41:19,751 [INFO] Received non-audio response: {"type":"rate_limits.updated","event_id":"event_B1a7bqSyc6K4aAcp66KwW","rate_limits":[]}
+2025-02-16 18:41:19,767 [INFO] Received non-audio response: {"type":"response.output_item.added","event_id":"event_B1a7b794LHyyhzxRGwZN3","response_id":"resp_B1a7b63XQojFbzdypqAfy","output_index":0,"item":{"id":"item_B1a7bjKQWbwvxP8yJjTIU","object":"realtime.item","type":"message","status":"in_progress","role":"assistant","content":[]}}
+2025-02-16 18:41:19,767 [INFO] Received non-audio response: {"type":"conversation.item.created","event_id":"event_B1a7b95tATj612Bqz1YiS","previous_item_id":"item_B1a7bROrokfK3wj8CZQRs","item":{"id":"item_B1a7bjKQWbwvxP8yJjTIU","object":"realtime.item","type":"message","status":"in_progress","role":"assistant","content":[]}}
+2025-02-16 18:41:19,797 [INFO] Received non-audio response: {"type":"response.content_part.added","event_id":"event_B1a7b7D9GRnPdTpbnpq56","response_id":"resp_B1a7b63XQojFbzdypqAfy","item_id":"item_B1a7bjKQWbwvxP8yJjTIU","output_index":0,"content_index":0,"part":{"type":"audio","transcript":""},"content":{"type":"audio","transcript":""}}
+2025-02-16 18:41:19,797 [INFO] Transcribed Text Delta: Certainly
+2025-02-16 18:41:19,798 [INFO] Transcribed Text Delta: !
+2025-02-16 18:41:19,800 [INFO] Transcribed Text Delta:  Did
+2025-02-16 18:41:19,800 [INFO] Transcribed Text Delta:  you
+2025-02-16 18:41:19,904 [INFO] Streaming audio chunk of size: 6400 bytes
+2025-02-16 18:41:19,904 [INFO] Sent audio chunk of size: 6400 bytes to client
+2025-02-16 18:41:19,931 [INFO] Streaming audio chunk of size: 9600 bytes
+2025-02-16 18:41:19,931 [INFO] Sent audio chunk of size: 9600 bytes to client
+2025-02-16 18:41:19,944 [INFO] Transcribed Text Delta:  know
+2025-02-16 18:41:19,944 [INFO] Transcribed Text Delta:  that
+2025-02-16 18:41:20,085 [INFO] Streaming audio chunk of size: 16000 bytes
+2025-02-16 18:41:20,093 [INFO] Sent audio chunk of size: 16000 bytes to client
+2025-02-16 18:41:20,131 [INFO] Streaming audio chunk of size: 16000 bytes
+2025-02-16 18:41:20,131 [INFO] Sent audio chunk of size: 16000 bytes to client
+2025-02-16 18:41:20,178 [INFO] Streaming audio chunk of size: 16000 bytes
+2025-02-16 18:41:20,178 [INFO] Sent audio chunk of size: 16000 bytes to client
+2025-02-16 18:41:20,178 [INFO] Transcribed Text Delta:  space
+2025-02-16 18:41:20,178 [INFO] Transcribed Text Delta:  is
+2025-02-16 18:41:20,277 [INFO] Streaming audio chunk of size: 16000 bytes
+2025-02-16 18:41:20,277 [INFO] Sent audio chunk of size: 16000 bytes to client
+2025-02-16 18:41:20,277 [INFO] Transcribed Text Delta:  completely
+2025-02-16 18:41:20,277 [INFO] Transcribed Text Delta:  silent
+2025-02-16 18:41:20,277 [INFO] Transcribed Text Delta: ?
+2025-02-16 18:41:20,277 [INFO] Transcribed Text Delta:  In
+2025-02-16 18:41:20,277 [INFO] Transcribed Text Delta:  the
+2025-02-16 18:41:20,314 [INFO] Streaming audio chunk of size: 32000 bytes
+2025-02-16 18:41:20,314 [INFO] Sent audio chunk of size: 32000 bytes to client
+2025-02-16 18:41:20,506 [INFO] Streaming audio chunk of size: 48000 bytes
+2025-02-16 18:41:20,506 [INFO] Sent audio chunk of size: 48000 bytes to client
+2025-02-16 18:41:20,506 [INFO] Transcribed Text Delta:  vacuum
+2025-02-16 18:41:20,506 [INFO] Transcribed Text Delta:  of
+2025-02-16 18:41:20,506 [INFO] Transcribed Text Delta:  space
+2025-02-16 18:41:20,506 [INFO] Transcribed Text Delta: ,
+2025-02-16 18:41:20,510 [INFO] Transcribed Text Delta:  there
+2025-02-16 18:41:20,510 [INFO] Transcribed Text Delta:  is
+2025-02-16 18:41:20,510 [INFO] Transcribed Text Delta:  no
+2025-02-16 18:41:20,510 [INFO] Transcribed Text Delta:  air
+2025-02-16 18:41:20,510 [INFO] Transcribed Text Delta:  to
+2025-02-16 18:41:20,510 [INFO] Transcribed Text Delta:  carry
+2025-02-16 18:41:20,582 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:41:20,585 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:41:20,724 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:41:20,727 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:41:20,853 [INFO] Transcribed Text Delta:  sound
+2025-02-16 18:41:20,860 [INFO] Transcribed Text Delta:  waves
+2025-02-16 18:41:20,867 [INFO] Transcribed Text Delta: ,
+2025-02-16 18:41:20,874 [INFO] Transcribed Text Delta:  so
+2025-02-16 18:41:20,878 [INFO] Transcribed Text Delta:  even
+2025-02-16 18:41:20,917 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:41:20,917 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:41:21,064 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:41:21,065 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:41:21,192 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:41:21,202 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:41:21,226 [INFO] Transcribed Text Delta:  if
+2025-02-16 18:41:21,232 [INFO] Transcribed Text Delta:  a
+2025-02-16 18:41:21,239 [INFO] Transcribed Text Delta:  massive
+2025-02-16 18:41:21,245 [INFO] Transcribed Text Delta:  explosion
+2025-02-16 18:41:21,255 [INFO] Transcribed Text Delta:  occurred
+2025-02-16 18:41:21,264 [INFO] Transcribed Text Delta: ,
+2025-02-16 18:41:21,264 [INFO] Transcribed Text Delta:  you
+2025-02-16 18:41:21,274 [INFO] Transcribed Text Delta:  wouldn't
+2025-02-16 18:41:21,409 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:41:21,412 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:41:21,540 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:41:21,550 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:41:21,611 [INFO] Transcribed Text Delta:  be
+2025-02-16 18:41:21,618 [INFO] Transcribed Text Delta:  able
+2025-02-16 18:41:21,624 [INFO] Transcribed Text Delta:  to
+2025-02-16 18:41:21,630 [INFO] Transcribed Text Delta:  hear
+2025-02-16 18:41:21,637 [INFO] Transcribed Text Delta:  it
+2025-02-16 18:41:21,645 [INFO] Transcribed Text Delta: .
+2025-02-16 18:41:21,652 [INFO] Transcribed Text Delta:  Pretty
+2025-02-16 18:41:21,658 [INFO] Transcribed Text Delta:  eerie
+2025-02-16 18:41:21,664 [INFO] Transcribed Text Delta: ,
+2025-02-16 18:41:21,768 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:41:21,770 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:41:21,910 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:41:21,913 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:41:22,005 [INFO] Transcribed Text Delta:  huh
+2025-02-16 18:41:22,010 [INFO] Transcribed Text Delta: ?
+2025-02-16 18:41:22,231 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:41:22,231 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:41:22,331 [INFO] Streaming audio chunk of size: 73600 bytes
+2025-02-16 18:41:22,331 [INFO] Sent audio chunk of size: 73600 bytes to client
+2025-02-16 18:41:22,331 [INFO] Received non-audio response: {"type":"response.audio.done","event_id":"event_B1a7eE6x3K0uMdEJ9Z38D","response_id":"resp_B1a7b63XQojFbzdypqAfy","item_id":"item_B1a7bjKQWbwvxP8yJjTIU","output_index":0,"content_index":0}
+2025-02-16 18:41:22,401 [INFO] Received non-audio response: {"type":"response.audio_transcript.done","event_id":"event_B1a7e3g5mwCTarxDuHkuI","response_id":"resp_B1a7b63XQojFbzdypqAfy","item_id":"item_B1a7bjKQWbwvxP8yJjTIU","output_index":0,"content_index":0,"transcript":"Certainly! Did you know that space is completely silent? In the vacuum of space, there is no air to carry sound waves, so even if a massive explosion occurred, you wouldn't be able to hear it. Pretty eerie, huh?"}
+2025-02-16 18:41:22,401 [INFO] Received non-audio response: {"type":"response.content_part.done","event_id":"event_B1a7en30YmCdqJATNsB42","response_id":"resp_B1a7b63XQojFbzdypqAfy","item_id":"item_B1a7bjKQWbwvxP8yJjTIU","output_index":0,"content_index":0,"part":{"type":"audio","transcript":"Certainly! Did you know that space is completely silent? In the vacuum of space, there is no air to carry sound waves, so even if a massive explosion occurred, you wouldn't be able to hear it. Pretty eerie, huh?"},"content":{"type":"audio","transcript":"Certainly! Did you know that space is completely silent? In the vacuum of space, there is no air to carry sound waves, so even if a massive explosion occurred, you wouldn't be able to hear it. Pretty eerie, huh?"}}
+2025-02-16 18:41:22,401 [INFO] Received non-audio response: {"type":"response.output_item.done","event_id":"event_B1a7eotZDLM1g6uRCfCMo","response_id":"resp_B1a7b63XQojFbzdypqAfy","output_index":0,"item":{"id":"item_B1a7bjKQWbwvxP8yJjTIU","object":"realtime.item","type":"message","status":"completed","role":"assistant","content":[{"type":"audio","transcript":"Certainly! Did you know that space is completely silent? In the vacuum of space, there is no air to carry sound waves, so even if a massive explosion occurred, you wouldn't be able to hear it. Pretty eerie, huh?"}]}}
+2025-02-16 18:41:22,401 [INFO] Received non-audio response: {"type":"response.done","event_id":"event_B1a7epLpAkE9HdWfddx0j","response":{"object":"realtime.response","id":"resp_B1a7b63XQojFbzdypqAfy","status":"completed","status_details":null,"output":[{"id":"item_B1a7bjKQWbwvxP8yJjTIU","object":"realtime.item","type":"message","status":"completed","role":"assistant","content":[{"type":"audio","transcript":"Certainly! Did you know that space is completely silent? In the vacuum of space, there is no air to carry sound waves, so even if a massive explosion occurred, you wouldn't be able to hear it. Pretty eerie, huh?"}]}],"conversation_id":"conv_B1a7aUqkzCvJ8TN2RDXN5","modalities":["audio","text"],"voice":"alloy","custom_voice_id":null,"output_audio_format":"pcm16","temperature":0.8,"max_output_tokens":"inf","usage":{"total_tokens":365,"input_tokens":23,"output_tokens":342,"input_token_details":{"text_tokens":23,"audio_tokens":0,"cached_tokens":0,"cached_tokens_details":{"text_tokens":0,"audio_tokens":0}},"output_token_details":{"text_tokens":69,"audio_tokens":273}},"metadata":null}}
+2025-02-16 18:41:36,632 [INFO] Frontend WebSocket connected.
+2025-02-16 18:41:37,792 [INFO] Connected to Azure OpenAI WebSocket.
+2025-02-16 18:41:37,792 [INFO] Azure Session Created.
+2025-02-16 18:41:37,792 [INFO] Sent session.update to Azure.
+2025-02-16 18:41:37,993 [INFO] Received response for session.update: {"type":"session.updated","event_id":"event_B1a7u5j7gmKyXhOsIfbxj","session":{"id":"sess_B1a7tBjRikZmZYPjqBUTI","object":"realtime.session","model":"gpt-4o-realtime-preview-2024-12-17","expires_at":1739717797,"modalities":["audio","text"],"instructions":"You are a helpful AI assistant.","voice":"alloy","custom_voice_id":null,"turn_detection":{"type":"server_vad","threshold":0.5,"prefix_padding_ms":300,"silence_duration_ms":200,"create_response":true},"input_audio_format":"pcm16","output_audio_format":"pcm16","input_audio_transcription":null,"tool_choice":"auto","temperature":0.8,"max_response_output_tokens":"inf","client_secret":null,"tools":[]}}
+2025-02-16 18:41:37,993 [INFO] Sent conversation.item.create to Azure.
+2025-02-16 18:41:38,183 [INFO] Received response for conversation.item.create: {"type":"conversation.item.created","event_id":"event_B1a7uj69f7WNC29IIhoTC","previous_item_id":null,"item":{"id":"item_B1a7uiRNUvpydWGdbmjsb","object":"realtime.item","type":"message","status":"completed","role":"user","content":[{"type":"input_text","text":"Hello! Can you tell me a fun fact about space?"}]}}
+2025-02-16 18:41:38,183 [INFO] Sent response.create to Azure.
+2025-02-16 18:41:38,389 [INFO] Received response for response.create: {"type":"response.created","event_id":"event_B1a7ufIhqRCYMvOXO2Opd","response":{"object":"realtime.response","id":"resp_B1a7uYUUBfJG7a35fFmvI","status":"in_progress","status_details":null,"output":[],"conversation_id":"conv_B1a7tSxkKToc0vQ2nWD5x","modalities":["audio","text"],"voice":"alloy","custom_voice_id":null,"output_audio_format":"pcm16","temperature":0.8,"max_output_tokens":"inf","usage":null,"metadata":null}}
+2025-02-16 18:41:38,668 [INFO] Received non-audio response: {"type":"rate_limits.updated","event_id":"event_B1a7u5t0eUSqJMgZBXl34","rate_limits":[]}
+2025-02-16 18:41:38,668 [INFO] Received non-audio response: {"type":"response.output_item.added","event_id":"event_B1a7uGoPQYHPhZs8U6eaD","response_id":"resp_B1a7uYUUBfJG7a35fFmvI","output_index":0,"item":{"id":"item_B1a7uIYjJFhYBzZWAfZnt","object":"realtime.item","type":"message","status":"in_progress","role":"assistant","content":[]}}
+2025-02-16 18:41:38,668 [INFO] Received non-audio response: {"type":"conversation.item.created","event_id":"event_B1a7ulIyeTNnzLXBXMvSB","previous_item_id":"item_B1a7uiRNUvpydWGdbmjsb","item":{"id":"item_B1a7uIYjJFhYBzZWAfZnt","object":"realtime.item","type":"message","status":"in_progress","role":"assistant","content":[]}}
+2025-02-16 18:41:38,699 [INFO] Received non-audio response: {"type":"response.content_part.added","event_id":"event_B1a7uceep9PiGags14vip","response_id":"resp_B1a7uYUUBfJG7a35fFmvI","item_id":"item_B1a7uIYjJFhYBzZWAfZnt","output_index":0,"content_index":0,"part":{"type":"audio","transcript":""},"content":{"type":"audio","transcript":""}}
+2025-02-16 18:41:38,700 [INFO] Transcribed Text Delta: Certainly
+2025-02-16 18:41:38,700 [INFO] Transcribed Text Delta: !
+2025-02-16 18:41:38,762 [INFO] Streaming audio chunk of size: 6400 bytes
+2025-02-16 18:41:38,762 [INFO] Sent audio chunk of size: 6400 bytes to client
+2025-02-16 18:41:38,817 [INFO] Streaming audio chunk of size: 9600 bytes
+2025-02-16 18:41:38,818 [INFO] Sent audio chunk of size: 9600 bytes to client
+2025-02-16 18:41:38,943 [INFO] Streaming audio chunk of size: 16000 bytes
+2025-02-16 18:41:38,943 [INFO] Sent audio chunk of size: 16000 bytes to client
+2025-02-16 18:41:38,943 [INFO] Transcribed Text Delta:  Did
+2025-02-16 18:41:38,943 [INFO] Transcribed Text Delta:  you
+2025-02-16 18:41:39,005 [INFO] Streaming audio chunk of size: 16000 bytes
+2025-02-16 18:41:39,005 [INFO] Sent audio chunk of size: 16000 bytes to client
+2025-02-16 18:41:39,065 [INFO] Streaming audio chunk of size: 16000 bytes
+2025-02-16 18:41:39,066 [INFO] Sent audio chunk of size: 16000 bytes to client
+2025-02-16 18:41:39,066 [INFO] Transcribed Text Delta:  know
+2025-02-16 18:41:39,066 [INFO] Transcribed Text Delta:  that
+2025-02-16 18:41:39,135 [INFO] Streaming audio chunk of size: 16000 bytes
+2025-02-16 18:41:39,144 [INFO] Sent audio chunk of size: 16000 bytes to client
+2025-02-16 18:41:39,224 [INFO] Streaming audio chunk of size: 32000 bytes
+2025-02-16 18:41:39,226 [INFO] Sent audio chunk of size: 32000 bytes to client
+2025-02-16 18:41:39,226 [INFO] Transcribed Text Delta:  in
+2025-02-16 18:41:39,226 [INFO] Transcribed Text Delta:  space
+2025-02-16 18:41:39,226 [INFO] Transcribed Text Delta: ,
+2025-02-16 18:41:39,226 [INFO] Transcribed Text Delta:  there's
+2025-02-16 18:41:39,226 [INFO] Transcribed Text Delta:  a
+2025-02-16 18:41:39,226 [INFO] Transcribed Text Delta:  giant
+2025-02-16 18:41:39,226 [INFO] Transcribed Text Delta:  cloud
+2025-02-16 18:41:39,226 [INFO] Transcribed Text Delta:  of
+2025-02-16 18:41:39,332 [INFO] Streaming audio chunk of size: 48000 bytes
+2025-02-16 18:41:39,334 [INFO] Sent audio chunk of size: 48000 bytes to client
+2025-02-16 18:41:39,401 [INFO] Transcribed Text Delta:  alcohol
+2025-02-16 18:41:39,408 [INFO] Transcribed Text Delta: ?
+2025-02-16 18:41:39,416 [INFO] Transcribed Text Delta:  It's
+2025-02-16 18:41:39,416 [INFO] Transcribed Text Delta:  called
+2025-02-16 18:41:39,427 [INFO] Transcribed Text Delta:  Sagittarius
+2025-02-16 18:41:39,436 [INFO] Transcribed Text Delta:  B
+2025-02-16 18:41:39,444 [INFO] Transcribed Text Delta: 2
+2025-02-16 18:41:39,448 [INFO] Transcribed Text Delta: ,
+2025-02-16 18:41:39,514 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:41:39,514 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:41:39,660 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:41:39,663 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:41:39,792 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:41:39,808 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:41:39,808 [INFO] Transcribed Text Delta:  and
+2025-02-16 18:41:39,808 [INFO] Transcribed Text Delta:  it's
+2025-02-16 18:41:39,814 [INFO] Transcribed Text Delta:  a
+2025-02-16 18:41:39,826 [INFO] Transcribed Text Delta:  massive
+2025-02-16 18:41:39,832 [INFO] Transcribed Text Delta:  molecular
+2025-02-16 18:41:40,008 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:41:40,013 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:41:40,158 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:41:40,158 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:41:40,194 [INFO] Transcribed Text Delta:  cloud
+2025-02-16 18:41:40,197 [INFO] Transcribed Text Delta:  near
+2025-02-16 18:41:40,207 [INFO] Transcribed Text Delta:  the
+2025-02-16 18:41:40,215 [INFO] Transcribed Text Delta:  center
+2025-02-16 18:41:40,220 [INFO] Transcribed Text Delta:  of
+2025-02-16 18:41:40,231 [INFO] Transcribed Text Delta:  our
+2025-02-16 18:41:40,361 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:41:40,365 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:41:40,508 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:41:40,508 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:41:40,579 [INFO] Transcribed Text Delta:  galaxy
+2025-02-16 18:41:40,586 [INFO] Transcribed Text Delta: .
+2025-02-16 18:41:40,616 [INFO] Transcribed Text Delta:  It
+2025-02-16 18:41:40,616 [INFO] Transcribed Text Delta:  contains
+2025-02-16 18:41:40,619 [INFO] Transcribed Text Delta:  enough
+2025-02-16 18:41:40,693 [INFO] Transcribed Text Delta:  alcohol
+2025-02-16 18:41:40,714 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:41:40,716 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:41:40,856 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:41:40,859 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:41:40,966 [INFO] Transcribed Text Delta:  to
+2025-02-16 18:41:40,971 [INFO] Transcribed Text Delta:  fill
+2025-02-16 18:41:40,982 [INFO] Transcribed Text Delta:  
+2025-02-16 18:41:40,989 [INFO] Transcribed Text Delta: 400
+2025-02-16 18:41:40,996 [INFO] Transcribed Text Delta:  trillion
+2025-02-16 18:41:41,053 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:41:41,055 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:41:41,196 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:41:41,196 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:41:41,342 [INFO] Transcribed Text Delta:  p
+2025-02-16 18:41:41,342 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:41:41,346 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:41:41,346 [INFO] Transcribed Text Delta: ints
+2025-02-16 18:41:41,355 [INFO] Transcribed Text Delta:  of
+2025-02-16 18:41:41,362 [INFO] Transcribed Text Delta:  beer
+2025-02-16 18:41:41,372 [INFO] Transcribed Text Delta: !
+2025-02-16 18:41:41,377 [INFO] Transcribed Text Delta:  However
+2025-02-16 18:41:41,383 [INFO] Transcribed Text Delta: ,
+2025-02-16 18:41:41,552 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:41:41,552 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:41:41,694 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:41:41,699 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:41:41,729 [INFO] Transcribed Text Delta:  don't
+2025-02-16 18:41:41,732 [INFO] Transcribed Text Delta:  get
+2025-02-16 18:41:41,748 [INFO] Transcribed Text Delta:  too
+2025-02-16 18:41:41,752 [INFO] Transcribed Text Delta:  excited
+2025-02-16 18:41:41,755 [INFO] Transcribed Text Delta: —
+2025-02-16 18:41:41,764 [INFO] Transcribed Text Delta: it's
+2025-02-16 18:41:41,772 [INFO] Transcribed Text Delta:  not
+2025-02-16 18:41:41,904 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:41:41,904 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:41:42,044 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:41:42,056 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:41:42,120 [INFO] Transcribed Text Delta:  the
+2025-02-16 18:41:42,126 [INFO] Transcribed Text Delta:  kind
+2025-02-16 18:41:42,134 [INFO] Transcribed Text Delta:  of
+2025-02-16 18:41:42,134 [INFO] Transcribed Text Delta:  alcohol
+2025-02-16 18:41:42,145 [INFO] Transcribed Text Delta:  you'd
+2025-02-16 18:41:42,154 [INFO] Transcribed Text Delta:  want
+2025-02-16 18:41:42,154 [INFO] Transcribed Text Delta:  to
+2025-02-16 18:41:42,168 [INFO] Transcribed Text Delta:  drink
+2025-02-16 18:41:42,175 [INFO] Transcribed Text Delta: ,
+2025-02-16 18:41:42,271 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:41:42,273 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:41:42,414 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:41:42,414 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:41:42,514 [INFO] Transcribed Text Delta:  as
+2025-02-16 18:41:42,527 [INFO] Transcribed Text Delta:  it's
+2025-02-16 18:41:42,536 [INFO] Transcribed Text Delta:  mixed
+2025-02-16 18:41:42,544 [INFO] Transcribed Text Delta:  with
+2025-02-16 18:41:42,545 [INFO] Transcribed Text Delta:  a
+2025-02-16 18:41:42,558 [INFO] Transcribed Text Delta:  lot
+2025-02-16 18:41:42,564 [INFO] Transcribed Text Delta:  of
+2025-02-16 18:41:42,571 [INFO] Transcribed Text Delta:  other
+2025-02-16 18:41:42,634 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:41:42,642 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:41:42,774 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:41:42,775 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:41:42,914 [INFO] Transcribed Text Delta:  toxic
+2025-02-16 18:41:42,926 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:41:42,929 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:41:42,931 [INFO] Transcribed Text Delta:  chemicals
+2025-02-16 18:41:42,934 [INFO] Transcribed Text Delta: .
+2025-02-16 18:41:43,104 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:41:43,107 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:41:43,244 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:41:43,249 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:41:43,328 [INFO] Streaming audio chunk of size: 64000 bytes
+2025-02-16 18:41:43,328 [INFO] Sent audio chunk of size: 64000 bytes to client
+2025-02-16 18:41:43,334 [INFO] Received non-audio response: {"type":"response.audio.done","event_id":"event_B1a7zcS97FFgsKa3twMTv","response_id":"resp_B1a7uYUUBfJG7a35fFmvI","item_id":"item_B1a7uIYjJFhYBzZWAfZnt","output_index":0,"content_index":0}
+2025-02-16 18:41:43,419 [INFO] Received non-audio response: {"type":"response.audio_transcript.done","event_id":"event_B1a7zwikrgwLRkBHcCRsU","response_id":"resp_B1a7uYUUBfJG7a35fFmvI","item_id":"item_B1a7uIYjJFhYBzZWAfZnt","output_index":0,"content_index":0,"transcript":"Certainly! Did you know that in space, there's a giant cloud of alcohol? It's called Sagittarius B2, and it's a massive molecular cloud near the center of our galaxy. It contains enough alcohol to fill 400 trillion pints of beer! However, don't get too excited\u2014it's not the kind of alcohol you'd want to drink, as it's mixed with a lot of other toxic chemicals."}
+2025-02-16 18:41:43,419 [INFO] Received non-audio response: {"type":"response.content_part.done","event_id":"event_B1a7zCdtDph5TeydStJSt","response_id":"resp_B1a7uYUUBfJG7a35fFmvI","item_id":"item_B1a7uIYjJFhYBzZWAfZnt","output_index":0,"content_index":0,"part":{"type":"audio","transcript":"Certainly! Did you know that in space, there's a giant cloud of alcohol? It's called Sagittarius B2, and it's a massive molecular cloud near the center of our galaxy. It contains enough alcohol to fill 400 trillion pints of beer! However, don't get too excited\u2014it's not the kind of alcohol you'd want to drink, as it's mixed with a lot of other toxic chemicals."},"content":{"type":"audio","transcript":"Certainly! Did you know that in space, there's a giant cloud of alcohol? It's called Sagittarius B2, and it's a massive molecular cloud near the center of our galaxy. It contains enough alcohol to fill 400 trillion pints of beer! However, don't get too excited\u2014it's not the kind of alcohol you'd want to drink, as it's mixed with a lot of other toxic chemicals."}}
+2025-02-16 18:41:43,419 [INFO] Received non-audio response: {"type":"response.output_item.done","event_id":"event_B1a7zB03nfL6VWPa9Yff2","response_id":"resp_B1a7uYUUBfJG7a35fFmvI","output_index":0,"item":{"id":"item_B1a7uIYjJFhYBzZWAfZnt","object":"realtime.item","type":"message","status":"completed","role":"assistant","content":[{"type":"audio","transcript":"Certainly! Did you know that in space, there's a giant cloud of alcohol? It's called Sagittarius B2, and it's a massive molecular cloud near the center of our galaxy. It contains enough alcohol to fill 400 trillion pints of beer! However, don't get too excited\u2014it's not the kind of alcohol you'd want to drink, as it's mixed with a lot of other toxic chemicals."}]}}
+2025-02-16 18:41:43,420 [INFO] Received non-audio response: {"type":"response.done","event_id":"event_B1a7zcHF5hVfDGRgQNKmP","response":{"object":"realtime.response","id":"resp_B1a7uYUUBfJG7a35fFmvI","status":"completed","status_details":null,"output":[{"id":"item_B1a7uIYjJFhYBzZWAfZnt","object":"realtime.item","type":"message","status":"completed","role":"assistant","content":[{"type":"audio","transcript":"Certainly! Did you know that in space, there's a giant cloud of alcohol? It's called Sagittarius B2, and it's a massive molecular cloud near the center of our galaxy. It contains enough alcohol to fill 400 trillion pints of beer! However, don't get too excited\u2014it's not the kind of alcohol you'd want to drink, as it's mixed with a lot of other toxic chemicals."}]}],"conversation_id":"conv_B1a7tSxkKToc0vQ2nWD5x","modalities":["audio","text"],"voice":"alloy","custom_voice_id":null,"output_audio_format":"pcm16","temperature":0.8,"max_output_tokens":"inf","usage":{"total_tokens":663,"input_tokens":23,"output_tokens":640,"input_token_details":{"text_tokens":23,"audio_tokens":0,"cached_tokens":0,"cached_tokens_details":{"text_tokens":0,"audio_tokens":0}},"output_token_details":{"text_tokens":110,"audio_tokens":530}},"metadata":null}}
+2025-02-16 19:05:22,014 [WARNING] Azure WebSocket connection closed.
+2025-02-16 19:05:22,014 [WARNING] Azure WebSocket connection closed.
+2025-02-16 19:08:42,288 [WARNING] Azure WebSocket connection closed.
+2025-02-16 19:08:42,288 [WARNING] Azure WebSocket connection closed.
+2025-02-16 19:08:42,288 [WARNING] Azure WebSocket connection closed.
+2025-02-16 19:18:11,549 [WARNING] Azure WebSocket connection closed.
