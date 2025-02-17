@@ -1,69 +1,144 @@
-import { useState } from "react";
-import { useWebSocket } from "../hooks/useWebSocket";
+import React, { useState, useEffect } from "react";
+import { defaultSettings, updateSettings, getSettings, Settings } from "../utils/settings";
+import { IoMenu, IoClose } from "react-icons/io5"; // Import icons
+import ConversationTurns from "./RealtimeAPI-CP/ConversationTurns";
+import VoiceSelector from "./RealtimeAPI-CP/VoiceSelector";
+import OtherConfigs from "./RealtimeAPI-CP/OtherConfigs";
+import InstructionPrompt from "./Backend-CP/InstructionPrompt";
+import ToolConfig from "./Backend-CP/ToolConfig";
+import UserInfo from "./Backend-CP/UserInfo";
+import MetahumanToggle from "./Client-CP/MetahumanToggle";
+import FaceRecognitionToggle from "./Client-CP/FaceRecognitionToggle";
+import { sendSettingsToBackend, listenForSettingsUpdate } from "../utils/api";
 
-export default function ControlPanel() {
-    const { isConnected, sendMessage } = useWebSocket("ws://localhost:8000/realtime");
-    const [voice, setVoice] = useState("alloy");
-    const [neuroSyncEnabled, setNeuroSyncEnabled] = useState(false);
+const ControlPanel: React.FC = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [settings, setSettings] = useState<Settings>(defaultSettings);
 
-    const handleStart = () => sendMessage(JSON.stringify({ event: "START" }));
-    const handleEnd = () => sendMessage(JSON.stringify({ event: "END" }));
-    const updateSettings = () => sendMessage(JSON.stringify({ event: "CONFIG", voice, neuroSyncEnabled }));
+  useEffect(() => {
+    // Listen for updates from backend and apply them
+    listenForSettingsUpdate((newSettings: Partial<Settings>) => {
+      Object.entries(newSettings).forEach(([key, value]) => {
+        if (value !== undefined) {
+          const settingKey = key as keyof Settings;
+          if (typeof defaultSettings[settingKey] === typeof value) {
+            updateSettings(settingKey, value as Settings[keyof Settings]);
+          }
+        }
+      });
+      // Update local state to reflect changes.
+      setSettings(getSettings());
+    });
+  }, []);
 
-    return (
-        <div className="p-6 text-white">
-            <h2 className="text-xl font-bold mb-4">AI Agent Control Panel</h2>
-            <p className={`mb-4 ${isConnected ? "text-green-400" : "text-red-400"}`}>
-                Status: {isConnected ? "Connected" : "Disconnected"}
-            </p>
+  const handleStartConversation = () => {
+    console.log("Conversation started");
+    updateSettings("isConversationActive", true);
+    setSettings((prev) => ({ ...prev, isConversationActive: true }));
+  };
 
-            {/* Session Controls */}
-            <div className="flex space-x-4">
-                <button 
-                    onClick={handleStart} 
-                    className="bg-gray-700 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-600"
-                >
-                    Start Session
-                </button>
-                <button 
-                    onClick={handleEnd} 
-                    className="bg-gray-700 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-600"
-                >
-                    End Session
-                </button>
-            </div>
+  const handleEndConversation = () => {
+    console.log("Conversation ended");
+    updateSettings("isConversationActive", false);
+    setSettings((prev) => ({ ...prev, isConversationActive: false }));
+  };
 
-            {/* Voice Model Selector */}
-            <div className="mt-4">
-                <label className="block font-semibold">Voice Model:</label>
-                <select 
-                    value={voice} 
-                    onChange={(e) => setVoice(e.target.value)}
-                    className="w-full border border-gray-600 bg-gray-700 text-white p-2 rounded-lg hover:border-gray-400 transition-all duration-300 transform hover:scale-105"
-                >
-                    <option value="alloy">Alloy</option>
-                    <option value="echo">Echo</option>
-                </select>
-            </div>
+  const handleSaveSettings = async () => {
+    const currentSettings = getSettings();
+    await sendSettingsToBackend(currentSettings);
+    console.log("Settings saved to backend:", currentSettings);
+  };
 
-            {/* NeuroSync Toggle */}
-            <div className="mt-2 flex items-center">
-                <label className="font-semibold mr-2">NeuroSync:</label>
-                <input 
-                    type="checkbox" 
-                    checked={neuroSyncEnabled} 
-                    onChange={() => setNeuroSyncEnabled(!neuroSyncEnabled)}
-                    className="w-5 h-5 bg-gray-700 border-gray-500 rounded cursor-pointer hover:border-gray-400 transition-all duration-300 transform hover:scale-110"
-                />
-            </div>
+  return (
+    <>
+      {/* Hamburger Icon (only shown when panel is closed) */}
+      {!isOpen && (
+        <button
+          className="fixed top-4 left-4 text-white bg-[#10a37f] p-2 rounded-md shadow-md z-50"
+          onClick={() => setIsOpen(true)}
+        >
+          <IoMenu size={24} />
+        </button>
+      )}
 
-            {/* Update Config Button */}
-            <button 
-                onClick={updateSettings} 
-                className="mt-4 bg-gray-700 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-600 w-full"
-            >
-                Update Config
-            </button>
+      {/* Side Panel */}
+      <div
+        className={`fixed top-0 left-0 h-full bg-[#202123] text-[#ececf1] w-80 shadow-lg transition-transform flex flex-col ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        {/* Header */}
+        <div className="flex justify-between items-center p-4 border-b border-gray-600">
+          <h2 className="text-lg font-semibold">Ameera Settings</h2>
+          <button onClick={() => setIsOpen(false)} className="text-white">
+            <IoClose size={24} />
+          </button>
         </div>
-    );
-}
+
+        {/* Scrollable Content Area */}
+        <div className="flex-1 overflow-y-auto p-5">
+          {/* Start/End Conversation Buttons */}
+          <div className="mb-4">
+            <button
+              className={`w-full ${
+                settings.isConversationActive
+                  ? "bg-gray-500 cursor-not-allowed"
+                  : "bg-[#10a37f] hover:bg-[#0e8d6b]"
+              } text-white px-4 py-2 rounded-md mb-2`}
+              onClick={handleStartConversation}
+              disabled={settings.isConversationActive}
+            >
+              Start Conversation
+            </button>
+            <button
+              className={`w-full ${
+                !settings.isConversationActive
+                  ? "bg-gray-500 cursor-not-allowed"
+                  : "bg-red-500 hover:bg-red-600"
+              } text-white px-4 py-2 rounded-md`}
+              onClick={handleEndConversation}
+              disabled={!settings.isConversationActive}
+            >
+              End Conversation
+            </button>
+          </div>
+
+          {/* Realtime API Settings */}
+          <div className="bg-[#343541] p-4 rounded-lg mb-4">
+            <h3 className="text-lg font-semibold mb-2">Realtime API</h3>
+            <ConversationTurns />
+            <VoiceSelector />
+            <OtherConfigs />
+          </div>
+
+          {/* Backend Settings */}
+          <div className="bg-[#343541] p-4 rounded-lg mb-4">
+            <h3 className="text-lg font-semibold mb-2">Backend Settings</h3>
+            <InstructionPrompt />
+            <ToolConfig />
+            <UserInfo />
+          </div>
+
+          {/* Client Settings */}
+          <div className="bg-[#343541] p-4 rounded-lg">
+            <h3 className="text-lg font-semibold mb-2">Client Settings</h3>
+            <MetahumanToggle />
+            <FaceRecognitionToggle />
+          </div>
+        </div>
+
+        {/* Footer: Save Button */}
+        <div className="p-4 border-t border-gray-600">
+          <button
+            className="w-full bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md"
+            onClick={handleSaveSettings}
+          >
+            Save Settings
+          </button>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default ControlPanel;

@@ -1,43 +1,31 @@
-import Sidebar from "./components/Sidebar";
-import { useState } from "react";
-import { FiMaximize } from "react-icons/fi";
+import React, { useEffect } from "react";
+import ControlPanel from "./components/ControlPanel";
 
-export default function App() {
-    const [isFullScreen, setIsFullScreen] = useState(false);
-    const [sidebarOpen, setSidebarOpen] = useState(true);
-
-    const toggleFullScreen = () => {
-        if (!document.fullscreenElement) {
-            document.documentElement.requestFullscreen();
-        } else if (document.exitFullscreen) {
-            document.exitFullscreen();
-        }
-        setIsFullScreen(!isFullScreen);
-    };
+const App: React.FC = () => {
+    useEffect(() => {
+        const requestPermissions = async () => {
+            try {
+                // Request both microphone and camera permissions
+                const stream = await navigator.mediaDevices.getUserMedia({ audio: true, video: true });
+                console.log("Microphone and camera permissions granted.");
+                // Optionally, you can store the stream or use it in your app.
+            } catch (error) {
+                console.error("Error requesting permissions:", error);
+                // Optionally, handle the error, such as showing a message to the user.
+            }
+        };
+    
+        requestPermissions();
+    }, []);
 
     return (
-        <div className="flex bg-gray-800 text-white min-h-screen">
-            <Sidebar isOpen={sidebarOpen} setIsOpen={setSidebarOpen} />
-
-            {/* Main Content */}
-            <main
-                className={`transition-all duration-300 flex-1 flex flex-col items-center justify-center px-6 py-10 ${
-                    sidebarOpen ? "ml-72" : "ml-0"
-                }`}
-            >
-                <div className="bg-gray-700 shadow-md rounded-lg max-w-3xl w-full text-center p-6">
-                    <h1 className="text-3xl font-bold">AI Agent Dashboard</h1>
-                    <p className="text-gray-400 mt-2">Main content will go here...</p>
-                </div>
-
-                {/* Fullscreen Button */}
-                <button
-                    onClick={toggleFullScreen}
-                    className="absolute top-4 right-4 bg-gray-700 p-2 rounded-md hover:bg-gray-600"
-                >
-                    <FiMaximize size={24} />
-                </button>
-            </main>
+        <div className="min-h-screen bg-[#202123] text-white">
+        <ControlPanel />
+        <div className="flex justify-center items-center h-screen">
+            <h1 className="text-4xl font-bold text-[#ececf1]">AI Chat Interface</h1>
+        </div>
         </div>
     );
-}
+};
+
+export default App;
