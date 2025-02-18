@@ -1,14 +1,10 @@
 from fastapi import APIRouter, Request
 from fastapi.responses import JSONResponse, StreamingResponse
-import json
 import asyncio
-from data_models.settings_model import Settings
+from data_models.settings_model import current_settings, Settings
 from logger import logger
 
 router = APIRouter()
-
-# ✅ Initialize settings in backend memory
-current_settings = Settings()
 
 @router.put("/api/update-settings")
 async def update_settings(request: Request):

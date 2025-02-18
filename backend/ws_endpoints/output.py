@@ -1,14 +1,14 @@
 import base64
 import json
 from fastapi import WebSocket
-from utils.azure_connection import connect_to_azure
+from backend.utils.openai_connection import connect_to_realtime_api
 from logger import logger
 
 async def websocket_output(websocket: WebSocket):
     await websocket.accept()
     logger.info("Client connected to /ws/output")
     try:
-        azure_connection = await connect_to_azure()
+        azure_connection = await connect_to_realtime_api()
         while True:
             response = await azure_connection.recv()
             response_json = json.loads(response)

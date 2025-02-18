@@ -1,14 +1,14 @@
 import base64
 import json
 from fastapi import WebSocket
-from utils.azure_connection import connect_to_azure
+from backend.utils.openai_connection import connect_to_realtime_api
 from logger import logger
 
 async def websocket_input(websocket: WebSocket):
     await websocket.accept()
     logger.info("Client connected to /ws/input")
     try:
-        azure_connection = await connect_to_azure()
+        azure_connection = await connect_to_realtime_api()
         while True:
             data = await websocket.receive_bytes()
             audio_b64 = base64.b64encode(data).decode("utf-8")

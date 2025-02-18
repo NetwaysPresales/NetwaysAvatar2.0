@@ -15,18 +15,20 @@ export interface VADConfig {
 }
 
 export interface UserData {
-  userName: string;
-  userJob: string;
-  selectedConversation: string | null;
-  pastConversations: { id: string; title: string }[];
+  user_id?: string;
+  user_name?: string;
+  user_job?: string;
+  selected_conversation?: string | null;
+  past_conversations: { id: string; title: string }[];
 }
 
 export interface AppConfig {
-  instructionPrompt: string;
-  enabledTools: string[];
-  metahumanSync: boolean;
-  faceRecognition: boolean;
-  isConversationActive: boolean;
+  input_mode: string; // "server_vad" or "ptt"
+  instruction_prompt: string;
+  enabled_tools: string[];
+  metahuman_sync: boolean;
+  face_recognition: boolean;
+  is_conversation_active: boolean;
 }
 
 export interface Settings {
@@ -36,12 +38,11 @@ export interface Settings {
   app: AppConfig;
 }
 
-// ✅ Default settings (mirroring backend defaults)
-export let defaultSettings: Settings = {
+export const defaultSettings: Settings = {
   openai: {
     model: "gpt-4o-realtime-preview",
     voice: "alloy",
-    temperature: 0.7,
+    temperature: 0.8,
     maxTokens: 500,
     enableStreaming: true,
   },
@@ -53,30 +54,18 @@ export let defaultSettings: Settings = {
     vadCreateResponse: true,
   },
   user: {
-    userName: "",
-    userJob: "",
-    selectedConversation: null,
-    pastConversations: [],
+    user_id: undefined,
+    user_name: "",
+    user_job: "",
+    selected_conversation: null,
+    past_conversations: [],
   },
   app: {
-    instructionPrompt: "You are a helpful AI assistant.",
-    enabledTools: ["search"],
-    metahumanSync: false,
-    faceRecognition: false,
-    isConversationActive: false,
+    input_mode: "server_vad", // "server_vad" or "ptt"
+    instruction_prompt: "You are a helpful AI assistant.",
+    enabled_tools: ["search"],
+    metahuman_sync: false,
+    face_recognition: false,
+    is_conversation_active: false,
   },
-};
-
-// ✅ Function to update settings dynamically
-export const updateSettings = <K extends keyof Settings>(
-  key: K,
-  value: Settings[K]
-) => {
-  defaultSettings = { ...defaultSettings, [key]: value };
-  console.log(`Updated setting: ${key} →`, value);
-};
-
-// ✅ Function to retrieve the current settings
-export const getSettings = (): Settings => {
-  return defaultSettings;
 };

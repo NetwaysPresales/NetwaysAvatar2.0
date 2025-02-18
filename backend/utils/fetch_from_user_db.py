@@ -5,7 +5,7 @@ def fetch_user_from_db(user_id: str):
     """
     # Simulated database query
     mock_db = {
-        "user_1": {
+        "1234": {
             "name": "Alice Example",
             "job": "Software Engineer",
             "past_conversations": [
@@ -13,7 +13,7 @@ def fetch_user_from_db(user_id: str):
                 {"id": "conv2", "title": "Chat from Feb 5", "summary": "Summary of chat 2"}
             ]
         },
-        "user_2": {
+        "5678": {
             "name": "Bob AI",
             "job": "Data Scientist",
             "past_conversations": [

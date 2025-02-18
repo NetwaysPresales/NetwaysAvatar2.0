@@ -9,6 +9,11 @@ class OpenAIConfig(BaseModel):
     max_tokens: int = Field(500, gt=0)  # Maximum tokens per response
     enable_streaming: bool = True  # Whether responses are streamed
 
+class PTTConfig(BaseModel):
+    """Settings related to the Push-to-Talk (PTT)."""
+    button: str = "space"
+    stream_input: bool = False
+
 class VADConfig(BaseModel):
     """Settings related to Voice Activity Detection (VAD)."""
     server_vad: bool = True  # Whether VAD is enabled
@@ -27,6 +32,7 @@ class UserData(BaseModel):
 
 class AppConfig(BaseModel):
     """Application-related settings."""
+    input_mode: str = "server_vad"
     instruction_prompt: str = "You are a helpful AI assistant."
     enabled_tools: List[str] = []  # List of tools enabled for AI (e.g., "retrieval", "code_interpreter")
     metahuman_sync: bool = False  # Whether to enable Metahuman animation
@@ -40,4 +46,5 @@ class Settings(BaseModel):
     user: UserData = UserData()
     app: AppConfig = AppConfig()
 
-
+global current_settings
+current_settings = Settings()

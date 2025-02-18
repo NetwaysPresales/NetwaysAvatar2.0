@@ -1,12 +1,12 @@
 from fastapi import APIRouter, Request, HTTPException
 from fastapi.responses import JSONResponse
 from utils.fetch_from_user_db import fetch_user_from_db
-from settings_api import current_settings
+from data_models.settings_model import current_settings
 from logger import logger
 
 router = APIRouter()
 
-@router.put("/api/load-user")
+@router.put("/api/load-user-data")
 async def load_user(request: Request):
     """
     Fetches user data from the database based on `user_id` and updates `current_settings` directly.
@@ -24,11 +24,12 @@ async def load_user(request: Request):
         if not user_data:
             raise HTTPException(status_code=404, detail="User not found")
 
-        # ✅ Directly modify `current_settings`
-        current_settings.user.userName = user_data.get("name")
-        current_settings.user.userJob = user_data.get("job")
-        current_settings.user.selectedConversation = None  # Reset conversation selection
-        current_settings.user.pastConversations = user_data.get("past_conversations", [])
+        # Directly modify `current_settings`
+        current_settings.user.user_id = user_id
+        current_settings.user.user_name = user_data.get("name")
+        current_settings.user.user_job = user_data.get("job")
+        current_settings.user.selected_conversation = None  # Reset conversation selection
+        current_settings.user.past_conversations = user_data.get("past_conversations", [])
 
         logger.info(f"Loaded user data for user_id {user_id}: {user_data}")
 

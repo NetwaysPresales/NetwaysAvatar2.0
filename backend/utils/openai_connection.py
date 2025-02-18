@@ -7,7 +7,7 @@ from logger import logger
 azure_ws = None
 azure_lock = asyncio.Lock()
 
-async def connect_to_azure():
+async def connect_to_realtime_api():
     global azure_ws
     async with azure_lock:
         # Check if there is no connection or if it's not open
