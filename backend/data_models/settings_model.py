@@ -1,6 +1,13 @@
 from pydantic import BaseModel, Field
 from typing import Dict, List, Optional
 
+class Tool(BaseModel):
+    """Represents an individual tool that can be enabled for AI functionality."""
+    type: str
+    name: str
+    description: Optional[str] = None
+    parameters: Optional[dict] = None
+
 class OpenAIConfig(BaseModel):
     """Settings related to OpenAI model behavior and processing."""
     model: str = "gpt-4o-realtime-preview"
@@ -34,7 +41,7 @@ class AppConfig(BaseModel):
     """Application-related settings."""
     input_mode: str = "server_vad"
     instruction_prompt: str = "You are a helpful AI assistant."
-    enabled_tools: List[str] = []  # List of tools enabled for AI (e.g., "retrieval", "code_interpreter")
+    enabled_tools: List[Tool] = []  # List of tools enabled for AI (e.g., retrieval, code_interpreter)
     metahuman_sync: bool = False  # Whether to enable Metahuman animation
     face_recognition: bool = False  # Whether Face Recognition is enabled
     is_conversation_active: bool = False  # True if a conversation is ongoing
@@ -46,5 +53,19 @@ class Settings(BaseModel):
     user: UserData = UserData()
     app: AppConfig = AppConfig()
 
+    def get_instruction_prompt_formatted(self) -> str:
+        """
+        Generates a formatted instruction prompt by combining the base instruction_prompt with
+        additional user data (if available).
+        """
+        formatted = self.app.instruction_prompt
+        if self.user:
+            if self.user.user_name:
+                formatted += f" User: {self.user.user_name}."
+            if self.user.user_job:
+                formatted += f" Job: {self.user.user_job}."
+        return formatted
+
 global current_settings
 current_settings = Settings()
+

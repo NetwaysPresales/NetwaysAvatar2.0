@@ -1,37 +1,37 @@
 import React from "react";
-import { Settings } from "../utils/settings";
+import { ISettings } from "../models/settingsModel";
 
 interface AppSettingsProps {
-  settings: Settings;
-  setSettings: React.Dispatch<React.SetStateAction<Settings>>;
+  settings: ISettings;
+  setSettings: React.Dispatch<React.SetStateAction<ISettings>>;
 }
 
 const AppSettings: React.FC<AppSettingsProps> = ({ settings, setSettings }) => {
   const { app } = settings;
 
   const handleInputModeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setSettings((prev) => ({
+    setSettings((prev: ISettings) => ({
       ...prev,
       app: { ...prev.app, input_mode: e.target.value },
     }));
   };
 
   const handleInstructionPromptChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setSettings((prev) => ({
+    setSettings((prev: ISettings) => ({
       ...prev,
       app: { ...prev.app, instruction_prompt: e.target.value },
     }));
   };
 
   const handleMetahumanToggle = () => {
-    setSettings((prev) => ({
+    setSettings((prev: ISettings) => ({
       ...prev,
       app: { ...prev.app, metahuman_sync: !prev.app.metahuman_sync },
     }));
   };
 
   const handleFaceRecognitionToggle = () => {
-    setSettings((prev) => ({
+    setSettings((prev: ISettings) => ({
       ...prev,
       app: { ...prev.app, face_recognition: !prev.app.face_recognition },
     }));
@@ -39,7 +39,7 @@ const AppSettings: React.FC<AppSettingsProps> = ({ settings, setSettings }) => {
 
   return (
     <div className="bg-gray-600 p-3 rounded-lg mb-4">
-      <h3 className="text-sm font-medium">Application Settings</h3>
+      <h3 className="text-sm font-medium">Application ISettings</h3>
       
       <label className="block text-sm font-medium mt-3">Input Mode:</label>
       <select

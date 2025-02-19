@@ -1,19 +1,12 @@
 // Base URL for your backend API
-export const BACKEND_URL = "http://0.0.0.0:8000";
+export const BACKEND_DOMAIN = "localhost:8000"
 
 // WebSocket URLs (if needed)
-export const WS_INPUT_URL = "ws://0.0.0.0:8000/ws/input";
-export const WS_OUTPUT_URL = "ws://0.0.0.0:8000/ws/output";
+export const WS_CONVO_URL = `ws://${BACKEND_DOMAIN}/ws/convo`;
+export const WS_DATA_SYNC_URL = `ws://${BACKEND_DOMAIN}/ws/data-sync`;
 
 // API Endpoints
 export const API_ENDPOINTS = {
-  health: `${BACKEND_URL}/health`,
-  updateSettings: `${BACKEND_URL}/api/update-settings`,
-  pushSettings: `${BACKEND_URL}/api/push-settings`,
-  userInfo: `${BACKEND_URL}/api/user-info`,
-  pushUserInfo: `${BACKEND_URL}/api/push-user-info`,
-  conversationSummary: (conversationId: string) =>
-    `${BACKEND_URL}/api/conversation-summary/${conversationId}`,
-  availableTools: `${BACKEND_URL}/api/available-tools`,
-  commitAudio: `${BACKEND_URL}/api/commit-audio`,
+  health: `http://${BACKEND_DOMAIN}/health`,
+  commitAudio: `http://${BACKEND_DOMAIN}/api/commit-audio`,
 };

@@ -1,9 +1,9 @@
-import React from "react";
-import { Settings } from "../utils/settings";
+import React, { useCallback } from "react";
+import { ISettings } from "../models/settingsModel"; // Adjust the import path as needed
 
 interface OpenAISettingsProps {
-  settings: Settings;
-  setSettings: React.Dispatch<React.SetStateAction<Settings>>;
+  settings: ISettings;
+  setSettings: React.Dispatch<React.SetStateAction<ISettings>>;
 }
 
 const models = [
@@ -16,41 +16,42 @@ const voices = ["Alloy", "Nova", "Shimmer"];
 const OpenAISettings: React.FC<OpenAISettingsProps> = ({ settings, setSettings }) => {
   const { openai } = settings;
 
-  const handleModelChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setSettings((prev) => ({
+  const handleModelChange = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSettings((prev: ISettings) => ({
       ...prev,
       openai: { ...prev.openai, model: e.target.value },
     }));
-    // Optionally push change to backend here.
-  };
+  }, [setSettings]);
 
-  const handleVoiceChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setSettings((prev) => ({
+  const handleVoiceChange = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSettings((prev: ISettings) => ({
       ...prev,
       openai: { ...prev.openai, voice: e.target.value },
     }));
-  };
+  }, [setSettings]);
 
-  const handleTemperatureChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSettings((prev) => ({
+  const handleTemperatureChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    const newTemp = parseFloat(e.target.value);
+    setSettings((prev: ISettings) => ({
       ...prev,
-      openai: { ...prev.openai, temperature: parseFloat(e.target.value) },
+      openai: { ...prev.openai, temperature: newTemp },
     }));
-  };
+  }, [setSettings]);
 
-  const handleMaxTokensChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSettings((prev) => ({
+  const handleMaxTokensChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    const newMax = parseInt(e.target.value, 10);
+    setSettings((prev: ISettings) => ({
       ...prev,
-      openai: { ...prev.openai, maxTokens: parseInt(e.target.value, 10) },
+      openai: { ...prev.openai, max_tokens: newMax },
     }));
-  };
+  }, [setSettings]);
 
-  const handleEnableStreamingChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSettings((prev) => ({
+  const handleEnableStreamingChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    setSettings((prev: ISettings) => ({
       ...prev,
-      openai: { ...prev.openai, enableStreaming: e.target.checked },
+      openai: { ...prev.openai, enable_streaming: e.target.checked },
     }));
-  };
+  }, [setSettings]);
 
   return (
     <div className="bg-gray-600 p-3 rounded-lg mb-4">
@@ -96,7 +97,7 @@ const OpenAISettings: React.FC<OpenAISettingsProps> = ({ settings, setSettings }
       <label className="block text-sm font-medium mt-3">Max Tokens:</label>
       <input
         type="number"
-        value={openai.maxTokens}
+        value={openai.max_tokens}
         onChange={handleMaxTokensChange}
         className="w-full mt-1 p-2 bg-gray-700 rounded-md"
       />
@@ -104,7 +105,7 @@ const OpenAISettings: React.FC<OpenAISettingsProps> = ({ settings, setSettings }
       <div className="flex items-center mt-3">
         <input
           type="checkbox"
-          checked={openai.enableStreaming}
+          checked={openai.enable_streaming}
           onChange={handleEnableStreamingChange}
           className="mr-2"
         />

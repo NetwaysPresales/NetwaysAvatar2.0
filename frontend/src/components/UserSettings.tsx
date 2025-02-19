@@ -1,49 +1,58 @@
-import React, { useState } from "react";
-import { Settings } from "../utils/settings";
-
-interface UserSettingsProps {
-  settings: Settings;
-  setSettings: React.Dispatch<React.SetStateAction<Settings>>;
-}
+import React, { useState, useCallback } from "react";
+import { ISettings } from "../models/settingsModel";
 
 const previousConversations = [
   { id: "conv1", title: "Chat from Jan 1" },
   { id: "conv2", title: "Chat from Feb 5" },
 ];
 
+interface UserSettingsProps {
+  settings: ISettings;
+  setSettings: React.Dispatch<React.SetStateAction<ISettings>>;
+}
+
 const UserSettings: React.FC<UserSettingsProps> = ({ settings, setSettings }) => {
-  const [name, setName] = useState(settings.user.user_name || "");
-  const [job, setJob] = useState(settings.user.user_job || "");
+  const [name, setName] = useState<string>(settings.user.user_name || "");
+  const [job, setJob] = useState<string>(settings.user.user_job || "");
   const [selectedConversation, setSelectedConversation] = useState<string | null>(
     settings.user.selected_conversation || null
   );
 
-  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newName = e.target.value;
-    setName(newName);
-    setSettings((prev) => ({
-      ...prev,
-      user: { ...prev.user, user_name: newName },
-    }));
-  };
+  const handleNameChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const newName = e.target.value;
+      setName(newName);
+      setSettings((prev: ISettings) => ({
+        ...prev,
+        user: { ...prev.user, user_name: newName },
+      }));
+    },
+    [setSettings]
+  );
 
-  const handleJobChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newJob = e.target.value;
-    setJob(newJob);
-    setSettings((prev) => ({
-      ...prev,
-      user: { ...prev.user, user_job: newJob },
-    }));
-  };
+  const handleJobChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const newJob = e.target.value;
+      setJob(newJob);
+      setSettings((prev: ISettings) => ({
+        ...prev,
+        user: { ...prev.user, user_job: newJob },
+      }));
+    },
+    [setSettings]
+  );
 
-  const handleConversationChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const convId = e.target.value;
-    setSelectedConversation(convId);
-    setSettings((prev) => ({
-      ...prev,
-      user: { ...prev.user, selected_conversation: convId },
-    }));
-  };
+  const handleConversationChange = useCallback(
+    (e: React.ChangeEvent<HTMLSelectElement>) => {
+      const convId = e.target.value;
+      setSelectedConversation(convId);
+      setSettings((prev: ISettings) => ({
+        ...prev,
+        user: { ...prev.user, selected_conversation: convId },
+      }));
+    },
+    [setSettings]
+  );
 
   return (
     <div className="bg-gray-600 p-3 rounded-lg mb-4">

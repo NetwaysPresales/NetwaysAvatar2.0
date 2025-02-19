@@ -1,41 +1,44 @@
-import React from "react";
-import { Settings } from "../utils/settings";
+import React, { useCallback } from "react";
+import { ISettings } from "../models/settingsModel";
 
 interface VADSettingsProps {
-  settings: Settings;
-  setSettings: React.Dispatch<React.SetStateAction<Settings>>;
+  settings: ISettings;
+  setSettings: React.Dispatch<React.SetStateAction<ISettings>>;
 }
 
 const VADSettings: React.FC<VADSettingsProps> = ({ settings, setSettings }) => {
   const { vad } = settings;
 
-  const handleThresholdChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSettings((prev) => ({
+  const handleThresholdChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    const newThreshold = parseFloat(e.target.value);
+    setSettings((prev: ISettings) => ({
       ...prev,
-      vad: { ...prev.vad, vadThreshold: parseFloat(e.target.value) },
+      vad: { ...prev.vad, vad_threshold: newThreshold },
     }));
-  };
+  }, [setSettings]);
 
-  const handlePaddingChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSettings((prev) => ({
+  const handlePaddingChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    const newPadding = parseInt(e.target.value, 10);
+    setSettings((prev: ISettings) => ({
       ...prev,
-      vad: { ...prev.vad, vadPrefixPadding: parseInt(e.target.value, 10) },
+      vad: { ...prev.vad, vad_prefix_padding: newPadding },
     }));
-  };
+  }, [setSettings]);
 
-  const handleSilenceDurationChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSettings((prev) => ({
+  const handleSilenceDurationChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    const newSilence = parseInt(e.target.value, 10);
+    setSettings((prev: ISettings) => ({
       ...prev,
-      vad: { ...prev.vad, vadSilenceDuration: parseInt(e.target.value, 10) },
+      vad: { ...prev.vad, vad_silence_duration: newSilence },
     }));
-  };
+  }, [setSettings]);
 
-  const handleCreateResponseChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSettings((prev) => ({
+  const handleCreateResponseChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    setSettings((prev: ISettings) => ({
       ...prev,
-      vad: { ...prev.vad, vadCreateResponse: e.target.checked },
+      vad: { ...prev.vad, vad_create_response: e.target.checked },
     }));
-  };
+  }, [setSettings]);
 
   return (
     <div className="bg-gray-600 p-3 rounded-lg mb-4">
@@ -47,7 +50,7 @@ const VADSettings: React.FC<VADSettingsProps> = ({ settings, setSettings }) => {
         min="0.0"
         max="1.0"
         step="0.1"
-        value={vad.vadThreshold}
+        value={vad.vad_threshold}
         onChange={handleThresholdChange}
         className="w-full mt-1"
       />
@@ -55,7 +58,7 @@ const VADSettings: React.FC<VADSettingsProps> = ({ settings, setSettings }) => {
       <label className="block text-sm font-medium mt-3">Prefix Padding (ms):</label>
       <input
         type="number"
-        value={vad.vadPrefixPadding}
+        value={vad.vad_prefix_padding}
         onChange={handlePaddingChange}
         className="w-full mt-1 p-2 bg-gray-700 rounded-md"
       />
@@ -63,7 +66,7 @@ const VADSettings: React.FC<VADSettingsProps> = ({ settings, setSettings }) => {
       <label className="block text-sm font-medium mt-3">Silence Duration (ms):</label>
       <input
         type="number"
-        value={vad.vadSilenceDuration}
+        value={vad.vad_silence_duration}
         onChange={handleSilenceDurationChange}
         className="w-full mt-1 p-2 bg-gray-700 rounded-md"
       />
@@ -71,7 +74,7 @@ const VADSettings: React.FC<VADSettingsProps> = ({ settings, setSettings }) => {
       <div className="flex items-center mt-3">
         <input
           type="checkbox"
-          checked={vad.vadCreateResponse}
+          checked={vad.vad_create_response}
           onChange={handleCreateResponseChange}
           className="mr-2"
         />

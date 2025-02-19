@@ -1,26 +1,25 @@
-import React, { useState, useEffect } from "react";
-import { defaultSettings, Settings } from "../utils/settings";
+import React, { useState } from "react";
 import { IoMenu, IoClose } from "react-icons/io5";
 import OpenAISettings from "./OpenAISettings";
 import VADSettings from "./VADSettings";
 import UserSettings from "./UserSettings";
 import AppSettings from "./AppSettings";
-import { sendSettingsToBackend, listenForSettingsUpdate } from "../utils/api";
+import { ISettings } from "../models/settingsModel";
+import { IState } from "../models/stateModel"
 
-const ControlPanel: React.FC = () => {
+interface ControlPanelProps {
+  settings: ISettings;
+  setSettings: React.Dispatch<React.SetStateAction<ISettings>>;
+  state: IState;
+  setState: React.Dispatch<React.SetStateAction<IState>>;
+}
+
+const ControlPanel: React.FC<ControlPanelProps> = ({ settings, setSettings }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [settings, setSettings] = useState<Settings>(defaultSettings);
-
-  // Listen for backend settings updates (full overwrite)
-  useEffect(() => {
-    listenForSettingsUpdate((newSettings: Settings) => {
-      setSettings(newSettings);
-    });
-  }, []);
 
   const handleStartConversation = () => {
     console.log("Conversation started");
-    setSettings((prev) => ({
+    setSettings((prev: ISettings) => ({
       ...prev,
       app: { ...prev.app, is_conversation_active: true },
     }));
@@ -28,20 +27,20 @@ const ControlPanel: React.FC = () => {
 
   const handleEndConversation = () => {
     console.log("Conversation ended");
-    setSettings((prev) => ({
+    setSettings((prev: ISettings) => ({
       ...prev,
       app: { ...prev.app, is_conversation_active: false },
     }));
   };
 
   const handleSaveSettings = async () => {
-    await sendSettingsToBackend(settings);
+    // This is where you would persist settings via HTTP if needed.
     console.log("Settings saved to backend:", settings);
   };
-  
+
   return (
     <>
-      {/* Hamburger Icon (only shown when panel is closed) */}
+      {/* Hamburger Icon */}
       {!isOpen && (
         <button
           className="fixed top-4 left-4 text-white bg-[#10a37f] p-2 rounded-md shadow-md z-50"

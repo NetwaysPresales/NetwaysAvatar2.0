@@ -1,29 +1,22 @@
-import React, { useEffect } from "react";
+// App.tsx
+import React from "react";
 import ControlPanel from "./components/ControlPanel";
+import ChatUI from "./components/ChatUI";
+import { useDataSync } from "./ws/dataSyncSocket";
+import { defaultSettings } from "./models/settingsModel";
+import { defaultState } from "./models/stateModel";
+import * as config from "./config"
+import { createConvoSocket } from "./ws/convoSocket";
 
 const App: React.FC = () => {
-    useEffect(() => {
-        const requestPermissions = async () => {
-            try {
-                // Request both microphone and camera permissions
-                const stream = await navigator.mediaDevices.getUserMedia({ audio: true, video: true });
-                console.log("Microphone and camera permissions granted.");
-                // Optionally, you can store the stream or use it in your app.
-            } catch (error) {
-                console.error("Error requesting permissions:", error);
-                // Optionally, handle the error, such as showing a message to the user.
-            }
-        };
-    
-        requestPermissions();
-    }, []);
+    // useDataSync hook initializes the WS connection and returns settings, state and their setters.
+    const { settings, setSettings, state, setState } = useDataSync(defaultSettings, defaultState, config.WS_DATA_SYNC_URL);
+    const convoWs = createConvoSocket(config.WS_CONVO_URL)
 
     return (
-        <div className="min-h-screen bg-[#202123] text-white">
-        <ControlPanel />
-        <div className="flex justify-center items-center h-screen">
-            <h1 className="text-4xl font-bold text-[#ececf1]">AI Chat Interface</h1>
-        </div>
+        <div>
+        <ControlPanel settings={settings} setSettings={setSettings} state={state} setState={setState} />
+        <ChatUI settings={settings} convoWs={convoWs} />
         </div>
     );
 };
