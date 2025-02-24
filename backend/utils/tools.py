@@ -26,10 +26,15 @@ def search_data(query: str):
     Searches through data in Azure AI Search.
     """
     try:
-        response = ai_search_client.search(query_answer=query)
+        responses =  ai_search_client.search(query_type='semantic', semantic_configuration_name=config.AZURE_AI_SEARCH_SEMANTIC_CONFIG,
+                                        search_text=query, select='chunk', query_caption='extractive')
         logger.info("Successfully called Azure AI Search with query: %s", query)
+        
+        result = ""
+        for i, response in enumerate(responses):
+            result += f"Chunk {i+1}: \n\n" + response['chunk'] + "\n\n" 
 
-        return response
+        return result
     except Exception as e:
         logger.error("Error calling Azure AI Search with query: %s", query)
 

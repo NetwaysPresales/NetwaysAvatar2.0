@@ -86,7 +86,7 @@ class AppConfig(BaseModel):
     6. Do NOT explicitly wait for commands to invoke function calls.
     """
     enabled_tools: List[Tool] = [
-        # search_data_tool,
+        search_data_tool,
         web_search_tool
     ]  # List of tools enabled for AI
     metahuman_sync: bool = False  # Whether to enable Metahuman animation
