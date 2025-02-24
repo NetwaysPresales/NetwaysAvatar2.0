@@ -68,7 +68,7 @@ async def send_session_update():
                     "create_response": current_settings.vad.vad_create_response
                 } if current_settings.vad.server_vad else None,
                 "tools": [
-                    tool.dict() for tool in current_settings.app.enabled_tools
+                    tool.model_dump() for tool in current_settings.app.enabled_tools
                 ],
                 "tool_choice": "auto",
                 "input_audio_format": "pcm16",

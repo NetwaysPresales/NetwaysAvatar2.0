@@ -1,20 +1,37 @@
 import config
+from logger import logger
 from tavily import TavilyClient
+from azure.core.credentials import AzureKeyCredential
+from azure.search.documents import SearchClient
+
 tavily_client = TavilyClient(api_key=config.TAVILY_KEY)
+ai_search_client = SearchClient(endpoint=config.AZURE_AI_SEARCH_ENDPOINT,
+                                index_name=config.AZURE_AI_SEARCH_INDEX,
+                                credential=AzureKeyCredential(config.AZURE_AI_SEARCH_KEY))
 
 def search_web(query: str):
     """
     Web search based on query.
     """
-    response = tavily_client.search(query)
-    return response
+    try:
+        response = tavily_client.search(query)
+        logger.info("Successfully called Tavily web search with query: %s", query)
 
-def search_data():
+        return "\n\n".join([result.get("content") for result in response.get("results")])
+    except Exception as e:
+        logger.error("Error calling Tavily web search with query: %s", query)
+
+def search_data(query: str):
     """
     Searches through data in Azure AI Search.
     """
-    with open("C:/Users/me/Desktop/Netways/NetwaysAvatar2.0/backend/utils/Dubai_Racing_Club.md", "r", encoding="utf-8") as file:
-        return file.read()
+    try:
+        response = ai_search_client.search(query_answer=query)
+        logger.info("Successfully called Azure AI Search with query: %s", query)
+
+        return response
+    except Exception as e:
+        logger.error("Error calling Azure AI Search with query: %s", query)
 
 def fetch_user_from_db(user_id: str):
     """

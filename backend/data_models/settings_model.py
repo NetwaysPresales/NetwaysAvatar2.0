@@ -19,14 +19,20 @@ class Tool(BaseModel):
 search_data_tool = Tool(
     type="function",
     name="search_data",
-    description="Reads content from Dubai_Racin_Club.md and returns it as text.",
-    parameters=None  # No input parameters required
+    description="Searches content using Azure AI Search based on the parameter 'query', and returns the results as text. Contains information regarding Dubai Racing Club history, events, and tickets. Always prioritize this function over the web_search function for Dubai Racing Club information,",
+    parameters={
+        "type": "object",
+        "properties": {
+            "query": { "type": "string" }
+        },
+        "required": ["query"]
+    }
 )
 
 web_search_tool = Tool(
     type="function",
-    name="web_search",
-    description="Conducts a web search the passed parameter query, and returns the results from the web.",
+    name="search_web",
+    description="Conducts a web search based on the parameter 'query', and returns the results from the web. Can be used to search for any information that you do not know.",
     parameters={
         "type": "object",
         "properties": {
@@ -68,9 +74,19 @@ class UserData(BaseModel):
 class AppConfig(BaseModel):
     """Application-related settings."""
     input_mode: str = "server_vad"
-    instruction_prompt: str = "You are Ameera, a helpful AI assistant that works for Dubai Racing Club. Respond in a friendly and conversational manner. ALWAYS responsd in the language you are spoken to in. You can use the tools provided when needed."
+    instruction_prompt: str = """You are Ameera, a helpful AI assistant that works for Dubai Racing Club. Respond in a friendly and conversational manner. 
+    
+    Follow the instruction below: 
+    
+    1. You can use the tools provided when needed.
+    2. ALWAYS responsd in the language you are spoken to in. If you do not know the language, default to English.
+    3. Understand that (Dubai) World Cup refers to the horse-racing event held in Dubai Racing Club. In general, assume that the context is related to horse racing in some way.
+    4. DO NOT EVER MAKE UP INFORMATION. If there is something you do not know, search the Azure AI Search database or the web for it.
+    5. ALWAYS respond in a conversational and friendly manner. If you are speaking in Arabic, use an Emirati Arabic dialect. 
+    6. Do NOT explicitly wait for commands to invoke function calls.
+    """
     enabled_tools: List[Tool] = [
-        search_data_tool,
+        # search_data_tool,
         web_search_tool
     ]  # List of tools enabled for AI
     metahuman_sync: bool = False  # Whether to enable Metahuman animation

@@ -24,10 +24,12 @@ async def handle_input_message(message: dict, openai_ws: WebSocket) -> None:
                     "type": "conversation.item.create",
                     "item": {
                         "type": "message",
-                        "content": [{
-                            "type": "input_text",
-                            "text": text_data
-                        }],
+                        "content": [
+                            {
+                                "type": "input_text",
+                                "text": text_data
+                            }
+                        ],
                         "role": "user"
                     }
                 }
@@ -64,14 +66,20 @@ async def handle_function_call(response_json: dict, openai_ws: WebSocket) -> Non
     call will be executed with the parameters that OpenAI returned. Output of function call
     is sent back to OpenAI, and ingestion is performed until response.done is ingested.
     """
-    logger.info("Received function_call:", response_json)
+    logger.info("Received function_call: %s", response_json)
     function_name = response_json.get("item").get("name")
-    function_call_output = None
+
+    args_json = json.loads(await openai_ws.recv())
+    while args_json.get("type") != "response.function_call_arguments.done":
+        args_json = json.loads(await openai_ws.recv())
+
+    args_json = json.loads(args_json.get("arguments"))
+
     match function_name:
         case "search_data":
-            function_call_output = search_data()
-        case "web_search":
-            function_call_output = web_search(response_json.get("item").get("arguments").get("query"))
+            function_call_output = search_data(args_json.get("query"))
+        case "search_web":
+            function_call_output = search_web(args_json.get("query"))
 
     func_output_payload = {
         "type": "conversation.item.create",
@@ -89,8 +97,6 @@ async def handle_function_call(response_json: dict, openai_ws: WebSocket) -> Non
             "instructions": current_settings.get_instruction_prompt_formatted() + " Reply based on function's output.",
             "voice": current_settings.openai.voice,
             "output_audio_format": "pcm16",
-            "tools": [tool.model_dump() for tool in current_settings.app.enabled_tools],
-            "tool_choice": "auto",
             "temperature": current_settings.openai.temperature,
             "max_output_tokens": current_settings.openai.max_tokens
         }
@@ -98,15 +104,13 @@ async def handle_function_call(response_json: dict, openai_ws: WebSocket) -> Non
 
     try:
         await openai_ws.send(json.dumps(func_output_payload))
-        await openai_ws.recv()
+        response_json = json.loads(await openai_ws.recv())
+        
         await openai_ws.send(json.dumps(response_payload))
-        await openai_ws.recv()
-        await openai_ws.recv()
-        await openai_ws.recv()
 
-        logger.info("Function calling is done for function:", function_name)
+        logger.info("Function calling is done for function: %s", function_name)
     except Exception as e:
-        logger.error("Error sending the function_call_output:", e)
+        logger.error("Error sending the function_call_output: %s", e)
 
 
 async def process_openai_event(response: str, response_json: dict, websocket: WebSocket) -> None:
@@ -189,9 +193,10 @@ async def forward_output(websocket: WebSocket, openai_ws: WebSocket) -> None:
         if response_json.get("type") == "conversation.item.created":
             item_type = response_json.get("item").get("type")
             if item_type == "function_call":
+                # print(response_json)
                 await handle_function_call(response_json, openai_ws)
-
-        await process_openai_event(response, response_json, websocket)
+        else:
+            await process_openai_event(response, response_json, websocket)
 
 @router.websocket("/ws/convo")
 async def convo_ws(websocket: WebSocket) -> None:
