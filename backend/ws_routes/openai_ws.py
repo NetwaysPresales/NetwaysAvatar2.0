@@ -43,7 +43,7 @@ async def get_openai_ws():
 
                 # Mark the session as active in the state.
                 current_state.session_active = True
-                # Immediately sync the updated state with the frontend via the data sync WebSocket.
+                # Immediately sync the updated state to the frontend via the data sync WebSocket.
                 await send_data_sync_update()
             except Exception as e:
                 logger.error("Error receiving session.created: %s", e)
@@ -67,6 +67,10 @@ async def send_session_update():
                     "silence_duration_ms": current_settings.vad.vad_silence_duration,
                     "create_response": current_settings.vad.vad_create_response
                 } if current_settings.vad.server_vad else None,
+                "tools": [
+                    tool.dict() for tool in current_settings.app.enabled_tools
+                ],
+                "tool_choice": "auto",
                 "input_audio_format": "pcm16",
                 "output_audio_format": "pcm16",
                 "voice": current_settings.openai.voice,

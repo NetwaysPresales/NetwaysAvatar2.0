@@ -6,6 +6,7 @@ from data_models.settings_model import current_settings
 from logger import logger
 from ws_routes.openai_ws import get_openai_ws, reset_openai_ws
 from ws_routes.data_sync_ws import update_state_param
+from utils.search_data import search_data
 
 router = APIRouter()
 
@@ -56,18 +57,62 @@ async def handle_input_message(message: dict, openai_ws: WebSocket) -> None:
         case _:
             logger.warning("Received unknown message type from client: %s", message)
 
-async def process_openai_event(response: str, websocket: WebSocket) -> None:
+
+async def handle_function_call(response_json: dict, openai_ws: WebSocket) -> None:
+    """
+    Process conversation.item.created events if they have a function_call type; Function
+    call will be executed with the parameters that OpenAI returned. Output of function call
+    is sent back to OpenAI, and ingestion is performed until response.done is ingested.
+    """
+    logger.info("Received function_call:", response_json)
+    function_name = response_json.get("item").get("name")
+    function_call_output = None
+    match function_name:
+        case "search_data":
+            function_call_output = search_data()
+
+    func_output_payload = {
+        "type": "conversation.item.create",
+        "item": {
+            "type": "function_call_output",
+            "output": function_call_output,
+            "call_id": response_json.get("item").get("call_id")
+        }
+    }
+
+    response_payload = {
+        "type": "response.create",
+        "response": {
+            "modalities": ["text", "audio"],
+            "instructions": current_settings.get_instruction_prompt_formatted() + " Reply based on function's output.",
+            "voice": current_settings.openai.voice,
+            "output_audio_format": "pcm16",
+            "tools": [tool.model_dump() for tool in current_settings.app.enabled_tools],
+            "tool_choice": "auto",
+            "temperature": current_settings.openai.temperature,
+            "max_output_tokens": current_settings.openai.max_tokens
+        }
+    }
+
+    try:
+        await openai_ws.send(json.dumps(func_output_payload))
+        await openai_ws.recv()
+        await openai_ws.send(json.dumps(response_payload))
+        await openai_ws.recv()
+        await openai_ws.recv()
+        await openai_ws.recv()
+
+        logger.info("Function calling is done for function:", function_name)
+    except Exception as e:
+        logger.error("Error sending the function_call_output:", e)
+
+
+async def process_openai_event(response: str, response_json: dict, websocket: WebSocket) -> None:
     """
     Processes an event received from OpenAI, updates the conversation state,
     forwards the event to the client, and updates the frontend via the data sync WS
     using the update functions.
     """
-    try:
-        response_json = json.loads(response)
-    except json.JSONDecodeError:
-        logger.error("Invalid JSON received from OpenAI: %s", response)
-        return
-
     event_type = response_json.get("type")
     update_state_param("last_event", event_type)
 
@@ -77,8 +122,8 @@ async def process_openai_event(response: str, websocket: WebSocket) -> None:
             update_state_param("session_id", response_json.get("session_id"))
             await websocket.send_text(response)
             logger.info("Session created. Session ID: %s", current_state.session_id)
-        case "conversation.item.created":
-            conv_id = response_json.get("conversation_id")
+        case "conversation.created":
+            conv_id = response_json.get("conversation").get("id")
             if conv_id:
                 update_state_param("conversation_id", conv_id)
                 logger.info("Conversation created. Conversation ID: %s", conv_id)
@@ -92,7 +137,7 @@ async def process_openai_event(response: str, websocket: WebSocket) -> None:
         case "speech_started":
             update_state_param("speech_detected", True)
             await websocket.send_text(response)
-            logger.info("Speech started detected; instructing client to reset playback.")
+            logger.info("Speech started detected; instructing client to stop and reset playback.")
         case "speech_ended":
             update_state_param("speech_detected", False)
             await websocket.send_text(response)
@@ -103,11 +148,11 @@ async def process_openai_event(response: str, websocket: WebSocket) -> None:
             logger.info("AI response completed.")
         case _:
             await websocket.send_text(response)
-            logger.info("Forwarded event from OpenAI: %s", response_json)
+            logger.info("Forwarded event from OpenAI: %s", response)
 
 async def forward_input(websocket: WebSocket, openai_ws: WebSocket) -> None:
     """
-    Continuously receives messages from the client and processes them.
+    Continuously receives messages from the client and processes them, forwarding to OpenAI.
     """
     while True:
         try:
@@ -128,11 +173,23 @@ async def forward_input(websocket: WebSocket, openai_ws: WebSocket) -> None:
 
 async def forward_output(websocket: WebSocket, openai_ws: WebSocket) -> None:
     """
-    Continuously receives messages from OpenAI and processes them.
+    Continuously receives messages from OpenAI and processes them, forwarding to client.
     """
     while True:
         response = await openai_ws.recv()
-        await process_openai_event(response, websocket)
+        
+        try:
+            response_json = json.loads(response)
+        except json.JSONDecodeError:
+            logger.error("Invalid JSON received from OpenAI: %s", response)
+            return
+
+        if response_json.get("type") == "conversation.item.created":
+            item_type = response_json.get("item").get("type")
+            if item_type == "function_call":
+                await handle_function_call(response_json, openai_ws)
+
+        await process_openai_event(response, response_json, websocket)
 
 @router.websocket("/ws/convo")
 async def convo_ws(websocket: WebSocket) -> None:

@@ -8,12 +8,31 @@ class Tool(BaseModel):
     description: Optional[str] = None
     parameters: Optional[dict] = None
 
+    def to_json(self):
+        return {
+            "type": type,
+            "name": name,
+            "description": description,
+            "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            }
+        }
+
+search_data_tool = Tool(
+    type="function",
+    name="search_data",
+    description="Reads content from Dubai_Racin_Club.md and returns it as text.",
+    parameters=None  # No input parameters required
+)
+
 class OpenAIConfig(BaseModel):
     """Settings related to OpenAI model behavior and processing."""
     model: str = "gpt-4o-realtime-preview"
     voice: str = "alloy"
     temperature: float = Field(0.8, ge=0.0, le=1.0)  # AI creativity level (0-1)
-    max_tokens: int = Field(500, gt=0)  # Maximum tokens per response
+    max_tokens: int = Field(2000, gt=0)  # Maximum tokens per response
     enable_streaming: bool = True  # Whether responses are streamed
 
 class PTTConfig(BaseModel):
@@ -40,8 +59,10 @@ class UserData(BaseModel):
 class AppConfig(BaseModel):
     """Application-related settings."""
     input_mode: str = "server_vad"
-    instruction_prompt: str = "You are a helpful AI assistant."
-    enabled_tools: List[Tool] = []  # List of tools enabled for AI (e.g., retrieval, code_interpreter)
+    instruction_prompt: str = "You are Ameera, a helpful AI assistant that works for Dubai Racing Club. Respond in a friendly and conversational manner, in the language of the user."
+    enabled_tools: List[Tool] = [
+        search_data_tool
+    ]  # List of tools enabled for AI (e.g., retrieval, code_interpreter)
     metahuman_sync: bool = False  # Whether to enable Metahuman animation
     face_recognition: bool = False  # Whether Face Recognition is enabled
     is_conversation_active: bool = False  # True if a conversation is ongoing
