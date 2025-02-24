@@ -172,6 +172,8 @@ async def websocket_client():
                                     print(f"❌ Error processing audio: {e}")
 
                             # Handle other messages
+                            elif response_json.get("type") == "conversation.item.created":
+                                print(f"Received function call: {response_json}")
                             else:
                                 print(f"ℹ️ Received JSON response: {response_json}")
 

@@ -10,14 +10,10 @@ class Tool(BaseModel):
 
     def to_json(self):
         return {
-            "type": type,
-            "name": name,
-            "description": description,
-            "parameters": {
-                "type": "object",
-                "properties": {},
-                "required": []
-            }
+            "type": self.type,
+            "name": self.name,
+            "description": self.description,
+            "parameters": self.parameters
         }
 
 search_data_tool = Tool(
@@ -25,6 +21,19 @@ search_data_tool = Tool(
     name="search_data",
     description="Reads content from Dubai_Racin_Club.md and returns it as text.",
     parameters=None  # No input parameters required
+)
+
+web_search_tool = Tool(
+    type="function",
+    name="web_search",
+    description="Conducts a web search the passed parameter query, and returns the results from the web.",
+    parameters={
+        "type": "object",
+        "properties": {
+            "query": { "type": "string" }
+        },
+        "required": ["query"]
+    }
 )
 
 class OpenAIConfig(BaseModel):
@@ -45,7 +54,7 @@ class VADConfig(BaseModel):
     server_vad: bool = True  # Whether VAD is enabled
     vad_threshold: float = Field(0.5, ge=0.0, le=1.0)  # 0.0 = very sensitive, 1.0 = strict
     vad_prefix_padding: int = Field(300, ge=0)  # Milliseconds of padding before speech
-    vad_silence_duration: int = Field(200, ge=0)  # Silence duration before speech cutoff
+    vad_silence_duration: int = Field(1000, ge=0)  # Silence duration before speech cutoff
     vad_create_response: bool = True  # AI auto-respond when VAD detects speech ending
 
 class UserData(BaseModel):
@@ -59,10 +68,11 @@ class UserData(BaseModel):
 class AppConfig(BaseModel):
     """Application-related settings."""
     input_mode: str = "server_vad"
-    instruction_prompt: str = "You are Ameera, a helpful AI assistant that works for Dubai Racing Club. Respond in a friendly and conversational manner, in the language of the user."
+    instruction_prompt: str = "You are Ameera, a helpful AI assistant that works for Dubai Racing Club. Respond in a friendly and conversational manner. ALWAYS responsd in the language you are spoken to in. You can use the tools provided when needed."
     enabled_tools: List[Tool] = [
-        search_data_tool
-    ]  # List of tools enabled for AI (e.g., retrieval, code_interpreter)
+        search_data_tool,
+        web_search_tool
+    ]  # List of tools enabled for AI
     metahuman_sync: bool = False  # Whether to enable Metahuman animation
     face_recognition: bool = False  # Whether Face Recognition is enabled
     is_conversation_active: bool = False  # True if a conversation is ongoing

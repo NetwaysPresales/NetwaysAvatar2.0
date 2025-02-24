@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Request, HTTPException
 from fastapi.responses import JSONResponse
-from utils.fetch_from_user_db import fetch_user_from_db
+from utils.tools import fetch_user_from_db
 from data_models.settings_model import current_settings
 from logger import logger
 

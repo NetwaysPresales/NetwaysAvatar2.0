@@ -6,7 +6,7 @@ from data_models.settings_model import current_settings
 from logger import logger
 from ws_routes.openai_ws import get_openai_ws, reset_openai_ws
 from ws_routes.data_sync_ws import update_state_param
-from utils.search_data import search_data
+from utils.tools import *
 
 router = APIRouter()
 
@@ -51,7 +51,7 @@ async def handle_input_message(message: dict, openai_ws: WebSocket) -> None:
                 await openai_ws.send(json.dumps(response_payload))
                 logger.info("Sent response.create to OpenAI: %s", response_payload)
         case {"audio_bytes": data_b64}:
-            payload = {"type": "input_audio_buffer.append", "data": data_b64}
+            payload = {"type": "input_audio_buffer.append", "audio": data_b64}
             await openai_ws.send(json.dumps(payload))
             logger.info("Forwarded audio chunk to OpenAI.")
         case _:
@@ -70,6 +70,8 @@ async def handle_function_call(response_json: dict, openai_ws: WebSocket) -> Non
     match function_name:
         case "search_data":
             function_call_output = search_data()
+        case "web_search":
+            function_call_output = web_search(response_json.get("item").get("arguments").get("query"))
 
     func_output_payload = {
         "type": "conversation.item.create",

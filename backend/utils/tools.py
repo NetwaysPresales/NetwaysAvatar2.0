@@ -1,3 +1,21 @@
+import config
+from tavily import TavilyClient
+tavily_client = TavilyClient(api_key=config.TAVILY_KEY)
+
+def search_web(query: str):
+    """
+    Web search based on query.
+    """
+    response = tavily_client.search(query)
+    return response
+
+def search_data():
+    """
+    Searches through data in Azure AI Search.
+    """
+    with open("C:/Users/me/Desktop/Netways/NetwaysAvatar2.0/backend/utils/Dubai_Racing_Club.md", "r", encoding="utf-8") as file:
+        return file.read()
+
 def fetch_user_from_db(user_id: str):
     """
     Fetches user data from the database.
