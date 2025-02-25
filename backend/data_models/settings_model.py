@@ -63,7 +63,7 @@ class OpenAIConfig(BaseModel):
     model: str = "gpt-4o-realtime-preview"
     voice: str = "alloy"
     temperature: float = Field(0.8, ge=0.0, le=1.0)  # AI creativity level (0-1)
-    max_tokens: int = Field(2000, gt=0)  # Maximum tokens per response
+    max_tokens: int = Field(5000, gt=0)  # Maximum tokens per response
     enable_streaming: bool = True  # Whether responses are streamed
 
 class PTTConfig(BaseModel):
@@ -114,7 +114,28 @@ class AppConfig(BaseModel):
 
     Context:
 
-    The Dubai Racing World Cup will be held on April 6th, 2025.
+    # Critical Dates for Dubai Racing Carnival & Dubai World Cup 2025
+        ## Dubai Racing Carnival (2024-2025)
+        - **Carnival Duration:** November 8, 2024 - March 14, 2025
+        - **Stable Application Closes:** November 6, 2024
+        - **Key Feature Race Days:**
+            - **Festive Friday:** December 20, 2024
+            - **Fashion Friday:** January 24, 2025
+            - **Emirates Super Saturday:** March 1, 2025
+
+        ## Dubai World Cup 2025
+        - **Main Event Date:** April 5, 2025
+        - **Nomination & Fee Deadlines:**
+            - **Free Nomination Closing:** January 15, 2025
+            - **First Supplementary Stage:** February 17, 2025
+            - **Second Supplementary Stage:** March 17, 2025
+            - **Third Supplementary Stage:** March 30, 2025
+            - **Payment of Declaration & Riding Fees / Final Entry Deadline:** March 31, 2025 (by 09:00 UAE Standard Time)
+
+        ## Additional Events Leading Up to the Dubai World Cup
+        - **Extended Carnival & Pre-Race Events:** The extended Dubai Racing Carnival features a 16-date schedule designed to build momentum toward the Dubai World Cup.
+        - **Morning Gallop Event:** Held on Thursday, April 3, 2025, as a prelude to the main race day.
+        - The Carnival schedule is arranged to coincide with local festivities (e.g., Eid Al Fitr), offering maximum opportunities for both local and international participants.
 
     Admission Only:
         Regular:
@@ -294,12 +315,13 @@ class AppConfig(BaseModel):
 
     ===================================================================================================================================================================
 
-    Limitations:
+    Limitations and Rules:
     - Keep all responses focused on the Dubai Racing Club and its events, politely declining unrelated requests.
     - Provide grounded ticket pricing details whenever questions about cost or attendance arise, regardless of whether the user explicitly requests “ticket info.”
     - Maintain natural, paragraph-based explanations for any data referenced from your sources; do not list them as bullet points.
     - Protect sensitive data and internal system details; do not disclose code implementations or confidential information.
     - Use the functions provided only when needed to answer a query; if information is unavailable, apologize and explain that you cannot fulfill the request.
+    - Whenever we talk about the history of Dubai Racing Club, be VERY enthusiastic and nostalgic in your tone.
     """
     enabled_tools: List[Tool] = [
         # search_data_tool,

@@ -72,6 +72,7 @@ class AudioPlayerAsync:
         with self.lock:
             np_data = np.frombuffer(data, dtype=np.int16)
             self.queue.append(np_data)
+            # print(len(self.queue))
             if not self.playing:
                 self.start()
 
@@ -178,6 +179,9 @@ async def websocket_client():
                                     print(f"❌ Error processing audio: {e}")
 
                             # Handle other messages
+                            elif response_json.get("type") == "rate_limits.updated":
+                                print("Updated rate limits: %s", response_json)
+
                             else:
                                 response_type = response_json.get("type")
                                 print(f"ℹ️ Received JSON response: {response_type}")
