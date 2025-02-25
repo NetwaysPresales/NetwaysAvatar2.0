@@ -80,6 +80,9 @@ async def handle_function_call(response_json: dict, openai_ws: WebSocket) -> Non
             function_call_output = search_data(args_json.get("query"))
         case "search_web":
             function_call_output = search_web(args_json.get("query"))
+        case "get_ticket_prices":
+            function_call_output = get_ticket_prices()
+        
 
     func_output_payload = {
         "type": "conversation.item.create",

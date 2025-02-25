@@ -146,36 +146,35 @@ async def websocket_client():
                             response_json = json.loads(message)
 
                             # Handle speech.started (Stop and clear audio)
-                            if response_json.get("type") == "speech.started":
+                            if response_json.get("type") == "input_audio_buffer.speech_started":
                                 print("🔇 Speech started: Stopping audio playback.")
                                 allow_audio_playback = False
                                 audio_player.clear_queue()
 
                             # Handle speech.ended (Resume playback)
-                            elif response_json.get("type") == "speech.ended":
+                            elif response_json.get("type") == "input_audio_buffer.speech_stopped":
                                 print("🔊 Speech ended: Allowing audio playback.")
                                 allow_audio_playback = True
 
                             # Handle text transcript
                             elif response_json.get("type") == "response.audio_transcript.delta":
                                 delta_text = response_json["delta"]
-                                print(f"📝 Transcript: {delta_text}")
+                                # print(f"📝 Transcript: {delta_text}")
 
                             # Handle audio playback
                             elif response_json.get("type") == "response.audio.delta":
                                 try:
                                     audio_bytes = decode_pcm16(response_json["delta"])
                                     if audio_bytes:
-                                        print(f"🔊 Queued audio chunk of {len(audio_bytes)} bytes")
+                                        # print(f"🔊 Queued audio chunk of {len(audio_bytes)} bytes")
                                         audio_player.add_data(audio_bytes)
                                 except Exception as e:
                                     print(f"❌ Error processing audio: {e}")
 
                             # Handle other messages
-                            elif response_json.get("type") == "conversation.item.created":
-                                print(f"Received function call: {response_json}")
                             else:
-                                print(f"ℹ️ Received JSON response: {response_json}")
+                                response_type = response_json.get("type")
+                                print(f"ℹ️ Received JSON response: {response_type}")
 
                         except Exception as e:
                             print("❌ Error while parsing response:", e)                        

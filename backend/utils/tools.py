@@ -30,13 +30,29 @@ def search_data(query: str):
                                         search_text=query, select='chunk', query_caption='extractive')
         logger.info("Successfully called Azure AI Search with query: %s", query)
         
-        result = ""
+        result = "AI Search Result: \n\n"
         for i, response in enumerate(responses):
             result += f"Chunk {i+1}: \n\n" + response['chunk'] + "\n\n" 
+
+        # print(result)
 
         return result
     except Exception as e:
         logger.error("Error calling Azure AI Search with query: %s", query)
+
+def get_ticket_prices():
+    """
+    Returns a .md file containing all the ticket prices and details retreived from website. 
+    """
+    try:
+        with open("C:/Users/me/Desktop/Netways/NetwaysAvatar2.0/backend/utils/DRC_Ticket_Pricing_Data.md") as file:
+            text = file.read()
+
+            logger.info("Successfully retreived ticket data")
+
+            return text
+    except Exception as e:
+        logger.error("Error retreiving ticket data")
 
 def fetch_user_from_db(user_id: str):
     """
