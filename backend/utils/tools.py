@@ -45,7 +45,7 @@ def get_ticket_prices():
     Returns a .md file containing all the ticket prices and details retreived from website. 
     """
     try:
-        with open("C:/Users/me/Desktop/Netways/NetwaysAvatar2.0/backend/utils/DRC_Ticket_Pricing_Data.md") as file:
+        with open("C:/Users/me/Desktop/Work/Netways/NetwaysAvatar2.0/backend/utils/DRC_Ticket_Pricing_Data.md") as file:
             text = file.read()
 
             logger.info("Successfully retreived ticket data")

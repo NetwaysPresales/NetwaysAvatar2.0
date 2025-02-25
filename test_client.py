@@ -100,31 +100,37 @@ class AudioPlayerAsync:
 audio_player = AudioPlayerAsync()
 
 async def send_microphone_audio(ws):
-    """Captures microphone audio and sends it to the WebSocket when PTT key is held."""
+    """Captures microphone audio and sends it to the WebSocket, sending silence when not pressed."""
     print(f"🎤 Push-to-Talk enabled: Hold **{push_to_talk_key.upper()}** to speak...")
     
-    read_size = int(SAMPLE_RATE * 0.1)  # 20ms buffer
+    read_size = int(SAMPLE_RATE * 0.1)  # 100ms buffer
     stream = sd.InputStream(channels=CHANNELS, samplerate=SAMPLE_RATE, dtype="int16")
     
     while True:
         if keyboard.is_pressed(push_to_talk_key):  # PTT active
             stream.start()
             print("🎙️ Recording... (Release key to stop)")
-
+            
             while keyboard.is_pressed(push_to_talk_key):
                 if stream.read_available < read_size:
                     await asyncio.sleep(0)
                     continue
-
+                
                 data, _ = stream.read(read_size)
+            
                 encoded_audio = base64.b64encode(data).decode("utf-8")
                 await ws.send(json.dumps({"audio_bytes": encoded_audio}))
-
+            
             print("🛑 Stopped recording.")
-
             stream.stop()
-
+        else:
+            # Send silence (zeros) when PTT is not pressed
+            silent_data = np.zeros(read_size, dtype=np.int16).tobytes()
+            encoded_silent_audio = base64.b64encode(silent_data).decode("utf-8")
+            await ws.send(json.dumps({"audio_bytes": encoded_silent_audio}))
+            
         await asyncio.sleep(0.1)  # Prevents CPU overload
+
 
 async def websocket_client():
     """Handles WebSocket connection and real-time communication."""
