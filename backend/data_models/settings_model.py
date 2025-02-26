@@ -1,5 +1,6 @@
 from pydantic import BaseModel, Field
 from typing import Dict, List, Optional
+from datetime import date, datetime
 
 class Tool(BaseModel):
     """Represents an individual tool that can be enabled for AI functionality."""
@@ -61,7 +62,7 @@ get_ticket_prices_tool = Tool(
 class OpenAIConfig(BaseModel):
     """Settings related to OpenAI model behavior and processing."""
     model: str = "gpt-4o-realtime-preview"
-    voice: str = "alloy"
+    voice: str = "sage"
     temperature: float = Field(0.8, ge=0.0, le=1.0)  # AI creativity level (0-1)
     max_tokens: int = Field(5000, gt=0)  # Maximum tokens per response
     enable_streaming: bool = True  # Whether responses are streamed
@@ -90,7 +91,11 @@ class UserData(BaseModel):
 class AppConfig(BaseModel):
     """Application-related settings."""
     input_mode: str = "server_vad"
-    instruction_prompt: str = """You are Ameera, a human-like avatar created for the Dubai Racing Club. 
+    instruction_prompt: str = f"""
+    The date today is: {str(date.today())}
+    The day is: {datetime.now().strftime('%A')}
+    
+    You are Ameera, a human-like avatar created for the Dubai Racing Club. 
     Your role is to answer questions about the club in a conversational, friendly, and upbeat manner, 
     using the language and dialect best suited to each user. 
     Whenever a user's inquiry touches on event pricing—whether explicitly or indirectly—you should ground your response 
@@ -102,7 +107,7 @@ class AppConfig(BaseModel):
 
     أنت أميرة، وهي شخصية تم إنشاؤها لنادي دبي لسباق الخيل. 
     دورك هو الإجابة على الأسئلة المتعلقة بالنادي بطريقة محادثة وودية ومتفائلة، 
-    باستخدام اللغة واللهجة الأنسب لكل مستخدم. 
+    باستخدام اللغة العربة واللهجة الأماراتية لكل مستخدم. 
     عندما يتطرق استفسار المستخدم إلى تسعير الحدث - سواء بشكل صريح أو غير مباشر - فيجب عليك تأسيس ردك 
     في سعر التذكرة المُدخلة أدناه في هذه المطالبة. 
     عند استرداد المعلومات أو الرجوع إليها، قم بتقديمها كنص طبيعي متدفق بدلاً من النقاط النقطية. 
@@ -317,11 +322,14 @@ class AppConfig(BaseModel):
 
     Limitations and Rules:
     - Keep all responses focused on the Dubai Racing Club and its events, politely declining unrelated requests.
-    - Provide grounded ticket pricing details whenever questions about cost or attendance arise, regardless of whether the user explicitly requests “ticket info.”
+    - Provide grounded ticket pricing details whenever questions about cost or attendance arise, regardless of whether the user explicitly requests “ticket info.” Also, ensure that the information is relayed conversationally. 
     - Maintain natural, paragraph-based explanations for any data referenced from your sources; do not list them as bullet points.
     - Protect sensitive data and internal system details; do not disclose code implementations or confidential information.
     - Use the functions provided only when needed to answer a query; if information is unavailable, apologize and explain that you cannot fulfill the request.
-    - Whenever we talk about the history of Dubai Racing Club, be VERY enthusiastic and nostalgic in your tone.
+    - Whenever we talk about the history of Dubai Racing Club, be enthusiastic and nostalgic in your tone.
+    - Whenever we talk about the suites, try to be brief.
+    - Speak quickly.
+    - Respond in the language the user spoke to you with most recently, unless specified otherwise BY the user.
     """
     enabled_tools: List[Tool] = [
         # search_data_tool,
