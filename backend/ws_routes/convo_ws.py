@@ -1,6 +1,8 @@
 import asyncio
+import base64
 import json
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect
+from utils.neurosync_utils_be import decode_to_mp3, send_audio_to_neurosync
 from data_models.state_model import current_state
 from data_models.settings_model import current_settings
 from logger import logger
@@ -131,30 +133,64 @@ async def process_openai_event(response: str, response_json: dict, websocket: We
             update_state_param("session_id", response_json.get("session_id"))
             await websocket.send_text(response)
             logger.info("Session created. Session ID: %s", current_state.session_id)
+        
         case "conversation.created":
             conv_id = response_json.get("conversation").get("id")
             if conv_id:
                 update_state_param("conversation_id", conv_id)
                 logger.info("Conversation created. Conversation ID: %s", conv_id)
             await websocket.send_text(response)
+        
         case "response.audio.delta":
-            await websocket.send_text(response)
-            logger.info("Sent AI audio chunk to client.")
+            encoded_audio = response_json.get("delta")
+            
+            if config.USE_NEUROSYNC:
+                try:
+                    # Convert the base64-encoded PCM16 audio to MP3 with 88200 Hz.
+                    mp3_audio = decode_to_mp3(encoded_audio)
+                    if not mp3_audio:
+                        raise Exception("MP3 conversion returned None")
+                    
+                    # Generate blendshapes using the MP3 audio.
+                    facial_data = send_audio_to_neurosync(mp3_audio)
+                    
+                    # Re-encode the MP3 bytes as base64 for JSON serialization.
+                    mp3_audio_b64 = base64.b64encode(mp3_audio).decode('utf-8')
+                    
+                    new_payload = {
+                        "type": "response.audio.delta.neurosync",
+                        "audio_delta": encoded_audio,
+                        "blendshapes": facial_data
+                    }
+                    logger.info("Sent AI audio chunk with blendshapes to client.")
+                except Exception as e:
+                    logger.error("Failed to generate blendshapes for chunk: %s", e)
+                    new_payload = response_json        
+            else:
+                logger.info("Sent AI audio chunk to client.")
+                new_payload = response_json
+
+            await websocket.send_text(json.dumps(new_payload))
+
         case "response.audio_transcript.delta":
             await websocket.send_text(response)
             logger.info("Sent transcript delta to client.")
+        
         case "speech_started":
             update_state_param("speech_detected", True)
             await websocket.send_text(response)
             logger.info("Speech started detected; instructing client to stop and reset playback.")
+        
         case "speech_ended":
             update_state_param("speech_detected", False)
             await websocket.send_text(response)
             logger.info("Speech ended detected; resuming playback.")
+        
         case "response.done":
             update_state_param("response_active", False)
             await websocket.send_text(response)
             logger.info("AI response completed.")
+        
         case _:
             await websocket.send_text(response)
             logger.info("Forwarded event from OpenAI: %s", response)

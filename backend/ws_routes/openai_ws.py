@@ -39,7 +39,7 @@ async def get_openai_ws():
                 # Send session.update with backend settings
                 await send_session_update()
                 session_updated = await _openai_ws.recv()
-                logger.info("OpenAI Session Updated: %s", session_updated)
+                logger.info("OpenAI Session Updated: %s", session_updated[0])
 
                 # Mark the session as active in the state.
                 current_state.session_active = True
